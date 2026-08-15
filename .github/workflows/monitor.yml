@@ -2,15 +2,22 @@ name: Govt Site Monitor
 
 on:
   schedule:
-    - cron: "*/15 * * * *"   # every 15 minutes
+    - cron: "*/5 * * * *"    # every 5 minutes
   workflow_dispatch: {}       # allows manual "Run workflow" button too
 
 permissions:
   contents: write
 
+# Prevents two runs from overlapping and fighting over the git push if one
+# run happens to take longer than 5 minutes.
+concurrency:
+  group: govt-site-monitor
+  cancel-in-progress: false
+
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -38,4 +45,5 @@ jobs:
           git config user.email "actions@github.com"
           git add state.json
           git diff --cached --quiet || git commit -m "update state [skip ci]"
+          git pull --rebase
           git push
