@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-Govt website new-post/notification watcher.
+Govt website new-post/notification watcher (v2 - uses a real headless
+browser via Playwright so JavaScript-rendered sites like DRDO/FCI/SSC/NTA
+also work, not just plain static HTML).
+
 Fetches each site in sites.json, extracts link+text items that look like
 notices/posts, compares to previously saved state, and sends a Telegram
 message for every NEW item found. State is saved to state.json so the
@@ -17,11 +20,8 @@ import urllib.request
 import urllib.error
 from urllib.parse import urljoin
 
-try:
-    from bs4 import BeautifulSoup
-except ImportError:
-    print("Missing dependency: pip install beautifulsoup4", file=sys.stderr)
-    raise
+from bs4 import BeautifulSoup
+from playwright.sync_api import sync_playwright
 
 STATE_FILE = "state.json"
 SITES_FILE = "sites.json"
@@ -29,15 +29,11 @@ SITES_FILE = "sites.json"
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
 
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-    )
-}
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+)
 
-# Words that make a link text look like a real notice/post (helps filter
-# out menu items like "Home", "Contact Us", "Sitemap" etc.)
 NOTICE_HINTS = re.compile(
     r"(notif|notice|advt|advertisement|recruit|result|admit|exam|vacan|"
     r"circular|press release|tender|walk-?in|interview|answer key|"
@@ -48,6 +44,7 @@ NOTICE_HINTS = re.compile(
 
 MIN_TEXT_LEN = 12
 MAX_TEXT_LEN = 220
+PAGE_LOAD_TIMEOUT_MS = 30000
 
 
 def load_json(path, default):
@@ -62,11 +59,11 @@ def save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def fetch(url, timeout=20):
-    req = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        charset = resp.headers.get_content_charset() or "utf-8"
-        return resp.read().decode(charset, errors="replace")
+def fetch_rendered_html(page, url):
+    """Load a page in the headless browser and return fully-rendered HTML."""
+    page.goto(url, timeout=PAGE_LOAD_TIMEOUT_MS, wait_until="networkidle")
+    page.wait_for_timeout(1500)
+    return page.content()
 
 
 def extract_items(html, base_url):
@@ -116,43 +113,46 @@ def send_telegram(message):
 def main():
     sites = load_json(SITES_FILE, [])
     state = load_json(STATE_FILE, {})  # {site_name: [item_id, ...]}
-    first_run_overall = len(state) == 0
 
-    for site in sites:
-        name = site["name"]
-        url = site["url"]
-        known_ids = set(state.get(name, []))
-        is_first_run_for_site = name not in state
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(user_agent=USER_AGENT)
+        page = context.new_page()
 
-        try:
-            html = fetch(url)
-        except Exception as e:
-            print(f"[SKIP] {name}: could not fetch ({e})", file=sys.stderr)
-            continue
+        for site in sites:
+            name = site["name"]
+            url = site["url"]
+            known_ids = set(state.get(name, []))
+            is_first_run_for_site = name not in state
 
-        items = extract_items(html, url)
-        new_items = [it for it in items if it["id"] not in known_ids]
+            try:
+                html = fetch_rendered_html(page, url)
+            except Exception as e:
+                print(f"[SKIP] {name}: could not load ({e})", file=sys.stderr)
+                continue
 
-        # On the very first run for a site, just record what's there —
-        # don't spam alerts for everything already on the page.
-        if is_first_run_for_site:
-            state[name] = [it["id"] for it in items]
-            print(f"[INIT] {name}: recorded {len(items)} existing items")
-            continue
+            items = extract_items(html, url)
+            new_items = [it for it in items if it["id"] not in known_ids]
 
-        for it in new_items:
-            msg = (
-                f"🔔 <b>New post: {name}</b>\n"
-                f"{it['title']}\n"
-                f"{it['link']}"
-            )
-            send_telegram(msg)
-            print(f"[ALERT] {name}: {it['title']}")
-            time.sleep(1)  # be gentle with Telegram rate limits
+            if is_first_run_for_site:
+                state[name] = [it["id"] for it in items]
+                print(f"[INIT] {name}: recorded {len(items)} existing items")
+                continue
 
-        # Keep state bounded (last 500 items per site) and updated
-        all_ids = list(known_ids.union(it["id"] for it in items))
-        state[name] = all_ids[-500:]
+            for it in new_items:
+                msg = (
+                    f"🔔 <b>New post: {name}</b>\n"
+                    f"{it['title']}\n"
+                    f"{it['link']}"
+                )
+                send_telegram(msg)
+                print(f"[ALERT] {name}: {it['title']}")
+                time.sleep(1)
+
+            all_ids = list(known_ids.union(it["id"] for it in items))
+            state[name] = all_ids[-500:]
+
+        browser.close()
 
     save_json(STATE_FILE, state)
 
