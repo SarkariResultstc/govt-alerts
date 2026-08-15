@@ -19,6 +19,9 @@ import hashlib
 import urllib.request
 import urllib.error
 from urllib.parse import urljoin
+from datetime import datetime, timezone, timedelta
+
+IST = timezone(timedelta(hours=5, minutes=30))
 
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
@@ -66,11 +69,24 @@ def fetch_rendered_html(page, url):
     return page.content()
 
 
+def normalize_title(text):
+    """Lowercase + collapse whitespace so trivial formatting changes don't
+    make the same notice look like a brand-new one."""
+    return re.sub(r"\s+", " ", text.strip().lower())
+
+
 def extract_items(html, base_url):
-    """Return list of (item_id, title, link) for notice-like <a> tags."""
+    """Return list of (item_id, title, link) for notice-like <a> tags.
+
+    IMPORTANT: item_id is derived from the TITLE TEXT ONLY (not the link).
+    Some government sites append a changing token/timestamp to their links
+    on every page load, which used to make the same notice look "new" on
+    every run and caused repeated duplicate alerts. Identifying purely by
+    title fixes that — each distinct notice now alerts exactly once.
+    """
     soup = BeautifulSoup(html, "html.parser")
     items = []
-    seen = set()
+    seen_titles = set()
     for a in soup.find_all("a", href=True):
         text = " ".join(a.get_text(" ", strip=True).split())
         href = a["href"].strip()
@@ -80,22 +96,25 @@ def extract_items(html, base_url):
             continue
         if not NOTICE_HINTS.search(text):
             continue
-        full_link = urljoin(base_url, href)
-        item_id = hashlib.sha256((text + "|" + full_link).encode("utf-8")).hexdigest()
-        if item_id in seen:
+        norm = normalize_title(text)
+        if norm in seen_titles:
             continue
-        seen.add(item_id)
+        seen_titles.add(norm)
+        full_link = urljoin(base_url, href)
+        item_id = hashlib.sha256(norm.encode("utf-8")).hexdigest()
         items.append({"id": item_id, "title": text, "link": full_link})
     return items
 
 
 def send_telegram(message):
-    if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
+    token = TELEGRAM_TOKEN.strip()
+    chat_id = TELEGRAM_CHAT_ID.strip()
+    if not token or not chat_id:
         print("Telegram credentials missing, skipping send.", file=sys.stderr)
         return
-    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
     data = json.dumps({
-        "chat_id": TELEGRAM_CHAT_ID,
+        "chat_id": chat_id,
         "text": message,
         "parse_mode": "HTML",
         "disable_web_page_preview": False,
@@ -106,7 +125,7 @@ def send_telegram(message):
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             resp.read()
-    except urllib.error.URLError as e:
+    except Exception as e:
         print(f"Telegram send failed: {e}", file=sys.stderr)
 
 
@@ -140,10 +159,12 @@ def main():
                 continue
 
             for it in new_items:
+                now_ist = datetime.now(IST).strftime("%d %b %Y, %I:%M %p")
                 msg = (
                     f"🔔 <b>New post: {name}</b>\n"
                     f"{it['title']}\n"
-                    f"{it['link']}"
+                    f"{it['link']}\n"
+                    f"🕒 {now_ist} (IST)"
                 )
                 send_telegram(msg)
                 print(f"[ALERT] {name}: {it['title']}")
