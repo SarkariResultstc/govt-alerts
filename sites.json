@@ -1,30 +1,162 @@
 [
-  {"name": "UPSC", "url": "https://upsc.gov.in"},
-  {"name": "SSC", "url": "https://ssc.gov.in"},
-  {"name": "Indian Railways", "url": "https://indianrailways.gov.in"},
-  {"name": "National Career Service", "url": "https://www.ncs.gov.in"},
-  {"name": "NTA", "url": "https://nta.ac.in"},
-  {"name": "IBPS", "url": "https://ibps.in"},
-  {"name": "UPPSC", "url": "https://uppsc.up.nic.in"},
-  {"name": "BPSC", "url": "https://bpsc.bihar.gov.in"},
-  {"name": "RPSC", "url": "https://rpsc.rajasthan.gov.in"},
-  {"name": "RSSB", "url": "https://rssb.rajasthan.gov.in"},
-  {"name": "MPPSC", "url": "https://mppsc.mp.gov.in"},
-  {"name": "HPSC", "url": "https://hpsc.gov.in"},
-  {"name": "HPPSC", "url": "https://hppsc.hp.gov.in"},
-  {"name": "DSSSB", "url": "https://dsssb.delhi.gov.in"},
-  {"name": "UP Police Board (UPPBPB)", "url": "https://uppbpb.gov.in"},
-  {"name": "BSSC", "url": "https://bssc.bihar.gov.in"},
-  {"name": "Bihar Board Online", "url": "https://biharboardonline.bihar.gov.in"},
-  {"name": "FCI", "url": "https://fci.gov.in"},
-  {"name": "LIC India", "url": "https://licindia.in"},
-  {"name": "SBI Careers", "url": "https://sbi.co.in/web/careers"},
-  {"name": "RBI", "url": "https://rbi.org.in"},
-  {"name": "SEBI", "url": "https://www.sebi.gov.in"},
-  {"name": "DRDO", "url": "https://drdo.gov.in"},
-  {"name": "ISRO", "url": "https://www.isro.gov.in"},
-  {"name": "AIIMS Exams", "url": "https://aiimsexams.ac.in"},
-  {"name": "ESIC", "url": "https://esic.gov.in"},
-  {"name": "EPFO", "url": "https://epfindia.gov.in"},
-  {"name": "Employment News", "url": "https://employmentnews.gov.in"}
+  {
+    "name": "UPSC",
+    "url": "https://upsc.gov.in"
+  },
+  {
+    "name": "SSC",
+    "url": "https://ssc.gov.in"
+  },
+  {
+    "name": "Indian Railways",
+    "url": "https://indianrailways.gov.in"
+  },
+  {
+    "name": "National Career Service",
+    "url": "https://www.ncs.gov.in"
+  },
+  {
+    "name": "NTA",
+    "url": "https://nta.ac.in"
+  },
+  {
+    "name": "IBPS",
+    "url": "https://ibps.in"
+  },
+  {
+    "name": "UPPSC",
+    "url": "https://uppsc.up.nic.in"
+  },
+  {
+    "name": "BPSC",
+    "url": "https://bpsc.bihar.gov.in"
+  },
+  {
+    "name": "RPSC",
+    "url": "https://rpsc.rajasthan.gov.in"
+  },
+  {
+    "name": "RSSB",
+    "url": "https://rssb.rajasthan.gov.in"
+  },
+  {
+    "name": "MPPSC",
+    "url": "https://mppsc.mp.gov.in"
+  },
+  {
+    "name": "HPSC",
+    "url": "https://hpsc.gov.in"
+  },
+  {
+    "name": "HPPSC",
+    "url": "https://hppsc.hp.gov.in"
+  },
+  {
+    "name": "DSSSB",
+    "url": "https://dsssb.delhi.gov.in"
+  },
+  {
+    "name": "UP Police Board (UPPBPB)",
+    "url": "https://uppbpb.gov.in"
+  },
+  {
+    "name": "BSSC",
+    "url": "https://bssc.bihar.gov.in"
+  },
+  {
+    "name": "Bihar Board Online",
+    "url": "https://biharboardonline.bihar.gov.in"
+  },
+  {
+    "name": "FCI",
+    "url": "https://fci.gov.in"
+  },
+  {
+    "name": "LIC India",
+    "url": "https://licindia.in"
+  },
+  {
+    "name": "SBI Careers",
+    "url": "https://sbi.co.in/web/careers"
+  },
+  {
+    "name": "RBI",
+    "url": "https://rbi.org.in"
+  },
+  {
+    "name": "SEBI",
+    "url": "https://www.sebi.gov.in"
+  },
+  {
+    "name": "DRDO",
+    "url": "https://drdo.gov.in"
+  },
+  {
+    "name": "ISRO",
+    "url": "https://www.isro.gov.in"
+  },
+  {
+    "name": "AIIMS Exams",
+    "url": "https://aiimsexams.ac.in"
+  },
+  {
+    "name": "ESIC",
+    "url": "https://esic.gov.in"
+  },
+  {
+    "name": "EPFO",
+    "url": "https://epfindia.gov.in"
+  },
+  {
+    "name": "Employment News",
+    "url": "https://employmentnews.gov.in"
+  },
+  {
+    "name": "Ministry of Education",
+    "url": "https://www.education.gov.in/"
+  },
+  {
+    "name": "NTA Exams Portal",
+    "url": "https://exams.nta.nic.in/"
+  },
+  {
+    "name": "NTA Notice Board Archive",
+    "url": "https://www.nta.ac.in/NoticeBoardArchive"
+  },
+  {
+    "name": "JEE Main",
+    "url": "https://jeemain.nta.nic.in/"
+  },
+  {
+    "name": "NEET",
+    "url": "https://neet.nta.nic.in/"
+  },
+  {
+    "name": "CUET",
+    "url": "https://cuet.nta.nic.in/"
+  },
+  {
+    "name": "UGC NET",
+    "url": "https://ugcnet.nta.nic.in/"
+  },
+  {
+    "name": "CSIR NET",
+    "url": "https://csirnet.nta.ac.in/"
+  },
+  {
+    "name": "GPAT",
+    "url": "https://gpat.nta.nic.in/"
+  },
+  {
+    "name": "ICAR NTA",
+    "url": "https://icar.nta.nic.in/"
+  },
+  {
+    "name": "AIAPGET",
+    "url": "https://exams.nta.nic.in/aiapget/"
+  },
+  {
+    "name": "SarkariResult",
+    "url": "https://www.sarkariresult.com/"
+  }
 ]
