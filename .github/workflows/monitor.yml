@@ -2,7 +2,7 @@ name: Govt Site Monitor
 
 on:
   schedule:
-    - cron: "*/5 * * * *"    # every 5 minutes
+    - cron: "*/7 * * * *"    # every 7 minutes
   workflow_dispatch: {}       # allows manual "Run workflow" button too
 
 permissions:
