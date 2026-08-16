@@ -30,6 +30,7 @@ from pypdf import PdfReader
 import io
 
 STATE_FILE = "state.json"
+RECENT_FEED_FILE = "recent_feed.json"
 SITES_FILE = "sites.json"
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
@@ -349,6 +350,7 @@ def create_wp_draft(site_name, title, link, ai_html=None):
 def main():
     sites = load_json(SITES_FILE, [])
     state = load_json(STATE_FILE, {})  # {site_name: [item_id, ...]}
+    recent_feed = load_json(RECENT_FEED_FILE, [])  # rolling list for the public live ticker
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -391,6 +393,12 @@ def main():
                     source_text = fetch_source_text(page, it["link"])
                     ai_html = call_gemini_for_summary(it["title"], name, source_text)
                 create_wp_draft(name, it["title"], it["link"], ai_html=ai_html)
+                recent_feed.append({
+                    "site": name,
+                    "title": it["title"],
+                    "link": it["link"],
+                    "time_utc": datetime.now(timezone.utc).isoformat(),
+                })
                 print(f"[ALERT] {name}: {it['title']}")
                 time.sleep(1)  # be gentle with Telegram/WP rate limits
 
@@ -401,6 +409,7 @@ def main():
         browser.close()
 
     save_json(STATE_FILE, state)
+    save_json(RECENT_FEED_FILE, recent_feed[-30:])  # keep only the newest 30 for the ticker
 
 
 if __name__ == "__main__":
