@@ -84,9 +84,11 @@ def save_json(path, data):
 def fetch_rendered_html(page, url):
     """Load a page in the headless browser and return fully-rendered HTML.
     Uses 'domcontentloaded' (fast) instead of 'networkidle' (slow) to keep
-    each site's check quick, important since many sites run every cycle."""
+    checks quick, but waits a bit longer afterwards so JS-heavy sites
+    (SSC, NTA, National Career Service etc.) have time to render their
+    notice widgets before we read the page content."""
     page.goto(url, timeout=PAGE_LOAD_TIMEOUT_MS, wait_until="domcontentloaded")
-    page.wait_for_timeout(800)
+    page.wait_for_timeout(3000)
     return page.content()
 
 
