@@ -16,6 +16,7 @@ import re
 import sys
 import time
 import hashlib
+import base64
 import urllib.request
 import urllib.error
 from urllib.parse import urljoin
@@ -25,12 +26,20 @@ IST = timezone(timedelta(hours=5, minutes=30))
 
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
+from pypdf import PdfReader
+import io
 
 STATE_FILE = "state.json"
 SITES_FILE = "sites.json"
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
+
+WP_URL = os.environ.get("WP_URL", "").rstrip("/")
+WP_USERNAME = os.environ.get("WP_USERNAME", "")
+WP_APP_PASSWORD = os.environ.get("WP_APP_PASSWORD", "")
+
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -174,6 +183,169 @@ def send_telegram(message):
         print(f"Telegram send failed: {e}", file=sys.stderr)
 
 
+# Best-effort label for the Important Links row, based on the notice title.
+LINK_TYPE_PATTERNS = [
+    (re.compile(r"answer key", re.IGNORECASE), "Answer Key"),
+    (re.compile(r"admit card", re.IGNORECASE), "Admit Card"),
+    (re.compile(r"result", re.IGNORECASE), "Result"),
+    (re.compile(r"syllabus", re.IGNORECASE), "Syllabus"),
+    (re.compile(r"apply", re.IGNORECASE), "Apply Online"),
+    (re.compile(r"merit|selection", re.IGNORECASE), "Merit List"),
+    (re.compile(r"cut ?off", re.IGNORECASE), "Cut Off"),
+    (re.compile(r"corrigendum", re.IGNORECASE), "Corrigendum"),
+    (re.compile(r"notif|advt|advertisement|recruit|vacan", re.IGNORECASE), "Notification"),
+]
+
+
+def guess_link_type(title):
+    for pattern, label in LINK_TYPE_PATTERNS:
+        if pattern.search(title):
+            return label
+    return "Details"
+
+
+def fetch_source_text(page, link, max_chars=8000):
+    """Fetch the notification's own page/PDF and return plain text content
+    for the AI to summarize from. Returns "" if it can't be read (e.g. a
+    scanned PDF with no text layer) — caller should fall back gracefully."""
+    try:
+        if link.lower().endswith(".pdf"):
+            req = urllib.request.Request(link, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                pdf_bytes = resp.read()
+            reader = PdfReader(io.BytesIO(pdf_bytes))
+            text = "\n".join((p.extract_text() or "") for p in reader.pages[:6])
+            return text.strip()[:max_chars]
+        else:
+            page.goto(link, timeout=15000, wait_until="domcontentloaded")
+            page.wait_for_timeout(1000)
+            body_text = page.inner_text("body")
+            return body_text.strip()[:max_chars]
+    except Exception as e:
+        print(f"Could not read source content for AI summary: {e}", file=sys.stderr)
+        return ""
+
+
+def call_gemini_for_summary(title, site_name, source_text):
+    """Ask Google Gemini (free tier) to extract Important Dates / Fee /
+    Eligibility from the raw notification text and return ready-to-use
+    HTML. Returns None on any failure so the caller falls back to the
+    basic template."""
+    if not GEMINI_API_KEY or not source_text:
+        return None
+
+    prompt = f"""You are helping build a government job/exam alert website.
+Below is the raw text of an official notification titled "{title}" from {site_name}.
+
+Extract the following into clean HTML (no markdown, no code fences, just raw HTML fragments):
+1. A 2-3 sentence factual summary IN YOUR OWN WORDS (do not copy sentences verbatim from the source).
+2. An "Important Dates" HTML table (only include rows for dates that are actually present in the text — e.g. Application Start, Last Date to Apply, Fee Payment Last Date, Exam Date, Admit Card Date, Result Date. Skip rows you can't find, don't guess.)
+3. An "Application Fee" HTML table by category, only if fee details are present.
+4. An "Eligibility" section (age limit, educational qualification) as a short bullet list, only if present.
+
+If a section has no information in the source text, omit that section entirely (don't write "not available").
+Output ONLY the HTML fragment, nothing else — no preamble, no explanation.
+
+SOURCE TEXT:
+{source_text}"""
+
+    url = (
+        "https://generativelanguage.googleapis.com/v1beta/models/"
+        "gemini-2.5-flash-lite:generateContent"
+    )
+    payload = json.dumps({
+        "contents": [{"parts": [{"text": prompt}]}],
+    }).encode("utf-8")
+
+    req = urllib.request.Request(
+        url,
+        data=payload,
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {GEMINI_API_KEY}",
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=45) as resp:
+            result = json.loads(resp.read().decode("utf-8"))
+        html = result["candidates"][0]["content"]["parts"][0]["text"].strip()
+        html = re.sub(r"^```html\s*|\s*```$", "", html.strip())
+        return html or None
+    except Exception as e:
+        print(f"Gemini summary failed: {e}", file=sys.stderr)
+        return None
+
+
+def create_wp_draft(site_name, title, link, ai_html=None):
+    """Create a WordPress draft post for one detected notice, using a
+    WordPress Application Password (NOT the real account password) over
+    the standard WP REST API. Fails silently (logs only) so a WordPress
+    hiccup never crashes the whole monitoring run."""
+    if not (WP_URL and WP_USERNAME and WP_APP_PASSWORD):
+        return  # WordPress posting not configured, skip quietly
+
+    link_type = guess_link_type(title)
+    now_ist = datetime.now(IST).strftime("%d %B %Y, %I:%M %p")
+
+    if ai_html:
+        intro_block = ai_html
+    else:
+        intro_block = (
+            f"<p>{title} — released by <strong>{site_name}</strong>. Full "
+            f"official details are available at the source link below. "
+            f"This draft was created automatically; please review and "
+            f"edit before publishing.</p>"
+        )
+
+    content_html = f"""
+{intro_block}
+
+<h4>Important Links</h4>
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%;">
+<thead>
+<tr style="background:#f2f2f2;">
+<th>Important Link</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{link_type}</td>
+<td><a href="{link}" target="_blank" rel="noopener">Click Here</a></td>
+</tr>
+</tbody>
+</table>
+
+<p><em>Detected on {now_ist} (IST) from {site_name}.</em></p>
+""".strip()
+
+    payload = json.dumps({
+        "title": title,
+        "content": content_html,
+        "status": "draft",
+    }).encode("utf-8")
+
+    credentials = f"{WP_USERNAME}:{WP_APP_PASSWORD}".encode("utf-8")
+    auth_header = "Basic " + base64.b64encode(credentials).decode("utf-8")
+
+    req = urllib.request.Request(
+        f"{WP_URL}/wp-json/wp/v2/posts",
+        data=payload,
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": auth_header,
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            resp.read()
+        print(f"[WP DRAFT] Created draft for: {title}")
+    except Exception as e:
+        print(f"WordPress draft creation failed: {e}", file=sys.stderr)
+
+
 def main():
     sites = load_json(SITES_FILE, [])
     state = load_json(STATE_FILE, {})  # {site_name: [item_id, ...]}
@@ -214,8 +386,13 @@ def main():
                     f"🕒 {now_ist} (IST)"
                 )
                 send_telegram(msg)
+                ai_html = None
+                if WP_URL and GEMINI_API_KEY:
+                    source_text = fetch_source_text(page, it["link"])
+                    ai_html = call_gemini_for_summary(it["title"], name, source_text)
+                create_wp_draft(name, it["title"], it["link"], ai_html=ai_html)
                 print(f"[ALERT] {name}: {it['title']}")
-                time.sleep(1)  # be gentle with Telegram rate limits
+                time.sleep(1)  # be gentle with Telegram/WP rate limits
 
             # Keep state bounded (last 500 items per site) and updated
             all_ids = list(known_ids.union(it["id"] for it in items))
