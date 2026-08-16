@@ -47,6 +47,23 @@ NOTICE_HINTS = re.compile(
     re.IGNORECASE,
 )
 
+# Real, specific notifications almost always mention a year (e.g. "2026").
+# Generic permanent menu items ("Examinations", "Apply Online", "Download
+# Syllabus") do NOT include a year — requiring one filters out the site's
+# static navigation menu and keeps only genuine, dated announcements.
+YEAR_HINT = re.compile(r"\b20\d{2}\b")
+
+# A short blocklist of common bare menu-label phrases that sometimes DO
+# contain a year-like number by coincidence but are still just navigation,
+# not an actual post.
+GENERIC_BLOCKLIST = {
+    "examinations", "active examinations", "forthcoming examinations",
+    "examination calendar", "online notifications", "apply online",
+    "download admit card", "download syllabus", "view answer key",
+    "all notifications/ advertisements", "all notifications advertisements",
+    "apply for post", "interview only", "examination only",
+}
+
 MIN_TEXT_LEN = 12
 MAX_TEXT_LEN = 220
 PAGE_LOAD_TIMEOUT_MS = 15000
@@ -99,6 +116,10 @@ def extract_items(html, base_url):
         if href.startswith(("javascript:", "#", "mailto:", "tel:")):
             continue
         if not NOTICE_HINTS.search(text):
+            continue
+        if not YEAR_HINT.search(text):
+            continue  # skip generic menu items with no year (not a real post)
+        if text.strip().lower() in GENERIC_BLOCKLIST:
             continue
         norm = normalize_title(text)
         if norm in seen_titles:
