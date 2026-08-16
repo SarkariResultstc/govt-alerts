@@ -12,10 +12,6 @@
     "url": "https://indianrailways.gov.in"
   },
   {
-    "name": "National Career Service",
-    "url": "https://www.ncs.gov.in"
-  },
-  {
     "name": "NTA",
     "url": "https://nta.ac.in"
   },
@@ -109,7 +105,7 @@
   },
   {
     "name": "Employment News",
-    "url": "https://employmentnews.gov.in"
+    "url": "https://employmentnews.gov.in/NewEmp/Home.aspx"
   },
   {
     "name": "Ministry of Education",
@@ -154,9 +150,5 @@
   {
     "name": "AIAPGET",
     "url": "https://exams.nta.nic.in/aiapget/"
-  },
-  {
-    "name": "SarkariResult",
-    "url": "https://www.sarkariresult.com/"
   }
 ]
