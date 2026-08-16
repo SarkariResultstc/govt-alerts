@@ -67,6 +67,18 @@ GENERIC_BLOCKLIST = {
 MIN_TEXT_LEN = 12
 MAX_TEXT_LEN = 220
 PAGE_LOAD_TIMEOUT_MS = 15000
+SLOW_PAGE_LOAD_TIMEOUT_MS = 25000
+
+# These specific sites are unusually heavy/slow JavaScript apps that need
+# to fully finish loading (networkidle) to show their notices — the fast
+# "domcontentloaded + short wait" approach used for everyone else isn't
+# enough for these. Keeping this list small means the overall run still
+# stays fast; only these few sites take longer.
+SLOW_SITES = {
+    "SSC", "NTA", "National Career Service", "CISCE (ICSE/ISC)",
+    "UP Police Board (UPPBPB)", "ICAR", "SBI Careers", "SEBI",
+    "AIIMS Exams", "Employment News",
+}
 
 
 def load_json(path, default):
@@ -81,14 +93,18 @@ def save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def fetch_rendered_html(page, url):
+def fetch_rendered_html(page, url, slow=False):
     """Load a page in the headless browser and return fully-rendered HTML.
-    Uses 'domcontentloaded' (fast) instead of 'networkidle' (slow) to keep
-    checks quick, but waits a bit longer afterwards so JS-heavy sites
-    (SSC, NTA, National Career Service etc.) have time to render their
-    notice widgets before we read the page content."""
-    page.goto(url, timeout=PAGE_LOAD_TIMEOUT_MS, wait_until="domcontentloaded")
-    page.wait_for_timeout(3000)
+    For most sites we use 'domcontentloaded' (fast) + a short pause, which
+    is enough. For known heavy JS apps (see SLOW_SITES) we wait for the
+    page to go fully idle (networkidle) so their notice widgets finish
+    loading before we read the content."""
+    if slow:
+        page.goto(url, timeout=SLOW_PAGE_LOAD_TIMEOUT_MS, wait_until="networkidle")
+        page.wait_for_timeout(2000)
+    else:
+        page.goto(url, timeout=PAGE_LOAD_TIMEOUT_MS, wait_until="domcontentloaded")
+        page.wait_for_timeout(800)
     return page.content()
 
 
@@ -174,7 +190,7 @@ def main():
             is_first_run_for_site = name not in state
 
             try:
-                html = fetch_rendered_html(page, url)
+                html = fetch_rendered_html(page, url, slow=(name in SLOW_SITES))
             except Exception as e:
                 print(f"[SKIP] {name}: could not load ({e})", file=sys.stderr)
                 continue
