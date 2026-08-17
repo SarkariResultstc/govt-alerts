@@ -47,7 +47,7 @@ jobs:
         run: |
           git config user.name "govt-site-monitor-bot"
           git config user.email "actions@github.com"
-          git add state.json recent_feed.json
+          git add state.json recent_feed.json wp_daily_count.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
