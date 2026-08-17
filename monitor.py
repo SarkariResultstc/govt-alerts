@@ -31,6 +31,8 @@ import io
 
 STATE_FILE = "state.json"
 RECENT_FEED_FILE = "recent_feed.json"
+WP_DAILY_COUNT_FILE = "wp_daily_count.json"
+WP_DAILY_LIMIT = 20
 SITES_FILE = "sites.json"
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
@@ -76,6 +78,7 @@ GENERIC_BLOCKLIST = {
 
 MIN_TEXT_LEN = 12
 MAX_TEXT_LEN = 220
+MAX_NEW_ITEMS_PER_SITE_PER_RUN = 4
 PAGE_LOAD_TIMEOUT_MS = 15000
 SLOW_PAGE_LOAD_TIMEOUT_MS = 25000
 
@@ -217,7 +220,7 @@ def guess_link_type(title):
     return "Details"
 
 
-def fetch_source_text(page, link, max_chars=8000):
+def fetch_source_text(page, link, max_chars=14000):
     """Fetch the notification's own page/PDF and return plain text content
     for the AI to summarize from. Returns "" if it can't be read (e.g. a
     scanned PDF with no text layer) — caller should fall back gracefully."""
@@ -247,17 +250,51 @@ def call_gemini_for_summary(title, site_name, source_text):
     if not GEMINI_API_KEY or not source_text:
         return None
 
-    prompt = f"""You are helping build a government job/exam alert website.
-Below is the raw text of an official notification titled "{title}" from {site_name}.
+    prompt = f"""You are a content writer for an Indian government job/exam alert
+website called SarkariResults.com.tc. Below is the raw text of an official
+notification titled "{title}" from {site_name}. Write a complete, ready-to-
+publish article in the exact structure below, in the same style as
+established "Sarkari Result" style sites.
 
-Extract the following into clean HTML (no markdown, no code fences, just raw HTML fragments):
-1. A 2-3 sentence factual summary IN YOUR OWN WORDS (do not copy sentences verbatim from the source).
-2. An "Important Dates" HTML table (only include rows for dates that are actually present in the text — e.g. Application Start, Last Date to Apply, Fee Payment Last Date, Exam Date, Admit Card Date, Result Date. Skip rows you can't find, don't guess.)
-3. An "Application Fee" HTML table by category, only if fee details are present.
-4. An "Eligibility" section (age limit, educational qualification) as a short bullet list, only if present.
+RULES:
+- Write factual summaries IN YOUR OWN WORDS — never copy sentences verbatim
+  from the source text (this is for copyright safety).
+- Use ONLY information that is actually present in the source text. If a
+  whole section has no relevant information, OMIT that entire section
+  (heading and table) — never write "not available", never guess or invent
+  dates/numbers.
+- Output ONLY raw HTML fragments (tables, headings, paragraphs, lists). No
+  markdown, no code fences, no commentary before or after.
+- Use <h4> for each section heading, and standard <table><thead><tbody> HTML
+  for every table (no inline CSS needed, the website already styles tables).
 
-If a section has no information in the source text, omit that section entirely (don't write "not available").
-Output ONLY the HTML fragment, nothing else — no preamble, no explanation.
+SECTIONS TO PRODUCE, IN THIS ORDER (skip any with no source data):
+
+1. A 2-3 sentence introductory summary paragraph.
+2. <h4>Quick Info</h4> table — rows for whichever of these are present:
+   Organization, Post Name, Department, Advertisement No., Total Vacancies,
+   Application Start Date, Last Date to Apply, Official Website.
+3. <h4>Important Dates</h4> table — rows for whichever are present:
+   Application Start, Last Date to Apply, Fee Payment Last Date,
+   Correction Window, Exam Date, Admit Card Release, Answer Key Date,
+   Result Date.
+4. <h4>Vacancy Details</h4> table — post-wise vacancy breakdown, only if the
+   source lists specific posts/numbers.
+5. <h4>Age Limit</h4> table — Minimum Age, Maximum Age, Age Relaxation
+   (as-on date if mentioned).
+6. <h4>Eligibility Criteria</h4> — short paragraph or bullet list covering
+   required qualification/experience.
+7. <h4>Application Fee</h4> table — by category (General/OBC/SC/ST/PwBD etc.)
+   if mentioned.
+8. <h4>Mode of Selection</h4> table — stages (e.g. Written Exam, Merit,
+   Interview) if mentioned.
+9. <h4>How to Apply</h4> — a short numbered/bulleted list of the application
+   steps, only if the source describes a process.
+10. <h4>Frequently Asked Questions</h4> — 3 to 5 short Q&A pairs a candidate
+    would realistically ask about THIS specific notice (e.g. "What is the
+    last date to apply for {{post name}}?"), answered using only facts found
+    in the source text. Format as <p><strong>Q: ...</strong><br>A: ...</p>
+    for each pair.
 
 SOURCE TEXT:
 {source_text}"""
@@ -268,6 +305,7 @@ SOURCE TEXT:
     )
     payload = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"maxOutputTokens": 3000},
     }).encode("utf-8")
 
     req = urllib.request.Request(
@@ -288,6 +326,20 @@ SOURCE TEXT:
     except Exception as e:
         print(f"Gemini summary failed: {e}", file=sys.stderr)
         return None
+
+
+def get_wp_daily_count():
+    today = datetime.now(IST).strftime("%Y-%m-%d")
+    data = load_json(WP_DAILY_COUNT_FILE, {"date": today, "count": 0})
+    if data.get("date") != today:
+        data = {"date": today, "count": 0}  # new day, reset counter
+    return data
+
+
+def increment_wp_daily_count(data):
+    data["count"] += 1
+    save_json(WP_DAILY_COUNT_FILE, data)
+    return data
 
 
 def create_wp_draft(site_name, title, link, ai_html=None):
@@ -363,6 +415,7 @@ def main():
     sites = load_json(SITES_FILE, [])
     state = load_json(STATE_FILE, {})  # {site_name: [item_id, ...]}
     recent_feed = load_json(RECENT_FEED_FILE, [])  # rolling list for the public live ticker
+    wp_count = get_wp_daily_count()
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -391,6 +444,20 @@ def main():
                 print(f"[INIT] {name}: recorded {len(items)} existing items")
                 continue
 
+            # SAFETY CAP: if a site was flaky/slow before and suddenly loads
+            # its FULL notice list, dozens of old/backlog notices can look
+            # "new" all at once. Notice boards list newest items first, so
+            # we only alert on the first few (top of the list) and quietly
+            # mark the rest as known — this avoids ever flooding old news.
+            if len(new_items) > MAX_NEW_ITEMS_PER_SITE_PER_RUN:
+                print(
+                    f"[CAP] {name}: {len(new_items)} new items found, "
+                    f"only alerting top {MAX_NEW_ITEMS_PER_SITE_PER_RUN} "
+                    f"(rest treated as old backlog, not alerted)",
+                    file=sys.stderr,
+                )
+            new_items = new_items[:MAX_NEW_ITEMS_PER_SITE_PER_RUN]
+
             for it in new_items:
                 now_ist = datetime.now(IST).strftime("%d %b %Y, %I:%M %p")
                 msg = (
@@ -400,11 +467,15 @@ def main():
                     f"🕒 {now_ist} (IST)"
                 )
                 send_telegram(msg)
-                ai_html = None
-                if WP_URL and GEMINI_API_KEY:
-                    source_text = fetch_source_text(page, it["link"])
-                    ai_html = call_gemini_for_summary(it["title"], name, source_text)
-                create_wp_draft(name, it["title"], it["link"], ai_html=ai_html)
+                if wp_count["count"] < WP_DAILY_LIMIT:
+                    ai_html = None
+                    if WP_URL and GEMINI_API_KEY:
+                        source_text = fetch_source_text(page, it["link"])
+                        ai_html = call_gemini_for_summary(it["title"], name, source_text)
+                    create_wp_draft(name, it["title"], it["link"], ai_html=ai_html)
+                    wp_count = increment_wp_daily_count(wp_count)
+                else:
+                    print(f"[WP LIMIT] Daily draft limit ({WP_DAILY_LIMIT}) reached, skipping draft for: {it['title']}")
                 recent_feed.append({
                     "site": name,
                     "title": it["title"],
