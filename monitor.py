@@ -103,19 +103,31 @@ def save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def fetch_rendered_html(page, url, slow=False):
+def fetch_rendered_html(page, url, slow=False, retries=2):
     """Load a page in the headless browser and return fully-rendered HTML.
     For most sites we use 'domcontentloaded' (fast) + a short pause, which
     is enough. For known heavy JS apps (see SLOW_SITES) we wait for the
     page to go fully idle (networkidle) so their notice widgets finish
-    loading before we read the content."""
-    if slow:
-        page.goto(url, timeout=SLOW_PAGE_LOAD_TIMEOUT_MS, wait_until="networkidle")
-        page.wait_for_timeout(2000)
-    else:
-        page.goto(url, timeout=PAGE_LOAD_TIMEOUT_MS, wait_until="domcontentloaded")
-        page.wait_for_timeout(800)
-    return page.content()
+    loading before we read the content.
+
+    Retries once (or more) on transient network errors (timeouts, DNS
+    hiccups, connection resets) before giving up — many of these are
+    momentary blips, not permanent failures."""
+    last_error = None
+    for attempt in range(1, retries + 1):
+        try:
+            if slow:
+                page.goto(url, timeout=SLOW_PAGE_LOAD_TIMEOUT_MS, wait_until="networkidle")
+                page.wait_for_timeout(2000)
+            else:
+                page.goto(url, timeout=PAGE_LOAD_TIMEOUT_MS, wait_until="domcontentloaded")
+                page.wait_for_timeout(800)
+            return page.content()
+        except Exception as e:
+            last_error = e
+            if attempt < retries:
+                time.sleep(3)  # short pause before retrying
+    raise last_error
 
 
 def normalize_title(text):
