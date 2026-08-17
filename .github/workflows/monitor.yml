@@ -48,6 +48,15 @@ jobs:
           git config user.name "govt-site-monitor-bot"
           git config user.email "actions@github.com"
           git add state.json recent_feed.json
-          git diff --cached --quiet || git commit -m "update state [skip ci]"
-          git pull --rebase
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "update state [skip ci]"
+          if git push; then
+            echo "Pushed cleanly."
+            exit 0
+          fi
+          git fetch origin main
+          git rebase -X ours origin/main || git rebase --abort
           git push
