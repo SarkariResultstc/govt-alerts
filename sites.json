@@ -150,5 +150,29 @@
   {
     "name": "AIAPGET",
     "url": "https://exams.nta.nic.in/aiapget/"
+  },
+  {
+    "name": "UPSSSC",
+    "url": "https://upsssc.gov.in/AllNotifications.aspx"
+  },
+  {
+    "name": "UP Board (UPMSP)",
+    "url": "https://upmsp.edu.in"
+  },
+  {
+    "name": "UP Board Results",
+    "url": "https://upresults.nic.in"
+  },
+  {
+    "name": "UP Scholarship",
+    "url": "https://scholarship.up.gov.in"
+  },
+  {
+    "name": "CSBC (Bihar Police Constable)",
+    "url": "https://www.csbc.bih.nic.in/"
+  },
+  {
+    "name": "BPSSC (Bihar Police SI)",
+    "url": "https://www.bpssc.bih.nic.in/"
   }
 ]
