@@ -223,12 +223,31 @@ def guess_link_type(title):
 def fetch_source_text(page, link, max_chars=14000):
     """Fetch the notification's own page/PDF and return plain text content
     for the AI to summarize from. Returns "" if it can't be read (e.g. a
-    scanned PDF with no text layer) — caller should fall back gracefully."""
+    scanned PDF with no text layer) — caller should fall back gracefully.
+
+    We can't rely on the URL ending in ".pdf" — many government sites serve
+    PDFs from URLs like "download.aspx?id=123" with no extension — so we
+    check the real Content-Type header from the server instead."""
+    is_pdf = link.lower().endswith(".pdf")
+    pdf_bytes = None
+
     try:
-        if link.lower().endswith(".pdf"):
-            req = urllib.request.Request(link, headers={"User-Agent": USER_AGENT})
-            with urllib.request.urlopen(req, timeout=20) as resp:
+        req = urllib.request.Request(link, headers={"User-Agent": USER_AGENT})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            content_type = resp.headers.get("Content-Type", "").lower()
+            if "pdf" in content_type:
+                is_pdf = True
+            if is_pdf:
                 pdf_bytes = resp.read()
+    except Exception as e:
+        print(f"Could not fetch headers for {link}: {e}", file=sys.stderr)
+
+    try:
+        if is_pdf:
+            if pdf_bytes is None:
+                req = urllib.request.Request(link, headers={"User-Agent": USER_AGENT})
+                with urllib.request.urlopen(req, timeout=20) as resp:
+                    pdf_bytes = resp.read()
             reader = PdfReader(io.BytesIO(pdf_bytes))
             text = "\n".join((p.extract_text() or "") for p in reader.pages[:6])
             return text.strip()[:max_chars]
@@ -248,6 +267,11 @@ def call_gemini_for_summary(title, site_name, source_text):
     HTML. Returns None on any failure so the caller falls back to the
     basic template."""
     if not GEMINI_API_KEY or not source_text:
+        print(
+            f"[GEMINI SKIP] {title}: "
+            f"api_key_present={bool(GEMINI_API_KEY)}, "
+            f"source_text_chars={len(source_text) if source_text else 0}"
+        )
         return None
 
     prompt = f"""You are a content writer for an Indian government job/exam alert
@@ -322,6 +346,10 @@ SOURCE TEXT:
             result = json.loads(resp.read().decode("utf-8"))
         html = result["candidates"][0]["content"]["parts"][0]["text"].strip()
         html = re.sub(r"^```html\s*|\s*```$", "", html.strip())
+        if html:
+            print(f"[GEMINI OK] Got {len(html)} chars of rich content for: {title}")
+        else:
+            print(f"[GEMINI EMPTY] No content returned for: {title}")
         return html or None
     except Exception as e:
         print(f"Gemini summary failed: {e}", file=sys.stderr)
