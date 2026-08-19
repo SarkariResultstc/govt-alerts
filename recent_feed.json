@@ -1,23 +1,5 @@
 [
   {
-    "site": "AIIMS Exams",
-    "title": "Corrigendum No.34/2026: Common Recruitment Examination-5(CRE-5)",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1786950477109-714463231.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260817%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260817T071358Z&X-Amz-Expires=604800&X-Amz-Signature=1d35554092206e83056e94609b8e32184933ef3c824692eb9fc25cba2f374ba1&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-08-17T07:14:03.065431+00:00"
-  },
-  {
-    "site": "AIIMS Exams",
-    "title": "Notice: Fees and Admit Card for B.Sc. (Hons) Nursing Phase - II & IV (Supplementary) Professional Examinations to be held in August 2026",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1786957893966-594928911.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260817%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260817T092406Z&X-Amz-Expires=604800&X-Amz-Signature=1e0200cd6dcddf30471fb7ebc819b9eeb229bb9e815fe8a1ad1f326864b1c766&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-08-17T09:28:08.208086+00:00"
-  },
-  {
-    "site": "IBPS",
-    "title": "NBL Notification For The Posts Of Specialist Officers Registration From 15-Aug-2026",
-    "link": "https://ibpsreg.ibps.in/nbljul26/",
-    "time_utc": "2026-08-17T13:09:38.413608+00:00"
-  },
-  {
     "site": "IBPS",
     "title": "IOCL Recruitment of Executives Registration From 14-Aug-2026",
     "link": "https://ibpsreg.ibps.in/iocljun26/",
@@ -178,5 +160,23 @@
     "title": "Final Answer Key - Assistant Professor Exam 2025 (06 Subjects - Hindi, English, Commerce, Political Science, Economics, Sociology), Dated 19/08/2026",
     "link": "https://mppsc.mp.gov.in/uploads/files/Final_Answer_Key_Assistant_Professor_Exam_2025_06_Subjects_Dated_19_08_2026.pdf",
     "time_utc": "2026-08-19T13:05:48.936354+00:00"
+  },
+  {
+    "site": "MPPSC",
+    "title": "Caveat Vigyapti on Selection List of Assistant Manager Exam 2024, Dated 19/08/2026",
+    "link": "https://mppsc.mp.gov.in/uploads/advertisement/Caveat_Vigyapti_Assistant_Manager_Exam_2024_Dated_19_08_2026.pdf",
+    "time_utc": "2026-08-19T17:16:00.786642+00:00"
+  },
+  {
+    "site": "MPPSC",
+    "title": "Obtained Mark List - Assistant Manager Exam 2024, Dated 19/08/2026",
+    "link": "https://mppsc.mp.gov.in/uploads/files/Obtained_Mark_List_Assistant_Manager_Exam_2024_Dated_19_08_2026.pdf",
+    "time_utc": "2026-08-19T17:16:05.161397+00:00"
+  },
+  {
+    "site": "MPPSC",
+    "title": "Selection List - Assistant Manager Exam 2024, Dated 19/08/2026",
+    "link": "https://mppsc.mp.gov.in/uploads/files/Selection_List_Assistant_Manager_Exam_2024_Dated_19_08_2026.pdf",
+    "time_utc": "2026-08-19T17:16:09.021254+00:00"
   }
 ]
