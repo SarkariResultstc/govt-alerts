@@ -1,29 +1,5 @@
 [
   {
-    "site": "IBPS",
-    "title": "IOCL Recruitment of Executives Registration From 14-Aug-2026",
-    "link": "https://ibpsreg.ibps.in/iocljun26/",
-    "time_utc": "2026-08-17T13:09:46.149744+00:00"
-  },
-  {
-    "site": "AIIMS Exams",
-    "title": "Updated list of the Faculty Members Eligible for the APS-2026",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1786970829936-320082882.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260817%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260817T130925Z&X-Amz-Expires=604800&X-Amz-Signature=22da364b589192ff39022b8200a2c5d45bc0e6bbae8430ad604ea5d82d4fee12&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-08-17T13:13:41.239291+00:00"
-  },
-  {
-    "site": "SEBI",
-    "title": "Certificate No. RC9281 of 2026 _ Notice of Demand in respect of LCI India Limited (PAN: AAACL5741Q) in the matter of Illiquid Stock Options",
-    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/aug-2026/certificate-no-rc9281-of-2026-notice-of-demand-in-respect-of-lci-india-limited-pan-aaacl5741q-in-the-matter-of-illiquid-stock-options_103727.html",
-    "time_utc": "2026-08-17T13:55:55.697801+00:00"
-  },
-  {
-    "site": "IBPS",
-    "title": "BOB Recruitment of Local Bank Officer Registration From 18-Aug-2026",
-    "link": "https://ibpsreg.ibps.in/bobjul26/",
-    "time_utc": "2026-08-18T06:46:53.576861+00:00"
-  },
-  {
     "site": "UPPSC",
     "title": "NOTICE REGARDING DOWNLOAD MARKSHEET & CUT OFF FOR ADVT. NO. D-2-E-1-2024, [S-09-..",
     "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmtuZKZH/Den+TiD+7HnBYY",
@@ -178,5 +154,29 @@
     "title": "Selection List - Assistant Manager Exam 2024, Dated 19/08/2026",
     "link": "https://mppsc.mp.gov.in/uploads/files/Selection_List_Assistant_Manager_Exam_2024_Dated_19_08_2026.pdf",
     "time_utc": "2026-08-19T17:16:09.021254+00:00"
+  },
+  {
+    "site": "SEBI",
+    "title": "Notice of Attachment of Demat account dated 19.08.2026 in RC No. 9241 of 2026",
+    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/aug-2026/notice-of-attachment-of-demat-account-dated-19-08-2026-in-rc-no-9241-of-2026_103803.html",
+    "time_utc": "2026-08-20T10:17:12.962108+00:00"
+  },
+  {
+    "site": "SEBI",
+    "title": "Notice of Attachment of Demat account dated 19.08.2026 in RC No. 9248 of 2026",
+    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/aug-2026/notice-of-attachment-of-demat-account-dated-19-08-2026-in-rc-no-9248-of-2026_103805.html",
+    "time_utc": "2026-08-20T10:17:13.460540+00:00"
+  },
+  {
+    "site": "SEBI",
+    "title": "Notice of Attachment of Demat account dated 19.08.2026 in RC No. 9249 of 2026",
+    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/aug-2026/notice-of-attachment-of-demat-account-dated-19-08-2026-in-rc-no-9249-of-2026_103807.html",
+    "time_utc": "2026-08-20T10:17:14.029118+00:00"
+  },
+  {
+    "site": "SEBI",
+    "title": "Notice of Demand dated 19.08.2026 in RC No. 9286 of 2026",
+    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/aug-2026/notice-of-demand-dated-19-08-2026-in-rc-no-9286-of-2026_103809.html",
+    "time_utc": "2026-08-20T10:17:14.562578+00:00"
   }
 ]
