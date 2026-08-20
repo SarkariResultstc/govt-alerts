@@ -469,11 +469,18 @@ def main():
     recent_feed = load_json(RECENT_FEED_FILE, [])  # rolling list for the public live ticker
     wp_count = get_wp_daily_count()
 
+    pending_for_ai = []  # collected here, processed AFTER all sites are scanned
+
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(user_agent=USER_AGENT)
         page = context.new_page()
 
+        # ---- PASS 1: fast scan of every site + immediate Telegram alerts.
+        # Nothing slow (AI calls, WordPress) happens in this loop, so a
+        # notice found early doesn't delay discovering notices on the
+        # sites checked afterward — every site gets scanned as fast as
+        # possible and Telegram alerts go out the moment each is found.
         for site in sites:
             name = site["name"]
             url = site["url"]
@@ -489,18 +496,11 @@ def main():
             items = extract_items(html, url)
             new_items = [it for it in items if it["id"] not in known_ids]
 
-            # On the very first run for a site, just record what's there —
-            # don't spam alerts for everything already on the page.
             if is_first_run_for_site:
                 state[name] = [it["id"] for it in items]
                 print(f"[INIT] {name}: recorded {len(items)} existing items")
                 continue
 
-            # SAFETY CAP: if a site was flaky/slow before and suddenly loads
-            # its FULL notice list, dozens of old/backlog notices can look
-            # "new" all at once. Notice boards list newest items first, so
-            # we only alert on the first few (top of the list) and quietly
-            # mark the rest as known — this avoids ever flooding old news.
             if len(new_items) > MAX_NEW_ITEMS_PER_SITE_PER_RUN:
                 print(
                     f"[CAP] {name}: {len(new_items)} new items found, "
@@ -518,28 +518,34 @@ def main():
                     f"{it['link']}\n"
                     f"🕒 {now_ist} (IST)"
                 )
-                send_telegram(msg)
-                if wp_count["count"] < WP_DAILY_LIMIT:
-                    ai_html = None
-                    if WP_URL and (GROQ_API_KEY or OPENROUTER_API_KEY or CF_API_TOKEN):
-                        source_text = fetch_source_text(page, it["link"])
-                        ai_html = call_ai_for_summary(it["title"], name, source_text)
-                    create_wp_draft(name, it["title"], it["link"], ai_html=ai_html)
-                    wp_count = increment_wp_daily_count(wp_count)
-                else:
-                    print(f"[WP LIMIT] Daily draft limit ({WP_DAILY_LIMIT}) reached, skipping draft for: {it['title']}")
+                send_telegram(msg)  # fast — goes out immediately
+                print(f"[ALERT] {name}: {it['title']}")
+                pending_for_ai.append({"site": name, "title": it["title"], "link": it["link"]})
                 recent_feed.append({
                     "site": name,
                     "title": it["title"],
                     "link": it["link"],
                     "time_utc": datetime.now(timezone.utc).isoformat(),
                 })
-                print(f"[ALERT] {name}: {it['title']}")
-                time.sleep(1)  # be gentle with Telegram/WP rate limits
 
-            # Keep state bounded (last 500 items per site) and updated
             all_ids = list(known_ids.union(it["id"] for it in items))
             state[name] = all_ids[-500:]
+
+        # ---- PASS 2: slower AI summary + WordPress draft creation, done
+        # AFTER every Telegram alert has already been sent. This never
+        # delays the alerts — it only affects how quickly the WordPress
+        # draft appears, which isn't as time-critical.
+        for it in pending_for_ai:
+            if wp_count["count"] >= WP_DAILY_LIMIT:
+                print(f"[WP LIMIT] Daily draft limit ({WP_DAILY_LIMIT}) reached, skipping draft for: {it['title']}")
+                continue
+            ai_html = None
+            if WP_URL and (GROQ_API_KEY or OPENROUTER_API_KEY or CF_API_TOKEN):
+                source_text = fetch_source_text(page, it["link"])
+                ai_html = call_ai_for_summary(it["title"], it["site"], source_text)
+            create_wp_draft(it["site"], it["title"], it["link"], ai_html=ai_html)
+            wp_count = increment_wp_daily_count(wp_count)
+            time.sleep(1)  # be gentle with the AI/WordPress APIs
 
         browser.close()
 
