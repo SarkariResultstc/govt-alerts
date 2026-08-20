@@ -42,7 +42,10 @@ WP_URL = os.environ.get("WP_URL", "").rstrip("/")
 WP_USERNAME = os.environ.get("WP_USERNAME", "")
 WP_APP_PASSWORD = os.environ.get("WP_APP_PASSWORD", "")
 
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
+CF_ACCOUNT_ID = os.environ.get("CF_ACCOUNT_ID", "")
+CF_API_TOKEN = os.environ.get("CF_API_TOKEN", "")
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -261,18 +264,31 @@ def fetch_source_text(page, link, max_chars=14000):
         return ""
 
 
-def call_gemini_for_summary(title, site_name, source_text):
-    """Ask Google Gemini (free tier) to extract Important Dates / Fee /
-    Eligibility from the raw notification text and return ready-to-use
-    HTML. Returns None on any failure so the caller falls back to the
-    basic template."""
-    if not GEMINI_API_KEY or not source_text:
+def call_ai_for_summary(title, site_name, source_text):
+    """Ask a free LLM (Groq if configured, else OpenRouter) to extract
+    Important Dates / Fee / Eligibility from the raw notification text and
+    return ready-to-use HTML. Returns None on any failure so the caller
+    falls back to the basic template."""
+    api_key = GROQ_API_KEY or OPENROUTER_API_KEY
+    if not (api_key or CF_API_TOKEN) or not source_text:
         print(
-            f"[GEMINI SKIP] {title}: "
-            f"api_key_present={bool(GEMINI_API_KEY)}, "
+            f"[AI SKIP] {title}: "
+            f"groq={bool(GROQ_API_KEY)} openrouter={bool(OPENROUTER_API_KEY)} "
+            f"cloudflare={bool(CF_API_TOKEN)}, "
             f"source_text_chars={len(source_text) if source_text else 0}"
         )
         return None
+
+    use_cloudflare = bool(CF_API_TOKEN and CF_ACCOUNT_ID) and not api_key
+
+    if use_cloudflare:
+        url = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT_ID}/ai/run/@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+    elif GROQ_API_KEY:
+        url = "https://api.groq.com/openai/v1/chat/completions"
+        model = "llama-3.3-70b-versatile"
+    else:
+        url = "https://openrouter.ai/api/v1/chat/completions"
+        model = "meta-llama/llama-3.3-70b-instruct:free"
 
     prompt = f"""You are a content writer for an Indian government job/exam alert
 website called SarkariResults.com.tc. Below is the raw text of an official
@@ -323,36 +339,44 @@ SECTIONS TO PRODUCE, IN THIS ORDER (skip any with no source data):
 SOURCE TEXT:
 {source_text}"""
 
-    url = (
-        "https://generativelanguage.googleapis.com/v1beta/models/"
-        "gemini-2.5-flash-lite:generateContent"
-    )
-    payload = json.dumps({
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"maxOutputTokens": 3000},
-    }).encode("utf-8")
+    if use_cloudflare:
+        payload = json.dumps({
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": 3000,
+        }).encode("utf-8")
+        auth_header = f"Bearer {CF_API_TOKEN}"
+    else:
+        payload = json.dumps({
+            "model": model,
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": 3000,
+        }).encode("utf-8")
+        auth_header = f"Bearer {api_key}"
 
     req = urllib.request.Request(
         url,
         data=payload,
         headers={
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {GEMINI_API_KEY}",
+            "Authorization": auth_header,
         },
         method="POST",
     )
     try:
         with urllib.request.urlopen(req, timeout=45) as resp:
             result = json.loads(resp.read().decode("utf-8"))
-        html = result["candidates"][0]["content"]["parts"][0]["text"].strip()
+        if use_cloudflare:
+            html = result["result"]["response"].strip()
+        else:
+            html = result["choices"][0]["message"]["content"].strip()
         html = re.sub(r"^```html\s*|\s*```$", "", html.strip())
         if html:
-            print(f"[GEMINI OK] Got {len(html)} chars of rich content for: {title}")
+            print(f"[AI OK] Got {len(html)} chars of rich content for: {title}")
         else:
-            print(f"[GEMINI EMPTY] No content returned for: {title}")
+            print(f"[AI EMPTY] No content returned for: {title}")
         return html or None
     except Exception as e:
-        print(f"Gemini summary failed: {e}", file=sys.stderr)
+        print(f"AI summary failed: {e}", file=sys.stderr)
         return None
 
 
@@ -497,9 +521,9 @@ def main():
                 send_telegram(msg)
                 if wp_count["count"] < WP_DAILY_LIMIT:
                     ai_html = None
-                    if WP_URL and GEMINI_API_KEY:
+                    if WP_URL and (GROQ_API_KEY or OPENROUTER_API_KEY or CF_API_TOKEN):
                         source_text = fetch_source_text(page, it["link"])
-                        ai_html = call_gemini_for_summary(it["title"], name, source_text)
+                        ai_html = call_ai_for_summary(it["title"], name, source_text)
                     create_wp_draft(name, it["title"], it["link"], ai_html=ai_html)
                     wp_count = increment_wp_daily_count(wp_count)
                 else:
