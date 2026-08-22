@@ -1,11 +1,5 @@
 [
   {
-    "site": "MPPSC",
-    "title": "Written Exam Result - Assistant Professor (Law) Exam 2025, Dated 18/08/2026",
-    "link": "https://mppsc.mp.gov.in/uploads/files/Written_Exam_Result_Assistant_Professor_Law_Exam_2025_Dated_18_08_2026.pdf",
-    "time_utc": "2026-08-18T14:49:54.589288+00:00"
-  },
-  {
     "site": "SEBI",
     "title": "Certificate No. RC9284 of 2026 Notice of Demand in respect of Sachin Kumar Jhawar HUF (PAN: AALHS9592Q) in the matter of Illiquid Stock Options",
     "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/aug-2026/certificate-no-rc9284-of-2026-notice-of-demand-in-respect-of-sachin-kumar-jhawar-huf-pan-aalhs9592q-in-the-matter-of-illiquid-stock-options_103749.html",
@@ -178,5 +172,11 @@
     "title": "Interview Call Letter - Assistant Registrar Exam 2025",
     "link": "https://mppsc.mponline.gov.in/Portal/Examinations/MPPSC/2026/IA25/CallLetter/Login.aspx",
     "time_utc": "2026-08-21T18:52:17.258473+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Vacant seat position of B.Sc. (Hons.) Nursing for 2nd round seat allocation August-2026 session",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1787389737467-188777174.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260822%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260822T094043Z&X-Amz-Expires=604800&X-Amz-Signature=1cdd9ff367026a49f18996a2117fb77a3a30d9111e91b73c7524be24abbe14be&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-08-22T09:42:09.848436+00:00"
   }
 ]
