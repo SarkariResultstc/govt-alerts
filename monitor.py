@@ -19,7 +19,7 @@ import hashlib
 import base64
 import urllib.request
 import urllib.error
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 from datetime import datetime, timezone, timedelta
 
 IST = timezone(timedelta(hours=5, minutes=30))
@@ -66,7 +66,13 @@ NOTICE_HINTS = re.compile(
 # Generic permanent menu items ("Examinations", "Apply Online", "Download
 # Syllabus") do NOT include a year — requiring one filters out the site's
 # static navigation menu and keeps only genuine, dated announcements.
-YEAR_HINT = re.compile(r"\b20\d{2}\b")
+#
+# IMPORTANT: we only accept the CURRENT or NEXT year, not just "any year".
+# Otherwise old notices (e.g. "...2024") that a flaky site only just now
+# exposed to us would incorrectly pass as "fresh". CURRENT_YEAR is computed
+# at run time so this never needs manual updating.
+CURRENT_YEAR = datetime.now(timezone.utc).year
+YEAR_HINT = re.compile(rf"\b({CURRENT_YEAR}|{CURRENT_YEAR + 1})\b")
 
 # A short blocklist of common bare menu-label phrases that sometimes DO
 # contain a year-like number by coincidence but are still just navigation,
@@ -223,10 +229,53 @@ def guess_link_type(title):
     return "Details"
 
 
+def is_gov_domain(url):
+    """Only these domain patterns count as 'government' — used to decide
+    which links are allowed to appear in the Important Links table."""
+    try:
+        host = urlparse(url).netloc.lower()
+    except Exception:
+        return False
+    if not host:
+        return False
+    gov_patterns = (".gov.in", ".nic.in", ".ac.in", ".res.in")
+    return any(host.endswith(p) or p in host for p in gov_patterns)
+
+
+def extract_gov_links(html, base_url, max_links=12):
+    """Pull out (text, url) pairs for links pointing to government domains
+    only — competitor/private sites are never included here."""
+    links = []
+    seen = set()
+    try:
+        soup = BeautifulSoup(html, "html.parser")
+        for a in soup.find_all("a", href=True):
+            text = " ".join(a.get_text(" ", strip=True).split())
+            href = a["href"].strip()
+            if not text or len(text) < 3 or len(text) > 100:
+                continue
+            if href.startswith(("javascript:", "#", "mailto:", "tel:")):
+                continue
+            full_url = urljoin(base_url, href)
+            if not is_gov_domain(full_url):
+                continue
+            key = (text.lower(), full_url)
+            if key in seen:
+                continue
+            seen.add(key)
+            links.append({"text": text, "url": full_url})
+            if len(links) >= max_links:
+                break
+    except Exception as e:
+        print(f"Could not extract gov links: {e}", file=sys.stderr)
+    return links
+
+
 def fetch_source_text(page, link, max_chars=14000):
-    """Fetch the notification's own page/PDF and return plain text content
-    for the AI to summarize from. Returns "" if it can't be read (e.g. a
-    scanned PDF with no text layer) — caller should fall back gracefully.
+    """Fetch the notification's own page/PDF and return (plain_text,
+    gov_links) for the AI to summarize from. Returns ("", []) if it can't
+    be read (e.g. a scanned PDF with no text layer) — caller should fall
+    back gracefully.
 
     We can't rely on the URL ending in ".pdf" — many government sites serve
     PDFs from URLs like "download.aspx?id=123" with no extension — so we
@@ -253,15 +302,17 @@ def fetch_source_text(page, link, max_chars=14000):
                     pdf_bytes = resp.read()
             reader = PdfReader(io.BytesIO(pdf_bytes))
             text = "\n".join((p.extract_text() or "") for p in reader.pages[:6])
-            return text.strip()[:max_chars]
+            return text.strip()[:max_chars], []  # can't extract links from PDF easily
         else:
             page.goto(link, timeout=15000, wait_until="domcontentloaded")
             page.wait_for_timeout(1000)
+            html = page.content()
+            gov_links = extract_gov_links(html, link)
             body_text = page.inner_text("body")
-            return body_text.strip()[:max_chars]
+            return body_text.strip()[:max_chars], gov_links
     except Exception as e:
         print(f"Could not read source content for AI summary: {e}", file=sys.stderr)
-        return ""
+        return "", []
 
 
 def call_ai_for_summary(title, site_name, source_text):
@@ -290,51 +341,67 @@ def call_ai_for_summary(title, site_name, source_text):
         url = "https://openrouter.ai/api/v1/chat/completions"
         model = "meta-llama/llama-3.3-70b-instruct:free"
 
-    prompt = f"""You are a content writer for an Indian government job/exam alert
-website called SarkariResults.com.tc. Below is the raw text of an official
-notification titled "{title}" from {site_name}. Write a complete, ready-to-
-publish article in the exact structure below, in the same style as
-established "Sarkari Result" style sites.
+    prompt = f"""You are an experienced human content writer for an Indian
+government job/exam alert website called SarkariResults.com.tc. Below is
+the raw text of an official notification titled "{title}" from {site_name}.
+Your job is to COMPLETELY REWRITE this into a fresh, original,
+ready-to-publish article — not summarize or lightly reword the source, but
+genuinely rewrite it the way a human editor would explain it to a reader
+in their own voice.
 
-RULES:
-- Write factual summaries IN YOUR OWN WORDS — never copy sentences verbatim
-  from the source text (this is for copyright safety).
-- Use ONLY information that is actually present in the source text. If a
-  whole section has no relevant information, OMIT that entire section
-  (heading and table) — never write "not available", never guess or invent
-  dates/numbers.
+CRITICAL RULES (follow strictly):
+- Do NOT mirror the source's sentence structure, paragraph order, or
+  phrasing. Read the source, understand the facts, then explain them in
+  your own natural human words as if you're telling a friend — never copy
+  or lightly-edit any sentence from the source text.
+- Do NOT reproduce the source page's own layout/structure — reorganize
+  everything into ONLY the sections listed below, regardless of how the
+  source itself was organized.
+- Use ONLY factual information (dates, numbers, names) that is actually
+  present in the source text. If a whole section has no relevant
+  information, OMIT that entire section (heading and table) — never write
+  "not available", never guess or invent dates/numbers.
+- Extract EVERY relevant fact you can find in the source (be thorough, not
+  brief) — the goal is a complete, comprehensive article, not a short
+  summary.
 - Output ONLY raw HTML fragments (tables, headings, paragraphs, lists). No
-  markdown, no code fences, no commentary before or after.
-- Use <h4> for each section heading, and standard <table><thead><tbody> HTML
-  for every table (no inline CSS needed, the website already styles tables).
+  markdown, no code fences, no commentary before or after, no watermark
+  text, no mention of AI or that this was auto-generated.
+- Use <h4> for each section heading, and standard <table><thead><tbody>
+  HTML for every table.
 
 SECTIONS TO PRODUCE, IN THIS ORDER (skip any with no source data):
 
-1. A 2-3 sentence introductory summary paragraph.
-2. <h4>Quick Info</h4> table — rows for whichever of these are present:
-   Organization, Post Name, Department, Advertisement No., Total Vacancies,
-   Application Start Date, Last Date to Apply, Official Website.
-3. <h4>Important Dates</h4> table — rows for whichever are present:
-   Application Start, Last Date to Apply, Fee Payment Last Date,
-   Correction Window, Exam Date, Admit Card Release, Answer Key Date,
-   Result Date.
-4. <h4>Vacancy Details</h4> table — post-wise vacancy breakdown, only if the
-   source lists specific posts/numbers.
-5. <h4>Age Limit</h4> table — Minimum Age, Maximum Age, Age Relaxation
-   (as-on date if mentioned).
-6. <h4>Eligibility Criteria</h4> — short paragraph or bullet list covering
-   required qualification/experience.
-7. <h4>Application Fee</h4> table — by category (General/OBC/SC/ST/PwBD etc.)
-   if mentioned.
-8. <h4>Mode of Selection</h4> table — stages (e.g. Written Exam, Merit,
-   Interview) if mentioned.
-9. <h4>How to Apply</h4> — a short numbered/bulleted list of the application
-   steps, only if the source describes a process.
-10. <h4>Frequently Asked Questions</h4> — 3 to 5 short Q&A pairs a candidate
-    would realistically ask about THIS specific notice (e.g. "What is the
-    last date to apply for {{post name}}?"), answered using only facts found
-    in the source text. Format as <p><strong>Q: ...</strong><br>A: ...</p>
-    for each pair.
+1. A 3-4 sentence introductory summary paragraph, written naturally in
+   your own words.
+2. <h4>Quick Info</h4> table — Organization, Post Name, Department,
+   Advertisement No., Total Vacancies, Application Start Date, Last Date
+   to Apply, Official Website (whichever are present).
+3. An important-notice style paragraph (1-2 sentences) if there's any
+   critical instruction, deadline reminder, or caveat worth highlighting —
+   otherwise skip.
+4. <h4>Important Dates</h4> table — every date-related event mentioned
+   (Application Start, Last Date to Apply, Fee Payment Last Date,
+   Correction Window, Exam City Slip, Exam Date, Admit Card Release,
+   Answer Key Date, Result Date, etc.) — include ALL that are present,
+   don't limit to a fixed set.
+5. <h4>Vacancy Details</h4> table — post-wise vacancy breakdown, only if
+   listed.
+6. <h4>Age Limit</h4> table — Minimum Age, Maximum Age, Age Relaxation,
+   only if present.
+7. <h4>Eligibility Criteria</h4> — paragraph or bullet list covering
+   qualification/experience required, written in your own words.
+8. <h4>Application Fee</h4> table — by category, only if mentioned.
+9. <h4>Mode of Selection</h4> table — every stage/status mentioned, only
+   if described.
+10. <h4>How to Check/Apply</h4> — clear numbered steps for what the
+    candidate should actually do, only if the source describes a process.
+11. <h4>Documents Required</h4> — bullet list, only if the source mentions
+    specific documents needed.
+12. <h4>Frequently Asked Questions</h4> — 4-5 realistic Q&A pairs a
+    candidate would ask about THIS specific notice, answered using only
+    source facts, written naturally. Format as
+    <p><strong>Q: ...</strong><br>A: ...</p> for each pair.
 
 SOURCE TEXT:
 {source_text}"""
@@ -353,31 +420,34 @@ SOURCE TEXT:
         }).encode("utf-8")
         auth_header = f"Bearer {api_key}"
 
-    req = urllib.request.Request(
-        url,
-        data=payload,
-        headers={
-            "Content-Type": "application/json",
-            "Authorization": auth_header,
-        },
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=45) as resp:
-            result = json.loads(resp.read().decode("utf-8"))
-        if use_cloudflare:
-            html = result["result"]["response"].strip()
-        else:
-            html = result["choices"][0]["message"]["content"].strip()
-        html = re.sub(r"^```html\s*|\s*```$", "", html.strip())
-        if html:
-            print(f"[AI OK] Got {len(html)} chars of rich content for: {title}")
-        else:
-            print(f"[AI EMPTY] No content returned for: {title}")
-        return html or None
-    except Exception as e:
-        print(f"AI summary failed: {e}", file=sys.stderr)
-        return None
+    for attempt in range(1, 3):  # try up to 2 times — Cloudflare/Groq sometimes
+        req = urllib.request.Request(          # give a transient/intermittent error
+            url,
+            data=payload,
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": auth_header,
+            },
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=45) as resp:
+                result = json.loads(resp.read().decode("utf-8"))
+            if use_cloudflare:
+                html = result["result"]["response"].strip()
+            else:
+                html = result["choices"][0]["message"]["content"].strip()
+            html = re.sub(r"^```html\s*|\s*```$", "", html.strip())
+            if html:
+                print(f"[AI OK] Got {len(html)} chars of rich content for: {title}")
+            else:
+                print(f"[AI EMPTY] No content returned for: {title}")
+            return html or None
+        except Exception as e:
+            print(f"AI summary failed (attempt {attempt}/2): {e}", file=sys.stderr)
+            if attempt < 2:
+                time.sleep(3)
+    return None
 
 
 def get_wp_daily_count():
@@ -394,7 +464,36 @@ def increment_wp_daily_count(data):
     return data
 
 
-def create_wp_draft(site_name, title, link, ai_html=None):
+def apply_styling(html):
+    """Post-process AI-generated HTML into the site's visual style:
+    red bars (#e83c3c) for section titles, bordered/styled tables."""
+    html = re.sub(
+        r"<h4>(.*?)</h4>",
+        r'<div style="background:#e83c3c;color:#ffffff;font-weight:bold;'
+        r'font-size:15px;padding:8px 14px;margin:22px 0 0 0;">\1</div>',
+        html, flags=re.IGNORECASE | re.DOTALL,
+    )
+    html = re.sub(
+        r"<table[^>]*>",
+        '<table border="1" cellpadding="8" cellspacing="0" '
+        'style="border-collapse:collapse;width:100%;margin:0 0 16px 0;">',
+        html, flags=re.IGNORECASE,
+    )
+    html = re.sub(
+        r"<th>",
+        '<th style="background:#fbe1e1;color:#111111;text-align:left;'
+        'padding:8px;border:1px solid #cccccc;">',
+        html, flags=re.IGNORECASE,
+    )
+    html = re.sub(
+        r"<td>",
+        '<td style="padding:8px;border:1px solid #cccccc;">',
+        html, flags=re.IGNORECASE,
+    )
+    return html
+
+
+def create_wp_draft(site_name, title, link, ai_html=None, gov_links=None):
     """Create a WordPress draft post for one detected notice, using a
     WordPress Application Password (NOT the real account password) over
     the standard WP REST API. Fails silently (logs only) so a WordPress
@@ -406,7 +505,7 @@ def create_wp_draft(site_name, title, link, ai_html=None):
     now_ist = datetime.now(IST).strftime("%d %B %Y, %I:%M %p")
 
     if ai_html:
-        intro_block = ai_html
+        intro_block = apply_styling(ai_html)
     else:
         intro_block = (
             f"<p>{title} — released by <strong>{site_name}</strong>. Full "
@@ -415,22 +514,33 @@ def create_wp_draft(site_name, title, link, ai_html=None):
             f"edit before publishing.</p>"
         )
 
+    # Important Links: source link + any government-domain links found on
+    # the source page. Never competitor/private sites. All "nofollow".
+    links_rows = (
+        f'<tr><td style="padding:8px;border:1px solid #cccccc;">{link_type}</td>'
+        f'<td style="padding:8px;border:1px solid #cccccc;">'
+        f'<a href="{link}" target="_blank" rel="nofollow noopener">Click Here</a></td></tr>'
+    )
+    for gl in (gov_links or []):
+        links_rows += (
+            f'<tr><td style="padding:8px;border:1px solid #cccccc;">{gl["text"]}</td>'
+            f'<td style="padding:8px;border:1px solid #cccccc;">'
+            f'<a href="{gl["url"]}" target="_blank" rel="nofollow noopener">Click Here</a></td></tr>'
+        )
+
     content_html = f"""
 {intro_block}
 
-<h4>Important Links</h4>
-<table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%;">
+<div style="background:#e83c3c;color:#ffffff;font-weight:bold;font-size:15px;padding:8px 14px;margin:22px 0 0 0;">Important Links</div>
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%;margin:0 0 16px 0;">
 <thead>
-<tr style="background:#f2f2f2;">
-<th>Important Link</th>
-<th>Link</th>
+<tr>
+<th style="background:#fbe1e1;color:#111111;text-align:left;padding:8px;border:1px solid #cccccc;">Important Link</th>
+<th style="background:#fbe1e1;color:#111111;text-align:left;padding:8px;border:1px solid #cccccc;">Link</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>{link_type}</td>
-<td><a href="{link}" target="_blank" rel="noopener">Click Here</a></td>
-</tr>
+{links_rows}
 </tbody>
 </table>
 
@@ -540,10 +650,11 @@ def main():
                 print(f"[WP LIMIT] Daily draft limit ({WP_DAILY_LIMIT}) reached, skipping draft for: {it['title']}")
                 continue
             ai_html = None
+            gov_links = []
             if WP_URL and (GROQ_API_KEY or OPENROUTER_API_KEY or CF_API_TOKEN):
-                source_text = fetch_source_text(page, it["link"])
+                source_text, gov_links = fetch_source_text(page, it["link"])
                 ai_html = call_ai_for_summary(it["title"], it["site"], source_text)
-            create_wp_draft(it["site"], it["title"], it["link"], ai_html=ai_html)
+            create_wp_draft(it["site"], it["title"], it["link"], ai_html=ai_html, gov_links=gov_links)
             wp_count = increment_wp_daily_count(wp_count)
             time.sleep(1)  # be gentle with the AI/WordPress APIs
 
