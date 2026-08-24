@@ -54,13 +54,30 @@ USER_AGENT = (
 
 # Words that make a link text look like a real notice/post (helps filter
 # out menu items like "Home", "Contact Us", "Sitemap" etc.)
-NOTICE_HINTS = re.compile(
-    r"(notif|notice|advt|advertisement|recruit|result|admit|exam|vacan|"
+# EVENT_HINTS: words that represent a genuine "just happened" event — a
+# result being DECLARED, an admit card being RELEASED, etc. These are
+# valid "current news" no matter how old the underlying exam/batch year
+# is (e.g. a 2023-batch exam's Result can legitimately be announced today).
+EVENT_HINTS = re.compile(
+    r"(notif|notice|advt|advertisement|recruit|result|admit|vacan|"
     r"circular|press release|tender|walk-?in|interview|answer key|"
-    r"corrigendum|apply|schedule|syllabus|cut ?off|merit|selection|"
-    r"appoint|update|latest|new\b)",
+    r"corrigendum|cut ?off|merit|selection|appoint|counsel|"
+    r"final list|shortlist)",
     re.IGNORECASE,
 )
+
+# REFERENCE_HINTS: static/reference content (syllabus, exam pattern, etc.)
+# that sits unchanged on a page for years — NOT a "just happened" event by
+# itself. A page matching ONLY these (no EVENT_HINTS word) is treated as
+# stale reference material, not fresh news, even if newly detected.
+REFERENCE_HINTS = re.compile(
+    r"(syllabus|exam pattern|previous year paper|study material|"
+    r"eligibility criteria|apply|schedule|exam\b|update|latest|new\b)",
+    re.IGNORECASE,
+)
+
+# Kept for backward compatibility with any code still referencing it.
+NOTICE_HINTS = re.compile(EVENT_HINTS.pattern + "|" + REFERENCE_HINTS.pattern, re.IGNORECASE)
 
 # Real, specific notifications almost always mention a year (e.g. "2026").
 # Generic permanent menu items ("Examinations", "Apply Online", "Download
@@ -71,8 +88,16 @@ NOTICE_HINTS = re.compile(
 # Otherwise old notices (e.g. "...2024") that a flaky site only just now
 # exposed to us would incorrectly pass as "fresh". CURRENT_YEAR is computed
 # at run time so this never needs manual updating.
-CURRENT_YEAR = datetime.now(timezone.utc).year
-YEAR_HINT = re.compile(rf"\b({CURRENT_YEAR}|{CURRENT_YEAR + 1})\b")
+# Real, specific notifications almost always mention a year (e.g. "2026").
+# Generic permanent menu items ("Examinations", "Apply Online", "Download
+# Syllabus") do NOT include a year — requiring one filters out the site's
+# static navigation menu and keeps only genuine, dated announcements.
+#
+# NOTE: we accept ANY year here, not just current/next year — a "2023"
+# exam's Result/Admit Card can genuinely be announced today in 2026, so
+# the year in the title reflects the EXAM BATCH, not the publish date.
+# Restricting to current-year-only would incorrectly reject real news.
+YEAR_HINT = re.compile(r"\b20\d{2}\b")
 
 # A short blocklist of common bare menu-label phrases that sometimes DO
 # contain a year-like number by coincidence but are still just navigation,
@@ -167,8 +192,8 @@ def extract_items(html, base_url):
             continue
         if href.startswith(("javascript:", "#", "mailto:", "tel:")):
             continue
-        if not NOTICE_HINTS.search(text):
-            continue
+        if not EVENT_HINTS.search(text):
+            continue  # must be a genuine "just happened" event, not just static reference content
         if not YEAR_HINT.search(text):
             continue  # skip generic menu items with no year (not a real post)
         if text.strip().lower() in GENERIC_BLOCKLIST:
