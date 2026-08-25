@@ -1,23 +1,5 @@
 [
   {
-    "site": "AIIMS Exams",
-    "title": "Revised Instructions and schedule for reporting for admission in MBBS Courses at AIIMS New Delhi(NEET UG 2026)",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1787308384320-756159036.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260821%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260821T105437Z&X-Amz-Expires=604800&X-Amz-Signature=592f85202e634187f3b96f4ff50f480361c213f1f2b2c0d72fed76b0587d1ef4&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-08-21T10:57:20.033524+00:00"
-  },
-  {
-    "site": "AIIMS Exams",
-    "title": "Scheme of Examination for promotion to the post of Senior Administrative Assistant (erstwhile UDC) under the mode of 25% Limited Departmental Competitive Examination quota at AIIMS, New Delhi (Exam date 18.09.2026)",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1787310843895-558914106.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260821%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260821T111516Z&X-Amz-Expires=604800&X-Amz-Signature=575f90c49d4b766254f2c9b886734ab71206505626d24712a1e97edf362d5f62&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-08-21T11:18:22.863694+00:00"
-  },
-  {
-    "site": "UPPSC",
-    "title": "NOTICE REGARDING ADMIT CARD FOR ADVT. NO.A-6/E-1/2026, LECTURER (MALE/FEMALE) GO..",
-    "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmtuZKZH/DenxmfTZaveVl2",
-    "time_utc": "2026-08-21T11:43:41.121216+00:00"
-  },
-  {
     "site": "UPPSC",
     "title": "31 Aug 2026 NOTICE REGARDING ADMIT CARD FOR ADVT. NO.A-6/E-1/2026, LECTURER (MALE/FEMALE) GOVERNMENT INTER COLLEGE (MAINS) EXAM.-2025",
     "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagmtuZKZH/Den6BU5d6iBz8b",
@@ -178,5 +160,23 @@
     "title": "02nd round vacant seat position of B.Sc. Allied & Health care courses August 2026 session",
     "link": "https://rrpdocuments.aiimsexams.ac.in/1787658522349-429766654.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260825%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260825T120835Z&X-Amz-Expires=604800&X-Amz-Signature=81c3283cee9cf6e08123758a18f4bcf008f380e57a2398c2fc01134ed2263711&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
     "time_utc": "2026-08-25T12:11:29.786174+00:00"
+  },
+  {
+    "site": "MPPSC",
+    "title": "Selection List - State Engineering Services (Electrical and Mechanical) Exam 2025, Dated 25/08/2026",
+    "link": "https://mppsc.mp.gov.in/uploads/files/Selection_List_State_Engineering_Services_Electrical_and_Mechanical_Exam_2025_Dated_25_08_2026.pdf",
+    "time_utc": "2026-08-25T13:08:16.503479+00:00"
+  },
+  {
+    "site": "MPPSC",
+    "title": "Final Answer Key - Assistant Director / Veterinary Assistant Surgeon / Veterinary Extension Officer Exam 2026, Dated 25/08/2026",
+    "link": "https://mppsc.mp.gov.in/uploads/files/Final_Answer_Key_AD_Veterinary_Assistant_Surgeon_VEO_2026_Dated_25_08_2026.pdf",
+    "time_utc": "2026-08-25T13:08:17.132449+00:00"
+  },
+  {
+    "site": "HPPSC",
+    "title": "Advertisement Notice – Inviting Online Recruitment Applications (ORA) for the Posts of Himachal Pradesh Administrative Service Combined Competitive Examination–2026.",
+    "link": "https://hppsc.hp.gov.in/CommonControls/ViewCMSFile?qs=KI3gZ53zz1wSGo29lXLTBfw1DHezN8KfEg%2BrikZhi%2FLLqiZME0%2BQReThfPJPy%2Bjgtp9Gum%2BgldaVqcAHLzC5%2FwwmbTQRy%2BP29Sbd6%2BU0BCk%3D",
+    "time_utc": "2026-08-25T13:08:59.222640+00:00"
   }
 ]
