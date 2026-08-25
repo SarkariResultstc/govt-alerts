@@ -113,6 +113,59 @@ GENERIC_BLOCKLIST = {
 MIN_TEXT_LEN = 12
 MAX_TEXT_LEN = 220
 MAX_NEW_ITEMS_PER_SITE_PER_RUN = 4
+
+# Sites where we do an EXTRA check: visit the item's own post page and read
+# its actual published date/time (WordPress-style "Month DD, YYYY / HH:MM
+# AM/PM"), and only treat it as fresh news if that date is recent. This is
+# ONLY applied to sites listed here — every other site keeps using the
+# normal (title + year + event-keyword) detection, unchanged.
+SITES_NEEDING_PUBLISH_DATE_CHECK = {"SarkariResult.com.cm"}
+FRESHNESS_MAX_AGE_HOURS = 48
+
+PUBLISH_DATE_PATTERN = re.compile(
+    r"([A-Z][a-z]+\s+\d{1,2},\s*\d{4})\s*(?:/\s*(\d{1,2}:\d{2}\s*[AP]M))?",
+)
+MONTHS = (
+    "January February March April May June July August "
+    "September October November December"
+).split()
+
+
+def fetch_actual_publish_time(page, url):
+    """Visit a post's own page and try to read its real published
+    date/time (WordPress typically shows 'Month DD, YYYY / HH:MM AM/PM'
+    near the title). Returns a UTC-naive datetime, or None if it can't be
+    determined (caller should then just allow the item through)."""
+    try:
+        page.goto(url, timeout=15000, wait_until="domcontentloaded")
+        page.wait_for_timeout(800)
+        text = page.inner_text("body")[:3000]
+        match = PUBLISH_DATE_PATTERN.search(text)
+        if not match:
+            return None
+        date_part = match.group(1)
+        time_part = match.group(2) or "12:00 AM"
+        dt = datetime.strptime(f"{date_part} {time_part}", "%B %d, %Y %I:%M %p")
+        return dt
+    except Exception as e:
+        print(f"Could not read publish time from {url}: {e}", file=sys.stderr)
+        return None
+
+
+def is_actually_fresh(page, item_link, site_name):
+    """For sites in SITES_NEEDING_PUBLISH_DATE_CHECK only: verify the post
+    was genuinely published recently, using its own on-page date/time.
+    Every other site is unaffected and always returns True immediately."""
+    if site_name not in SITES_NEEDING_PUBLISH_DATE_CHECK:
+        return True
+    published_at = fetch_actual_publish_time(page, item_link)
+    if published_at is None:
+        return True  # couldn't read a date — don't block the item, just allow it
+    age_hours = (datetime.now(timezone.utc).replace(tzinfo=None) - published_at).total_seconds() / 3600
+    if age_hours > FRESHNESS_MAX_AGE_HOURS:
+        print(f"[STALE] {site_name}: skipping old post (published {published_at}, {age_hours:.0f}h ago)")
+        return False
+    return True
 PAGE_LOAD_TIMEOUT_MS = 15000
 SLOW_PAGE_LOAD_TIMEOUT_MS = 25000
 
@@ -635,6 +688,13 @@ def main():
                 state[name] = [it["id"] for it in items]
                 print(f"[INIT] {name}: recorded {len(items)} existing items")
                 continue
+
+            # For sites in SITES_NEEDING_PUBLISH_DATE_CHECK (currently just
+            # SarkariResult.com.cm), double-check each candidate's actual
+            # on-page publish date/time before treating it as fresh news.
+            # No effect on any other site.
+            if name in SITES_NEEDING_PUBLISH_DATE_CHECK:
+                new_items = [it for it in new_items if is_actually_fresh(page, it["link"], name)]
 
             if len(new_items) > MAX_NEW_ITEMS_PER_SITE_PER_RUN:
                 print(
