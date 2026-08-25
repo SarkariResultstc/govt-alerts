@@ -1,17 +1,5 @@
 [
   {
-    "site": "MPPSC",
-    "title": "Obtained Mark List - Assistant Manager Exam 2024, Dated 19/08/2026",
-    "link": "https://mppsc.mp.gov.in/uploads/files/Obtained_Mark_List_Assistant_Manager_Exam_2024_Dated_19_08_2026.pdf",
-    "time_utc": "2026-08-19T17:16:05.161397+00:00"
-  },
-  {
-    "site": "MPPSC",
-    "title": "Selection List - Assistant Manager Exam 2024, Dated 19/08/2026",
-    "link": "https://mppsc.mp.gov.in/uploads/files/Selection_List_Assistant_Manager_Exam_2024_Dated_19_08_2026.pdf",
-    "time_utc": "2026-08-19T17:16:09.021254+00:00"
-  },
-  {
     "site": "SEBI",
     "title": "Notice of Attachment of Demat account dated 19.08.2026 in RC No. 9241 of 2026",
     "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/aug-2026/notice-of-attachment-of-demat-account-dated-19-08-2026-in-rc-no-9241-of-2026_103803.html",
@@ -178,5 +166,17 @@
     "title": "Written Exam Result - Assistant Professor (Geography) Exam 2025, Dated 24/08/2026",
     "link": "https://mppsc.mp.gov.in/uploads/files/Written_Exam_Result_Assistant_Professor_Geography_Exam_2025_Dated_24_08_2026.pdf",
     "time_utc": "2026-08-24T14:43:16.774435+00:00"
+  },
+  {
+    "site": "IBPS",
+    "title": "NMDFC Recruitment of Company Secretary cum Chief Manager Registration From 25-Aug-2026",
+    "link": "https://ibpsreg.ibps.in/nmdfcjul26/",
+    "time_utc": "2026-08-25T09:49:15.206292+00:00"
+  },
+  {
+    "site": "IBPS",
+    "title": "IOB Recruitment of Security Guards Registration From 25-Aug-2026",
+    "link": "https://ibpsreg.ibps.in/iobsgaug26/",
+    "time_utc": "2026-08-25T09:49:15.822424+00:00"
   }
 ]
