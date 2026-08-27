@@ -1,11 +1,5 @@
 [
   {
-    "site": "AIIMS Exams",
-    "title": "Vacant seat position of B.Sc. (Hons.) Nursing for 2nd round seat allocation August-2026 session",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1787389737467-188777174.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260822%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260822T094043Z&X-Amz-Expires=604800&X-Amz-Signature=1cdd9ff367026a49f18996a2117fb77a3a30d9111e91b73c7524be24abbe14be&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-08-22T09:42:09.848436+00:00"
-  },
-  {
     "site": "UPPSC",
     "title": "NOTICE REGARDING ADVT. NO. A-9/E-1/2025, STATE PLANNING INSTITUTE (NEW DIVISION)..",
     "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagnM8dHr1ViOnnnNFW5qzQ+T",
@@ -178,5 +172,11 @@
     "title": "Advertisement Number: 59/8-2026 (H.P. Administrative Services Combined Competitive Examination-2026)",
     "link": "https://hppsc.hp.gov.in/CommonControls/ViewCMSFile?qs=KI3gZ53zz1wSGo29lXLTBfw1DHezN8KfEg%2BrikZhi%2FLLqiZME0%2BQReThfPJPy%2BjgJhsSzNLtXQgyrhjwChomkO7eONOEFu3udXmeG2YxYmM%3D",
     "time_utc": "2026-08-26T02:58:09.680640+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Notice No.132/2026:Information Brochure for Online Seat Allocation (Institute And Post) for CRE-5",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1787804546011-700900027.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260827%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260827T044544Z&X-Amz-Expires=604800&X-Amz-Signature=e7b69e533113da0655fbd716532f3d7f5cf3afbf36c0afddd2d734764fe7fccb&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-08-27T04:48:27.195369+00:00"
   }
 ]
