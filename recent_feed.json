@@ -1,11 +1,5 @@
 [
   {
-    "site": "IBPS",
-    "title": "IOB Recruitment of Security Guards Registration From 25-Aug-2026",
-    "link": "https://ibpsreg.ibps.in/iobsgaug26/",
-    "time_utc": "2026-08-25T09:49:15.822424+00:00"
-  },
-  {
     "site": "SEBI",
     "title": "Notice of Attachment dated August 21, 2026 issued under RC No. 9262 of 2026 drawn against Aahuti Rasik Mistry in the matter of Sadhna Broadcast Limited",
     "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/aug-2026/notice-of-attachment-dated-august-21-2026-issued-under-rc-no-9262-of-2026-drawn-against-aahuti-rasik-mistry-in-the-matter-of-sadhna-broadcast-limited_103940.html",
@@ -178,5 +172,11 @@
     "title": "Notice no.144/2026: Postponement of exercise of choice and order of Preference for Common Recruitment Examination(CRE-5)",
     "link": "https://rrpdocuments.aiimsexams.ac.in/1787817502355-287474398.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260827%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260827T153131Z&X-Amz-Expires=604800&X-Amz-Signature=6299809e0784d5bc02c473c01feea852e234ab5480f451ab74807a605a56e5a5&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
     "time_utc": "2026-08-27T15:36:21.063612+00:00"
+  },
+  {
+    "site": "SEBI",
+    "title": "Extension of timeline for implementation of provisions of SEBI Circular dated June 15, 2026 on norms for base price, price bands, call auction in pre-open session and Close-out procedure for Exchange Traded Funds (ETFs)",
+    "link": "https://www.sebi.gov.in/legal/circulars/aug-2026/extension-of-timeline-for-implementation-of-provisions-of-sebi-circular-dated-june-15-2026-on-norms-for-base-price-price-bands-call-auction-in-pre-open-session-and-close-out-procedure-for-exchange-_104094.html",
+    "time_utc": "2026-08-28T12:11:22.636359+00:00"
   }
 ]
