@@ -1,18 +1,6 @@
 [
   {
     "site": "UPPSC",
-    "title": "NOTICE REGARDING ADVT.NO. A-2-E-1-2020, REGIONAL INSPECTOR (TECHNICAL) EXAM-2020",
-    "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagnM8dHr1ViOng000cGwJ0vc",
-    "time_utc": "2026-08-25T12:06:06.877621+00:00"
-  },
-  {
-    "site": "UPPSC",
-    "title": "NOTICE REGARDING ADMIT CARD FOR ADVT.NO. A-11/E-1/2025, LECTURER U.P. TECHNICAL ..",
-    "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagnM8dHr1ViOnseKfh32h8Kz",
-    "time_utc": "2026-08-25T12:06:07.393353+00:00"
-  },
-  {
-    "site": "UPPSC",
     "title": "08 Sep 2026 NOTICE REGARDING ADVT.NO. A-2-E-1-2020, REGIONAL INSPECTOR (TECHNICAL) EXAM-2020",
     "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagnM8dHr1ViOnjB/gMRvwvxp",
     "time_utc": "2026-08-25T12:06:07.893187+00:00"
@@ -178,5 +166,17 @@
     "title": "Addendum No. 37/2026 regarding addition of AIIMS Rishikesh vacancy",
     "link": "https://rrpdocuments.aiimsexams.ac.in/1788171232827-10439106.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260831%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260831T114935Z&X-Amz-Expires=604800&X-Amz-Signature=7146a8ce1594599c73a5523386a757f375e07cc6f61d527c146baa234e260081&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
     "time_utc": "2026-08-31T11:53:32.370750+00:00"
+  },
+  {
+    "site": "MPPSC",
+    "title": "Caveat Vigyapti on Selection List of State Engineering Services (Civil) Exam 2025, Dated 31/08/2026",
+    "link": "https://mppsc.mp.gov.in/uploads/advertisement/Caveat_Vigyapti_State_Engineering_Services_Civil_Exam_2025_Dated_31_08_2026.pdf",
+    "time_utc": "2026-08-31T18:13:27.156277+00:00"
+  },
+  {
+    "site": "MPPSC",
+    "title": "Selection List - State Engineering Services (Civil) Exam 2025, Dated 31/08/2026",
+    "link": "https://mppsc.mp.gov.in/uploads/files/Selection_List_State_Engineering_Services_Civil_Exam_2025_Dated_31_08_2026.pdf",
+    "time_utc": "2026-08-31T18:13:27.759470+00:00"
   }
 ]
