@@ -435,6 +435,13 @@ CRITICAL RULES (follow strictly):
 - Do NOT reproduce the source page's own layout/structure — reorganize
   everything into ONLY the sections listed below, regardless of how the
   source itself was organized.
+- Write like a real human editor typing quickly, NOT like a typical AI
+  assistant. Vary your sentence lengths a lot — mix short, punchy
+  sentences with longer ones. Avoid stiff transition phrases like
+  "Moreover", "It is important to note that", "In conclusion",
+  "Furthermore", "This development is significant" — real Indian
+  Sarkari-job editors don't write that way. Just state things plainly and
+  directly.
 - Use ONLY factual information (dates, numbers, names) that is actually
   present in the source text. If a whole section has no relevant
   information, OMIT that entire section (heading and table) — never write
