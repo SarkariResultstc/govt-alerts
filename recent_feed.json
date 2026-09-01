@@ -1,11 +1,5 @@
 [
   {
-    "site": "AIIMS Exams",
-    "title": "02nd round vacant seat position of B.Sc. Allied & Health care courses August 2026 session",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1787658522349-429766654.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260825%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260825T120835Z&X-Amz-Expires=604800&X-Amz-Signature=81c3283cee9cf6e08123758a18f4bcf008f380e57a2398c2fc01134ed2263711&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-08-25T12:11:29.786174+00:00"
-  },
-  {
     "site": "MPPSC",
     "title": "Selection List - State Engineering Services (Electrical and Mechanical) Exam 2025, Dated 25/08/2026",
     "link": "https://mppsc.mp.gov.in/uploads/files/Selection_List_State_Engineering_Services_Electrical_and_Mechanical_Exam_2025_Dated_25_08_2026.pdf",
@@ -178,5 +172,11 @@
     "title": "Programme of Interview for the Assessment Promotion Scheme (APS-2026) for the batch of 01.07.2026 and also for Re-assessment Interview for the batch of 01.07.2025 to be held in the month of September-2026.",
     "link": "https://rrpdocuments.aiimsexams.ac.in/1788225398340-334260613.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260901%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260901T012756Z&X-Amz-Expires=604800&X-Amz-Signature=0733307d4550685bf27f15a6db158f2e31ef6196bc03dce4db5376e6f7a573e5&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
     "time_utc": "2026-09-01T01:32:37.275383+00:00"
+  },
+  {
+    "site": "IBPS",
+    "title": "IOB Recruitment of Generalist / Specialist Officers Registration From 29-Aug-2026",
+    "link": "https://ibpsreg.ibps.in/iobgoaug26/",
+    "time_utc": "2026-09-01T11:51:23.225127+00:00"
   }
 ]
