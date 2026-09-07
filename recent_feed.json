@@ -1,17 +1,5 @@
 [
   {
-    "site": "AIIMS Exams",
-    "title": "Addendum No. 37/2026 regarding addition of AIIMS Rishikesh vacancy",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1788171232827-10439106.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260831%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260831T114935Z&X-Amz-Expires=604800&X-Amz-Signature=7146a8ce1594599c73a5523386a757f375e07cc6f61d527c146baa234e260081&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-08-31T11:53:32.370750+00:00"
-  },
-  {
-    "site": "MPPSC",
-    "title": "Caveat Vigyapti on Selection List of State Engineering Services (Civil) Exam 2025, Dated 31/08/2026",
-    "link": "https://mppsc.mp.gov.in/uploads/advertisement/Caveat_Vigyapti_State_Engineering_Services_Civil_Exam_2025_Dated_31_08_2026.pdf",
-    "time_utc": "2026-08-31T18:13:27.156277+00:00"
-  },
-  {
     "site": "MPPSC",
     "title": "Selection List - State Engineering Services (Civil) Exam 2025, Dated 31/08/2026",
     "link": "https://mppsc.mp.gov.in/uploads/files/Selection_List_State_Engineering_Services_Civil_Exam_2025_Dated_31_08_2026.pdf",
@@ -178,5 +166,17 @@
     "title": "LATEST NOTICE: उत्तर प्रदेश होमगार्ड्स के पदों पर एनरोलमेंट-2025 के अन्तर्गत शारीरिक दक्षता परीक्षा (पीईटी) के प्रवेश पत्र डाउनलोड किये जाने हेतु महत्वपूर्ण सूचना ।",
     "link": "https://uppbpb.gov.in/FilesUploaded/Notice/vig1070920264a1e0d67-32c0-4ab8-ac3c-41c40f235e15.pdf",
     "time_utc": "2026-09-07T10:35:38.181526+00:00"
+  },
+  {
+    "site": "MPPSC",
+    "title": "Caveat Vigyapti on Selection List of Scientific Officer Chemistry 2023, Dated 07/09/2026",
+    "link": "https://mppsc.mp.gov.in/uploads/advertisement/Caveat_Vigyapti_Scientific_Officer_Chemistry_2023_Dated_07_09_2026.pdf",
+    "time_utc": "2026-09-07T16:03:12.955219+00:00"
+  },
+  {
+    "site": "MPPSC",
+    "title": "Selection List - Scientific Officer Chemistry 2023, Dated 07/09/2026",
+    "link": "https://mppsc.mp.gov.in/uploads/files/Selection_List_Scientific_Officer_Chemistry_2023_Dated_07_09_2026.pdf",
+    "time_utc": "2026-09-07T16:03:13.477535+00:00"
   }
 ]
