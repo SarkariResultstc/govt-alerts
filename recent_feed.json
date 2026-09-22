@@ -1,12 +1,6 @@
 [
   {
     "site": "MPPSC",
-    "title": "Admit Card - State Forest Service Main Exam 2026",
-    "link": "https://mppsc.mponline.gov.in/Portal/Examinations/MPPSC/2026/AdmitCard/F26Login.aspx",
-    "time_utc": "2026-09-17T16:55:07.369674+00:00"
-  },
-  {
-    "site": "MPPSC",
     "title": "Interview Call Letter - Assistant Professor (Political Science) 2024",
     "link": "https://mppsc.mponline.gov.in/Portal/Examinations/MPPSC/2025/ASP24/CallLetter/Login.aspx?Pid=AP23",
     "time_utc": "2026-09-17T16:55:07.919698+00:00"
@@ -178,5 +172,11 @@
     "title": "High Court of Judicature at Allahabad Recruitment Examinations – 2026 (ALLHCRE)",
     "link": "https://exams.nta.nic.in/allhcre/",
     "time_utc": "2026-09-22T15:45:21.020401+00:00"
+  },
+  {
+    "site": "NTA",
+    "title": "High Court of Judicature at Allahabad Recruitment Examinations – 2026 (ALLHCRE)",
+    "link": "https://exams.nta.nic.in/allhcre/",
+    "time_utc": "2026-09-22T19:06:14.233251+00:00"
   }
 ]
