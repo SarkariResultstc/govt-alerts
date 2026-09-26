@@ -1,12 +1,6 @@
 [
   {
     "site": "UPPSC",
-    "title": "RESULT OF ADVT. NO. D-2/E-1/2024, HIGHER EDUCATION DEPARTMENT UTTAR PRADESH, REG..",
-    "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmNKfqXmoSUnt55CdzP5iuV",
-    "time_utc": "2026-09-19T14:35:16.778118+00:00"
-  },
-  {
-    "site": "UPPSC",
     "title": "NOTICE REGARDING DOCUMENT VERIFICATION OF ADVT. NO. A-5/E-1/2025, ASSISTANT TEAC..",
     "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmNKfqXmoSUnpgVo6m3YsHG",
     "time_utc": "2026-09-19T14:35:17.313788+00:00"
@@ -178,5 +172,11 @@
     "title": "Updated Vacancies as on 25.09.2026 for Common Recruitment Process for CRP-RRBs-XV",
     "link": "https://www.ibps.in/wp-content/uploads/Annexure-I_updated_25.09.2026.pdf",
     "time_utc": "2026-09-25T23:28:42.180211+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Corrigendum No: 39/2026 Regarding Seat position and Eligibility for the INI-SS DM/M.Ch. January 2027 Session",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1790403265447-334960236.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260926%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260926T064353Z&X-Amz-Expires=604800&X-Amz-Signature=36be8e1b61ba35d6135078f7832a7e04066358b319a57a9f6b3e4867bbfae8d4&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-09-26T06:47:13.670016+00:00"
   }
 ]
