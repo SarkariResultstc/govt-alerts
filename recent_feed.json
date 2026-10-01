@@ -1,17 +1,5 @@
 [
   {
-    "site": "IBPS",
-    "title": "Updated Vacancies as on 25.09.2026 for Common Recruitment Process for CRP-RRBs-XV",
-    "link": "https://www.ibps.in/wp-content/uploads/Annexure-I_updated_25.09.2026.pdf",
-    "time_utc": "2026-09-25T23:28:42.180211+00:00"
-  },
-  {
-    "site": "AIIMS Exams",
-    "title": "Corrigendum No: 39/2026 Regarding Seat position and Eligibility for the INI-SS DM/M.Ch. January 2027 Session",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1790403265447-334960236.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260926%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260926T064353Z&X-Amz-Expires=604800&X-Amz-Signature=36be8e1b61ba35d6135078f7832a7e04066358b319a57a9f6b3e4867bbfae8d4&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-09-26T06:47:13.670016+00:00"
-  },
-  {
     "site": "UPPSC",
     "title": "NOTICE REGARDING ADMIT CARD FOR ADVT.NO.D-6/E-1/2025, SWASTHYA SHIKSHA ADHIKARI ..",
     "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmNKfqXmoSUnkhoZwOzbGVv",
@@ -178,5 +166,17 @@
     "title": "Notice No. 156/2026: Schedule of Seat Allocation (for group codes where skill test is not required) for Common Recruitment Examination (CRE-5)",
     "link": "https://rrpdocuments.aiimsexams.ac.in/1790767094671-477193795.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260930%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260930T135324Z&X-Amz-Expires=604800&X-Amz-Signature=05574727f17c4b549995782ad6bf73a260f9b678ffcc87d5f38b21171434c727&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
     "time_utc": "2026-09-30T13:58:10.322224+00:00"
+  },
+  {
+    "site": "UPPSC",
+    "title": "CLICK HERE TO DOWNLOAD ADMIT CARD FOR ADVT.NO.D-6/E-1/2025, SWASTHYA SHIKSHA ADHIKARI (SCREENING) EXAM-2025, (EXAM. DATED-04/10/2026).",
+    "link": "https://uppsc.up.nic.in/CandidatePages/Advertismentwise_DownloadDocument.aspx?inptprmtr=ac",
+    "time_utc": "2026-10-01T07:46:03.192152+00:00"
+  },
+  {
+    "site": "UPPSC",
+    "title": "CLICK HERE TO DOWNLOAD ADMIT CARD FOR ADVT.NO.D-6/E-1/2025, VETERINARY OFFICER (SCREENING) EXAM-2025, (EXAM. DATED-03/10/2026).",
+    "link": "https://uppsc.up.nic.in/CandidatePages/Advertismentwise_DownloadDocument.aspx?inptprmtr=ac",
+    "time_utc": "2026-10-01T07:46:03.696807+00:00"
   }
 ]
