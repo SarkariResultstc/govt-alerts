@@ -584,7 +584,13 @@ def create_wp_draft(site_name, title, link, ai_html=None, gov_links=None):
     the standard WP REST API. Fails silently (logs only) so a WordPress
     hiccup never crashes the whole monitoring run."""
     if not (WP_URL and WP_USERNAME and WP_APP_PASSWORD):
-        return  # WordPress posting not configured, skip quietly
+        print(
+            f"[WP SKIP] {title}: WordPress not configured "
+            f"(WP_URL={'set' if WP_URL else 'MISSING'}, "
+            f"WP_USERNAME={'set' if WP_USERNAME else 'MISSING'}, "
+            f"WP_APP_PASSWORD={'set' if WP_APP_PASSWORD else 'MISSING'})"
+        )
+        return
 
     link_type = guess_link_type(title)
     now_ist = datetime.now(IST).strftime("%d %B %Y, %I:%M %p")
