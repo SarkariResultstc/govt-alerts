@@ -1,23 +1,5 @@
 [
   {
-    "site": "AIIMS Exams",
-    "title": "Corrigendum No.40/2026: Common Recruitment Examination-5(CRE-5)",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1790591424088-312764043.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260928%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260928T155633Z&X-Amz-Expires=604800&X-Amz-Signature=51fce2c5eac9e0fbd36e63c6479e2d52d55dc4cfa336aad9dd85993bc7085664&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-09-28T16:00:16.000026+00:00"
-  },
-  {
-    "site": "IBPS",
-    "title": "Corrigendum dated 29.09.2026 in connection with CRP-CSA-XVI",
-    "link": "https://www.ibps.in/wp-content/uploads/Corrigendum-CRP-CSA_XVI_29.09.2026.pdf",
-    "time_utc": "2026-09-29T13:24:40.719339+00:00"
-  },
-  {
-    "site": "IBPS",
-    "title": "Updated Vacancies as on 29.09.2026 for Common Recruitment Process for CRP-CSA-XVI",
-    "link": "https://www.ibps.in/wp-content/uploads/Annexure_Corrigendum_29.09.2026.pdf",
-    "time_utc": "2026-09-29T13:24:41.216663+00:00"
-  },
-  {
     "site": "UPPSC",
     "title": "NOTICE REGARDING DOWNLOAD MARKSHEET & CUT OFF FOR ADVT. NO. D-5-E-1-2025, [S-10-..",
     "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagnr4uATu7lVS1AzHz/uiCOF",
@@ -178,5 +160,23 @@
     "title": "MPA Recruitment of Class I & II Posts Registration From 29-Sep-2026",
     "link": "https://ibpsreg.ibps.in/mpajul26/",
     "time_utc": "2026-10-05T06:48:59.495764+00:00"
+  },
+  {
+    "site": "UPPSC",
+    "title": "NOTICE REGARDING ADVT. NO. D-6/E-1/2025, MEDICAL HEALTH AND FAMILY WELFARE DEPAR..",
+    "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagkIY3nIrO0zxJUy3AgqZ4Ub",
+    "time_utc": "2026-10-05T18:24:20.876278+00:00"
+  },
+  {
+    "site": "UPPSC",
+    "title": "31 Dec 2026 NOTICE REGARDING ADVT. NO. D-6/E-1/2025, MEDICAL HEALTH AND FAMILY WELFARE DEPARTMENT UTTAR PRADESH, DENTAL SURGEON S-8/02",
+    "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagkIY3nIrO0zxAYQ8Jqy3+nN",
+    "time_utc": "2026-10-05T18:24:21.385152+00:00"
+  },
+  {
+    "site": "UPPSC",
+    "title": "05 Nov 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/PROFESSOR ORTHOPAEDICS, S-08/28",
+    "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagkIY3nIrO0zxLm4XA5UIYvX",
+    "time_utc": "2026-10-05T18:24:21.880468+00:00"
   }
 ]
