@@ -1,17 +1,5 @@
 [
   {
-    "site": "SEBI",
-    "title": "Notice of Attachment of Bank account of Navnit Gadoya in RC No. 9286 of 2026.",
-    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/sep-2026/notice-of-attachment-of-bank-account-of-navnit-gadoya-in-rc-no-9286-of-2026-_104803.html",
-    "time_utc": "2026-09-29T13:29:34.241838+00:00"
-  },
-  {
-    "site": "SEBI",
-    "title": "Notice of Attachment of Demat account of Navnit Gadoya in RC No. 9286 of 2026.",
-    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/sep-2026/notice-of-attachment-of-demat-account-of-navnit-gadoya-in-rc-no-9286-of-2026-_104805.html",
-    "time_utc": "2026-09-29T13:29:34.747281+00:00"
-  },
-  {
     "site": "AIIMS Exams",
     "title": "Corrigendum related to walk in interview for the post of Senior Resident/Demonstrator against the advt no. Academics/10-01/SR/Short term dated 18.09.2026",
     "link": "https://rrpdocuments.aiimsexams.ac.in/1790676529345-302793247.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20260929%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20260929T132712Z&X-Amz-Expires=604800&X-Amz-Signature=2d767a34d7adfcddd81bffa9a6ebdb9a80e71195aea920c2264a8c806c1a0d17&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
@@ -178,5 +166,17 @@
     "title": "Addendum dated 06.10.2026 in respect of Recruitment of Banker Faculty, Banker Faculty (Technical) And Executive Secretary to Director On Fixed Term Contract Basis",
     "link": "https://www.ibps.in/wp-content/uploads/Addendum-06.10.pdf",
     "time_utc": "2026-10-06T13:23:46.871650+00:00"
+  },
+  {
+    "site": "UPPSC",
+    "title": "RESULT OF ADVT. NO. D-4/E-1/2025, UTTAR PRADESH AYUSH (AYURVEDA) DEPARTMENT, PRO..",
+    "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmbO3OUZentgoSSgw34Mkau",
+    "time_utc": "2026-10-06T18:58:23.968133+00:00"
+  },
+  {
+    "site": "UPPSC",
+    "title": "06 Nov 2026 RESULT OF ADVT. NO. D-4/E-1/2025, UTTAR PRADESH AYUSH (AYURVEDA) DEPARTMENT, PROFESSOR(SPECIALIST) SHALAKYA TANTRA, S-09/04",
+    "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagmbO3OUZentgoYzM/hjudv5",
+    "time_utc": "2026-10-06T18:58:24.468620+00:00"
   }
 ]
