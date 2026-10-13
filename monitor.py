@@ -19,6 +19,7 @@ import hashlib
 import base64
 import urllib.request
 import urllib.error
+from html import escape as html_escape
 from urllib.parse import urljoin, urlparse
 from datetime import datetime, timezone, timedelta
 
@@ -32,15 +33,30 @@ import io
 STATE_FILE = "state.json"
 RECENT_FEED_FILE = "recent_feed.json"
 WP_DAILY_COUNT_FILE = "wp_daily_count.json"
+META_FILE = "meta.json"  # run counter, per-site failure counts, WordPress retry queue
 WP_DAILY_LIMIT = 20
 SITES_FILE = "sites.json"
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
 
-WP_URL = os.environ.get("WP_URL", "").rstrip("/")
-WP_USERNAME = os.environ.get("WP_USERNAME", "")
-WP_APP_PASSWORD = os.environ.get("WP_APP_PASSWORD", "")
+# --- WordPress settings (secrets are stripped: a stray space/newline pasted
+# into a GitHub secret is a very common reason for "401 Unauthorized") ---
+WP_URL = os.environ.get("WP_URL", "").strip().rstrip("/")
+if WP_URL and not WP_URL.lower().startswith(("http://", "https://")):
+    WP_URL = "https://" + WP_URL  # user forgot the https://
+WP_URL = re.sub(r"/wp-json.*$", "", WP_URL)  # user pasted the full API address
+WP_USERNAME = os.environ.get("WP_USERNAME", "").strip()
+WP_APP_PASSWORD = os.environ.get("WP_APP_PASSWORD", "").strip()
+# "draft" = you review and publish by hand (old behaviour). Set the repo
+# variable WP_POST_STATUS=publish to make posts go live automatically.
+WP_POST_STATUS = (os.environ.get("WP_POST_STATUS") or "draft").strip().lower()
+if WP_POST_STATUS not in ("draft", "publish", "pending", "private"):
+    WP_POST_STATUS = "draft"
+WP_TEST_POST = os.environ.get("WP_TEST_POST", "").strip().lower() == "true"
+# Brand name used in the AI prompt is taken from WP_URL automatically, so it
+# can never be stale again when the website changes.
+SITE_BRAND = urlparse(WP_URL).netloc or "our website"
 
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
@@ -166,8 +182,28 @@ def is_actually_fresh(page, item_link, site_name):
         print(f"[STALE] {site_name}: skipping old post (published {published_at}, {age_hours:.0f}h ago)")
         return False
     return True
-PAGE_LOAD_TIMEOUT_MS = 15000
-SLOW_PAGE_LOAD_TIMEOUT_MS = 25000
+PAGE_LOAD_TIMEOUT_MS = 25000
+SLOW_PAGE_LOAD_TIMEOUT_MS = 40000
+
+# Errors that will not fix themselves on a retry (wrong/non-existent domain,
+# broken SSL) - no point waiting and trying a second time.
+HARD_FAIL_MARKERS = (
+    "ERR_NAME_NOT_RESOLVED", "ERR_SSL", "ERR_CERT",
+    "ERR_CONNECTION_REFUSED", "ERR_ADDRESS_UNREACHABLE",
+)
+
+# A site that failed this many runs in a row is treated as "blocked from
+# GitHub's servers" and is only probed again every DEAD_PROBE_EVERY-th run,
+# so dead sites stop eating the whole run time.
+DEAD_AFTER_FAILS = 3
+DEAD_PROBE_EVERY = 10
+RUN_BUDGET_SECONDS = 9 * 60  # safety net: stop scanning after this long
+
+# WordPress retry queue: a post that could not be created is kept and retried
+# on the next run instead of being lost.
+WP_QUEUE_MAX_AGE_HOURS = 36
+WP_QUEUE_MAX_ATTEMPTS = 6
+WP_QUEUE_MAX_SIZE = 40
 
 # These specific sites are unusually heavy/slow JavaScript apps that need
 # to fully finish loading (networkidle) to show their notices — the fast
@@ -193,6 +229,13 @@ def save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
+def short_err(e):
+    """First line of an exception only (Playwright errors carry a long
+    multi-line 'Call log' that just floods the Actions log)."""
+    lines = [ln.strip() for ln in str(e).splitlines() if ln.strip()]
+    return (lines[0] if lines else type(e).__name__)[:160]
+
+
 def fetch_rendered_html(page, url, slow=False, retries=2):
     """Load a page in the headless browser and return fully-rendered HTML.
     For most sites we use 'domcontentloaded' (fast) + a short pause, which
@@ -200,23 +243,38 @@ def fetch_rendered_html(page, url, slow=False, retries=2):
     page to go fully idle (networkidle) so their notice widgets finish
     loading before we read the content.
 
-    Retries once (or more) on transient network errors (timeouts, DNS
-    hiccups, connection resets) before giving up — many of these are
-    momentary blips, not permanent failures."""
+    Two improvements over the old version:
+    - On a TIMEOUT we first check whether the page has in fact already
+      rendered its links (slow government servers often do, they just never
+      report "loaded"). If so we use that HTML instead of skipping the site.
+    - Errors that can never succeed (bad DNS, broken SSL) are not retried."""
+    timeout = SLOW_PAGE_LOAD_TIMEOUT_MS if slow else PAGE_LOAD_TIMEOUT_MS
     last_error = None
     for attempt in range(1, retries + 1):
         try:
             if slow:
-                page.goto(url, timeout=SLOW_PAGE_LOAD_TIMEOUT_MS, wait_until="networkidle")
+                page.goto(url, timeout=timeout, wait_until="networkidle")
                 page.wait_for_timeout(2000)
             else:
-                page.goto(url, timeout=PAGE_LOAD_TIMEOUT_MS, wait_until="domcontentloaded")
+                page.goto(url, timeout=timeout, wait_until="domcontentloaded")
                 page.wait_for_timeout(800)
             return page.content()
         except Exception as e:
             last_error = e
+            msg = str(e)
+            if "Timeout" in msg:
+                try:
+                    partial = page.content()
+                    if (page.url.startswith("http") and len(partial) > 3000
+                            and "href=" in partial.lower()):
+                        print(f"[PARTIAL] {url}: timed out but page had content, using it", file=sys.stderr)
+                        return partial
+                except Exception:
+                    pass
+            if any(marker in msg for marker in HARD_FAIL_MARKERS):
+                break  # retrying cannot help
             if attempt < retries:
-                time.sleep(3)  # short pause before retrying
+                time.sleep(2)  # short pause before retrying
     raise last_error
 
 
@@ -280,6 +338,9 @@ def send_telegram(message):
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             resp.read()
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", "replace")[:200]
+        print(f"Telegram send failed: HTTP {e.code} {body}", file=sys.stderr)
     except Exception as e:
         # Catch everything (URLError, InvalidURL, etc.) so one bad message
         # never crashes the whole run.
@@ -420,7 +481,7 @@ def call_ai_for_summary(title, site_name, source_text):
         model = "meta-llama/llama-3.3-70b-instruct:free"
 
     prompt = f"""You are an experienced human content writer for an Indian
-government job/exam alert website called SarkariResults.com.tc. Below is
+government job/exam alert website called {SITE_BRAND}. Below is
 the raw text of an official notification titled "{title}" from {site_name}.
 Your job is to COMPLETELY REWRITE this into a fresh, original,
 ready-to-publish article — not summarize or lightly reword the source, but
@@ -578,31 +639,172 @@ def apply_styling(html):
     return html
 
 
-def create_wp_draft(site_name, title, link, ai_html=None, gov_links=None):
-    """Create a WordPress draft post for one detected notice, using a
-    WordPress Application Password (NOT the real account password) over
-    the standard WP REST API. Fails silently (logs only) so a WordPress
-    hiccup never crashes the whole monitoring run."""
-    if not (WP_URL and WP_USERNAME and WP_APP_PASSWORD):
-        print(
-            f"[WP SKIP] {title}: WordPress not configured "
-            f"(WP_URL={'set' if WP_URL else 'MISSING'}, "
-            f"WP_USERNAME={'set' if WP_USERNAME else 'MISSING'}, "
-            f"WP_APP_PASSWORD={'set' if WP_APP_PASSWORD else 'MISSING'})"
-        )
-        return
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    """Stop urllib from silently following redirects. On a 301/302 it turns a
+    POST into a GET, and WordPress then answers 200 with a list of posts -
+    nothing is created but it LOOKS like success. We follow redirects
+    ourselves instead and keep the POST."""
 
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
+_wp_opener = urllib.request.build_opener(_NoRedirect)
+WP_BASE = WP_URL  # corrected automatically if the site redirects (http->https, www)
+
+
+def wp_configured():
+    return bool(WP_URL and WP_USERNAME and WP_APP_PASSWORD)
+
+
+def _same_site(a, b):
+    na = urlparse(a).netloc.lower().removeprefix("www.")
+    nb = urlparse(b).netloc.lower().removeprefix("www.")
+    return na == nb
+
+
+def wp_request(method, path, payload=None):
+    """Call the WordPress REST API with a browser-like User-Agent (the default
+    'Python-urllib' agent is blocked by most free hosts and firewalls).
+
+    Returns (status, body_text). status 0 means a network-level failure and
+    body_text holds the reason. Same-site redirects are followed with the
+    method and body kept; credentials are never sent to a different site."""
+    global WP_BASE
+    credentials = f"{WP_USERNAME}:{WP_APP_PASSWORD}".encode("utf-8")
+    headers = {
+        "Authorization": "Basic " + base64.b64encode(credentials).decode("ascii"),
+        "User-Agent": USER_AGENT,
+        "Accept": "application/json",
+    }
+    data = None
+    if payload is not None:
+        data = json.dumps(payload).encode("utf-8")
+        headers["Content-Type"] = "application/json"
+
+    url = WP_BASE + path
+    for _ in range(4):
+        req = urllib.request.Request(url, data=data, headers=headers, method=method)
+        try:
+            with _wp_opener.open(req, timeout=30) as resp:
+                if "/wp-json" in url:
+                    WP_BASE = url.split("/wp-json")[0]
+                return resp.status, resp.read().decode("utf-8", "replace")
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", "replace")
+            location = e.headers.get("Location") if e.headers else None
+            if e.code in (301, 302, 303, 307, 308) and location:
+                new_url = urljoin(url, location)
+                if not _same_site(new_url, url):
+                    return e.code, f"redirected to a different site: {new_url}"
+                print(f"[WP REDIRECT] {url} -> {new_url}", file=sys.stderr)
+                url = new_url
+                continue
+            if "/wp-json" in url:
+                WP_BASE = url.split("/wp-json")[0]
+            return e.code, body
+        except Exception as e:
+            return 0, str(e)
+    return 0, "too many redirects"
+
+
+def explain_wp_failure(status, body):
+    """Turn a failed WordPress response into a plain-language reason.
+    Returns (message, systemic). 'systemic' = every post will fail the same
+    way (login/URL/firewall problem), so there is no point trying the rest."""
+    snippet = " ".join(body.split())[:200]
+    looks_html = "<html" in body[:600].lower() or body.lstrip()[:9].lower() == "<!doctype"
+    if status == 0:
+        return (f"Could not reach WordPress at all ({snippet}). Check the WP_URL "
+                f"spelling and that the site is online.", True)
+    if looks_html:
+        return (f"HTTP {status}: the server answered with a normal web page, not JSON. "
+                f"This is an anti-bot / security challenge (typical for free hosts, "
+                f"Cloudflare, Wordfence) or WP_URL is not a WordPress site. Allow "
+                f"/wp-json/ in the firewall or switch hosting.", True)
+    if status == 401:
+        return ("401: wrong WP_USERNAME or WP_APP_PASSWORD. Create a NEW Application "
+                "Password on the NEW site (Users > Profile) and update the GitHub "
+                "secrets. The site must use HTTPS for this to work.", True)
+    if status == 403:
+        return ("403: blocked by a firewall/security plugin, or this user may not "
+                "create posts (use an Administrator or Editor account).", True)
+    if status == 404:
+        return ("404: REST API not found. WP_URL must be just the site address "
+                "(no extra path), and in WordPress Settings > Permalinks must NOT "
+                "be 'Plain' (choose 'Post name' and Save).", True)
+    if status == 429 or status >= 500:
+        return (f"HTTP {status}: server is busy or down. {snippet}", True)
+    if status == 200:
+        return ("HTTP 200 instead of 201: the post was NOT created (usually a redirect "
+                "or a caching/security layer in front of WordPress).", True)
+    return (f"HTTP {status}: {snippet}", False)
+
+
+def wp_selftest():
+    """Check URL + login WITHOUT creating anything and print a clear verdict."""
+    if not wp_configured():
+        print(
+            f"[WP TEST] Not configured: WP_URL={'set' if WP_URL else 'MISSING'}, "
+            f"WP_USERNAME={'set' if WP_USERNAME else 'MISSING'}, "
+            f"WP_APP_PASSWORD={'set' if WP_APP_PASSWORD else 'MISSING'}"
+        )
+        return False
+    print(f"[WP TEST] Site: {WP_BASE}  |  user: {WP_USERNAME}  |  post status: {WP_POST_STATUS}")
+    status, body = wp_request("GET", "/wp-json/wp/v2/users/me?context=edit")
+    if status == 200:
+        try:
+            me = json.loads(body)
+        except ValueError:
+            print("[WP TEST] FAIL: got HTTP 200 but the answer is not JSON (security page in front of WordPress?)")
+            return False
+        if not me.get("capabilities", {}).get("edit_posts"):
+            print(f"[WP TEST] Login OK as '{me.get('name')}' but this user cannot create posts "
+                  f"(role: {me.get('roles')}). Use an Administrator/Editor/Author account.")
+            return False
+        print(f"[WP TEST] OK: logged in as '{me.get('name')}' and allowed to create posts.")
+        return True
+    message, _ = explain_wp_failure(status, body)
+    print(f"[WP TEST] FAIL: {message}")
+    return False
+
+
+def run_wp_test_post():
+    """Manual 'Run workflow' button: check login, then create ONE harmless
+    test draft so you can see in the log exactly what works."""
+    wp_selftest()
+    if not wp_configured():
+        return
+    status, body = wp_request("POST", "/wp-json/wp/v2/posts", {
+        "title": "TEST post from govt-alerts bot (safe to delete)",
+        "content": "<p>If you can see this under Posts > Drafts, automatic posting works.</p>",
+        "status": "draft",
+    })
+    if status == 201:
+        print(f"[WP TEST POST] SUCCESS - open {WP_BASE}/wp-admin/edit.php?post_status=draft to see it.")
+    else:
+        message, _ = explain_wp_failure(status, body)
+        print(f"[WP TEST POST] FAIL: {message}")
+
+
+def create_wp_post(site_name, title, link, ai_html=None, gov_links=None):
+    """Create one WordPress post (status from WP_POST_STATUS, default draft)
+    through the standard REST API with an Application Password.
+    Returns (ok, systemic_failure). Never raises, so a WordPress problem can
+    never crash the monitoring run."""
     link_type = guess_link_type(title)
     now_ist = datetime.now(IST).strftime("%d %B %Y, %I:%M %p")
 
     if ai_html:
         intro_block = apply_styling(ai_html)
     else:
+        review_note = (
+            " This draft was created automatically; please review and edit before publishing."
+            if WP_POST_STATUS == "draft" else ""
+        )
         intro_block = (
-            f"<p>{title} — released by <strong>{site_name}</strong>. Full "
-            f"official details are available at the source link below. "
-            f"This draft was created automatically; please review and "
-            f"edit before publishing.</p>"
+            f"<p>{html_escape(title)} — released by <strong>{html_escape(site_name)}</strong>. "
+            f"Full official details are available at the source link below.{review_note}</p>"
         )
 
     # Important Links: source link + any government-domain links found on
@@ -610,13 +812,13 @@ def create_wp_draft(site_name, title, link, ai_html=None, gov_links=None):
     links_rows = (
         f'<tr><td style="padding:8px;border:1px solid #cccccc;">{link_type}</td>'
         f'<td style="padding:8px;border:1px solid #cccccc;">'
-        f'<a href="{link}" target="_blank" rel="nofollow noopener">Click Here</a></td></tr>'
+        f'<a href="{html_escape(link)}" target="_blank" rel="nofollow noopener">Click Here</a></td></tr>'
     )
     for gl in (gov_links or []):
         links_rows += (
-            f'<tr><td style="padding:8px;border:1px solid #cccccc;">{gl["text"]}</td>'
+            f'<tr><td style="padding:8px;border:1px solid #cccccc;">{html_escape(gl["text"])}</td>'
             f'<td style="padding:8px;border:1px solid #cccccc;">'
-            f'<a href="{gl["url"]}" target="_blank" rel="nofollow noopener">Click Here</a></td></tr>'
+            f'<a href="{html_escape(gl["url"])}" target="_blank" rel="nofollow noopener">Click Here</a></td></tr>'
         )
 
     content_html = f"""
@@ -635,131 +837,219 @@ def create_wp_draft(site_name, title, link, ai_html=None, gov_links=None):
 </tbody>
 </table>
 
-<p><em>Detected on {now_ist} (IST) from {site_name}.</em></p>
+<p><em>Detected on {now_ist} (IST) from {html_escape(site_name)}.</em></p>
 """.strip()
 
-    payload = json.dumps({
+    status, body = wp_request("POST", "/wp-json/wp/v2/posts", {
         "title": title,
         "content": content_html,
-        "status": "draft",
-    }).encode("utf-8")
+        "status": WP_POST_STATUS,
+    })
+    if status == 201:
+        try:
+            info = json.loads(body)
+            print(f"[WP OK] {WP_POST_STATUS} post #{info.get('id')} created: {title}")
+        except ValueError:
+            print(f"[WP OK] {WP_POST_STATUS} post created: {title}")
+        return True, False
 
-    credentials = f"{WP_USERNAME}:{WP_APP_PASSWORD}".encode("utf-8")
-    auth_header = "Basic " + base64.b64encode(credentials).decode("utf-8")
-
-    req = urllib.request.Request(
-        f"{WP_URL}/wp-json/wp/v2/posts",
-        data=payload,
-        headers={
-            "Content-Type": "application/json",
-            "Authorization": auth_header,
-        },
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            resp.read()
-        print(f"[WP DRAFT] Created draft for: {title}")
-    except Exception as e:
-        print(f"WordPress draft creation failed: {e}", file=sys.stderr)
+    message, systemic = explain_wp_failure(status, body)
+    print(f"[WP FAIL] {title}\n          -> {message}", file=sys.stderr)
+    return False, systemic
 
 
 def main():
+    started = time.time()
+
+    # Manual "Run workflow" with wp_test ticked: check WordPress only (fast).
+    if WP_TEST_POST:
+        run_wp_test_post()
+        return
+    # Any other manual run also prints a one-line WordPress health check.
+    if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
+        wp_selftest()
+
     sites = load_json(SITES_FILE, [])
     state = load_json(STATE_FILE, {})  # {site_name: [item_id, ...]}
     recent_feed = load_json(RECENT_FEED_FILE, [])  # rolling list for the public live ticker
+    meta = load_json(META_FILE, {})
+    meta["run_count"] = int(meta.get("run_count", 0)) + 1
+    fails = meta.setdefault("site_fails", {})  # {site_name: consecutive failures}
+    run_no = meta["run_count"]
     wp_count = get_wp_daily_count()
 
-    pending_for_ai = []  # collected here, processed AFTER all sites are scanned
+    new_for_wp = []  # collected here, processed AFTER all sites are scanned
+    failed_now, skipped_dead = [], []
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        context = browser.new_context(user_agent=USER_AGENT)
-        page = context.new_page()
+    # Start from a different site every run so that, if the time budget ever
+    # cuts a run short, it is not always the same sites at the end that miss out.
+    if sites:
+        offset = run_no % len(sites)
+        sites = sites[offset:] + sites[:offset]
 
-        # ---- PASS 1: fast scan of every site + immediate Telegram alerts.
-        # Nothing slow (AI calls, WordPress) happens in this loop, so a
-        # notice found early doesn't delay discovering notices on the
-        # sites checked afterward — every site gets scanned as fast as
-        # possible and Telegram alerts go out the moment each is found.
-        for site in sites:
-            name = site["name"]
-            url = site["url"]
-            known_ids = set(state.get(name, []))
-            is_first_run_for_site = name not in state
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            context = browser.new_context(user_agent=USER_AGENT)
+            page = context.new_page()
 
-            try:
-                html = fetch_rendered_html(page, url, slow=(name in SLOW_SITES))
-            except Exception as e:
-                print(f"[SKIP] {name}: could not load ({e})", file=sys.stderr)
-                continue
+            # ---- PASS 1: fast scan of every site + immediate Telegram alerts.
+            # Nothing slow (AI calls, WordPress) happens in this loop, so a
+            # notice found early doesn't delay discovering notices on the
+            # sites checked afterward.
+            for site in sites:
+                if time.time() - started > RUN_BUDGET_SECONDS:
+                    print(f"[BUDGET] {RUN_BUDGET_SECONDS}s used, rest of the sites are checked next run")
+                    break
 
-            items = extract_items(html, url)
-            new_items = [it for it in items if it["id"] not in known_ids]
+                name = site["name"]
+                url = site["url"]
+                known_ids = set(state.get(name, []))
+                is_first_run_for_site = name not in state
 
-            if is_first_run_for_site:
-                state[name] = [it["id"] for it in items]
-                print(f"[INIT] {name}: recorded {len(items)} existing items")
-                continue
+                n_fail = fails.get(name, 0)
+                probing = n_fail >= DEAD_AFTER_FAILS
+                if probing and run_no % DEAD_PROBE_EVERY != 0:
+                    skipped_dead.append(name)  # looks blocked: only probe now and then
+                    continue
 
-            # For sites in SITES_NEEDING_PUBLISH_DATE_CHECK (currently just
-            # SarkariResult.com.cm), double-check each candidate's actual
-            # on-page publish date/time before treating it as fresh news.
-            # No effect on any other site.
-            if name in SITES_NEEDING_PUBLISH_DATE_CHECK:
-                new_items = [it for it in new_items if is_actually_fresh(page, it["link"], name)]
+                try:
+                    html = fetch_rendered_html(
+                        page, url, slow=(name in SLOW_SITES), retries=1 if probing else 2
+                    )
+                except Exception as e:
+                    fails[name] = n_fail + 1
+                    failed_now.append(name)
+                    print(f"[SKIP] {name}: could not load ({short_err(e)}) [failed {n_fail + 1} runs in a row]",
+                          file=sys.stderr)
+                    continue
+                fails.pop(name, None)  # loaded fine, reset its failure count
 
-            if len(new_items) > MAX_NEW_ITEMS_PER_SITE_PER_RUN:
+                items = extract_items(html, url)
+                new_items = [it for it in items if it["id"] not in known_ids]
+
+                if is_first_run_for_site:
+                    state[name] = [it["id"] for it in items]
+                    print(f"[INIT] {name}: recorded {len(items)} existing items")
+                    continue
+
+                # For sites in SITES_NEEDING_PUBLISH_DATE_CHECK, double-check
+                # each candidate's actual on-page publish date/time before
+                # treating it as fresh news. No effect on any other site.
+                if name in SITES_NEEDING_PUBLISH_DATE_CHECK:
+                    new_items = [it for it in new_items if is_actually_fresh(page, it["link"], name)]
+
+                if len(new_items) > MAX_NEW_ITEMS_PER_SITE_PER_RUN:
+                    print(
+                        f"[CAP] {name}: {len(new_items)} new items found, "
+                        f"only alerting top {MAX_NEW_ITEMS_PER_SITE_PER_RUN} "
+                        f"(rest treated as old backlog, not alerted)",
+                        file=sys.stderr,
+                    )
+                new_items = new_items[:MAX_NEW_ITEMS_PER_SITE_PER_RUN]
+
+                for it in new_items:
+                    now_ist = datetime.now(IST).strftime("%d %b %Y, %I:%M %p")
+                    # Telegram HTML mode: <, > and & in a title/link must be
+                    # escaped or Telegram rejects the whole message.
+                    msg = (
+                        f"🔔 <b>New post: {html_escape(name, quote=False)}</b>\n"
+                        f"{html_escape(it['title'], quote=False)}\n"
+                        f"{html_escape(it['link'], quote=False)}\n"
+                        f"🕒 {now_ist} (IST)"
+                    )
+                    send_telegram(msg)  # fast — goes out immediately
+                    print(f"[ALERT] {name}: {it['title']}")
+                    new_for_wp.append({"site": name, "title": it["title"], "link": it["link"]})
+                    recent_feed.append({
+                        "site": name,
+                        "title": it["title"],
+                        "link": it["link"],
+                        "time_utc": datetime.now(timezone.utc).isoformat(),
+                    })
+
+                all_ids = list(known_ids.union(it["id"] for it in items))
+                state[name] = all_ids[-500:]
+
+            if failed_now or skipped_dead:
                 print(
-                    f"[CAP] {name}: {len(new_items)} new items found, "
-                    f"only alerting top {MAX_NEW_ITEMS_PER_SITE_PER_RUN} "
-                    f"(rest treated as old backlog, not alerted)",
-                    file=sys.stderr,
+                    f"[HEALTH] could not load this run: {len(failed_now)} | "
+                    f"skipped as blocked (re-tried every {DEAD_PROBE_EVERY}th run): {len(skipped_dead)}"
                 )
-            new_items = new_items[:MAX_NEW_ITEMS_PER_SITE_PER_RUN]
+                if skipped_dead:
+                    print("[HEALTH] blocked sites: " + ", ".join(skipped_dead))
 
-            for it in new_items:
-                now_ist = datetime.now(IST).strftime("%d %b %Y, %I:%M %p")
-                msg = (
-                    f"🔔 <b>New post: {name}</b>\n"
-                    f"{it['title']}\n"
-                    f"{it['link']}\n"
-                    f"🕒 {now_ist} (IST)"
+            # ---- PASS 2: AI summary + WordPress post, done AFTER every
+            # Telegram alert has already been sent. Anything that fails is
+            # kept in a queue (meta.json) and retried on the next run.
+            now_ts = int(time.time())
+            queue = [
+                q for q in meta.get("wp_pending", [])
+                if now_ts - q.get("added", 0) < WP_QUEUE_MAX_AGE_HOURS * 3600
+            ]
+            if wp_configured():
+                queued = {(q["link"], q["title"]) for q in queue}
+                for it in new_for_wp:
+                    if (it["link"], it["title"]) not in queued:
+                        queue.append({**it, "attempts": 0, "added": now_ts})
+            elif new_for_wp:
+                print(
+                    f"[WP SKIP] WordPress not configured "
+                    f"(WP_URL={'set' if WP_URL else 'MISSING'}, "
+                    f"WP_USERNAME={'set' if WP_USERNAME else 'MISSING'}, "
+                    f"WP_APP_PASSWORD={'set' if WP_APP_PASSWORD else 'MISSING'})"
                 )
-                send_telegram(msg)  # fast — goes out immediately
-                print(f"[ALERT] {name}: {it['title']}")
-                pending_for_ai.append({"site": name, "title": it["title"], "link": it["link"]})
-                recent_feed.append({
-                    "site": name,
-                    "title": it["title"],
-                    "link": it["link"],
-                    "time_utc": datetime.now(timezone.utc).isoformat(),
-                })
+            meta["wp_pending"] = queue[-WP_QUEUE_MAX_SIZE:]  # saved even if something crashes below
 
-            all_ids = list(known_ids.union(it["id"] for it in items))
-            state[name] = all_ids[-500:]
+            remaining = []
+            wp_blocked = False
+            limit_noted = False
+            if wp_configured():
+                for it in queue:
+                    if wp_blocked:
+                        remaining.append(it)
+                        continue
+                    if wp_count["count"] >= WP_DAILY_LIMIT:
+                        if not limit_noted:
+                            print(f"[WP LIMIT] Daily limit ({WP_DAILY_LIMIT}) reached, the rest waits for tomorrow")
+                            limit_noted = True
+                        remaining.append(it)
+                        continue
 
-        # ---- PASS 2: slower AI summary + WordPress draft creation, done
-        # AFTER every Telegram alert has already been sent. This never
-        # delays the alerts — it only affects how quickly the WordPress
-        # draft appears, which isn't as time-critical.
-        for it in pending_for_ai:
-            if wp_count["count"] >= WP_DAILY_LIMIT:
-                print(f"[WP LIMIT] Daily draft limit ({WP_DAILY_LIMIT}) reached, skipping draft for: {it['title']}")
-                continue
-            ai_html = None
-            gov_links = []
-            if WP_URL and (GROQ_API_KEY or OPENROUTER_API_KEY or CF_API_TOKEN):
-                source_text, gov_links = fetch_source_text(page, it["link"])
-                ai_html = call_ai_for_summary(it["title"], it["site"], source_text)
-            create_wp_draft(it["site"], it["title"], it["link"], ai_html=ai_html, gov_links=gov_links)
-            wp_count = increment_wp_daily_count(wp_count)
-            time.sleep(1)  # be gentle with the AI/WordPress APIs
+                    ai_html = None
+                    gov_links = []
+                    if GROQ_API_KEY or OPENROUTER_API_KEY or CF_API_TOKEN:
+                        source_text, gov_links = fetch_source_text(page, it["link"])
+                        ai_html = call_ai_for_summary(it["title"], it["site"], source_text)
 
-        browser.close()
+                    ok, systemic = create_wp_post(
+                        it["site"], it["title"], it["link"], ai_html=ai_html, gov_links=gov_links
+                    )
+                    if ok:
+                        wp_count = increment_wp_daily_count(wp_count)  # only successful posts count
+                    elif systemic:
+                        # Login/URL/firewall problem: every post would fail the
+                        # same way. Keep this one, stop for now, retry next run.
+                        remaining.append(it)
+                        wp_blocked = True
+                        print("[WP] Stopping WordPress posting for this run, will retry next run. "
+                              "Run the workflow manually with 'wp_test' ticked to see the exact reason.")
+                    else:
+                        it["attempts"] = it.get("attempts", 0) + 1
+                        if it["attempts"] < WP_QUEUE_MAX_ATTEMPTS:
+                            remaining.append(it)
+                        else:
+                            print(f"[WP DROP] giving up after {it['attempts']} tries: {it['title']}")
+                    time.sleep(1)  # be gentle with the AI/WordPress APIs
+                meta["wp_pending"] = remaining[-WP_QUEUE_MAX_SIZE:]
 
-    save_json(STATE_FILE, state)
-    save_json(RECENT_FEED_FILE, recent_feed[-30:])  # keep only the newest 30 for the ticker
+            browser.close()
+    finally:
+        # Always save, even if something crashed: Telegram alerts have already
+        # gone out, and losing the state would make the next run send them again.
+        save_json(STATE_FILE, state)
+        save_json(RECENT_FEED_FILE, recent_feed[-30:])  # keep only the newest 30 for the ticker
+        save_json(META_FILE, meta)
 
 
 if __name__ == "__main__":
