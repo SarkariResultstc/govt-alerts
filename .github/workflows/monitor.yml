@@ -3,7 +3,12 @@ name: Govt Site Monitor
 on:
   schedule:
     - cron: "*/7 * * * *"    # every 7 minutes
-  workflow_dispatch: {}       # allows manual "Run workflow" button too
+  workflow_dispatch:          # manual "Run workflow" button
+    inputs:
+      wp_test:
+        description: "Only test WordPress posting (creates 1 test draft, skips the site scan)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -52,6 +57,8 @@ jobs:
           WP_URL: ${{ secrets.WP_URL }}
           WP_USERNAME: ${{ secrets.WP_USERNAME }}
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          WP_POST_STATUS: ${{ vars.WP_POST_STATUS }}   # optional repo variable: draft (default) or publish
+          WP_TEST_POST: ${{ github.event.inputs.wp_test }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
@@ -63,6 +70,7 @@ jobs:
           git config user.name "govt-site-monitor-bot"
           git config user.email "actions@github.com"
           git add state.json recent_feed.json wp_daily_count.json
+          if [ -f meta.json ]; then git add meta.json; fi
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
