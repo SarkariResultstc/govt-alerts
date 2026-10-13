@@ -709,6 +709,17 @@ def wp_request(method, path, payload=None):
 
 
 def explain_wp_failure(status, body):
+    """Plain-language reason + the server's own reply (so you can tell a
+    WordPress permission error from a firewall block).
+    Returns (message, systemic)."""
+    message, systemic = _explain_wp_failure_core(status, body)
+    reply = " ".join(body.split())[:220]
+    if status and reply:
+        message += f"  | Server replied: {reply}"
+    return message, systemic
+
+
+def _explain_wp_failure_core(status, body):
     """Turn a failed WordPress response into a plain-language reason.
     Returns (message, systemic). 'systemic' = every post will fail the same
     way (login/URL/firewall problem), so there is no point trying the rest."""
