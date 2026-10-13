@@ -663,6 +663,34 @@ def _same_site(a, b):
     return na == nb
 
 
+CODE_VERSION = "2026-10-13-b"  # printed in the WordPress test so you can confirm the right file is live
+_WP_LAST = {}  # facts about the last WordPress HTTP answer, for the debug line
+
+
+def _remember_response(status, headers, body):
+    _WP_LAST.clear()
+    _WP_LAST["status"] = status
+    _WP_LAST["body_len"] = len(body)
+    try:
+        _WP_LAST["headers"] = {
+            k: v for k, v in headers.items()
+            if k.lower() not in ("set-cookie", "date", "content-length")
+        }
+    except Exception:
+        _WP_LAST["headers"] = {}
+
+
+def wp_debug_line():
+    """One line with what the server really sent back. A WordPress 403 always
+    carries a JSON body; an EMPTY body or odd headers (cloudflare, litespeed,
+    imunify, sucuri...) point to the host's firewall instead."""
+    if not _WP_LAST:
+        return ""
+    hdrs = "; ".join(f"{k}={str(v)[:60]}" for k, v in _WP_LAST.get("headers", {}).items())
+    return (f"[WP DEBUG] http={_WP_LAST.get('status')} body_bytes={_WP_LAST.get('body_len')} "
+            f"headers: {hdrs[:450]}")
+
+
 def wp_request(method, path, payload=None):
     """Call the WordPress REST API with a browser-like User-Agent (the default
     'Python-urllib' agent is blocked by most free hosts and firewalls).
@@ -689,7 +717,9 @@ def wp_request(method, path, payload=None):
             with _wp_opener.open(req, timeout=30) as resp:
                 if "/wp-json" in url:
                     WP_BASE = url.split("/wp-json")[0]
-                return resp.status, resp.read().decode("utf-8", "replace")
+                text = resp.read().decode("utf-8", "replace")
+                _remember_response(resp.status, resp.headers, text)
+                return resp.status, text
         except urllib.error.HTTPError as e:
             body = e.read().decode("utf-8", "replace")
             location = e.headers.get("Location") if e.headers else None
@@ -702,6 +732,7 @@ def wp_request(method, path, payload=None):
                 continue
             if "/wp-json" in url:
                 WP_BASE = url.split("/wp-json")[0]
+            _remember_response(e.code, e.headers, body)
             return e.code, body
         except Exception as e:
             return 0, str(e)
@@ -761,6 +792,7 @@ def wp_selftest():
             f"WP_APP_PASSWORD={'set' if WP_APP_PASSWORD else 'MISSING'}"
         )
         return False
+    print(f"[WP TEST] code version {CODE_VERSION}")
     print(f"[WP TEST] Site: {WP_BASE}  |  user: {WP_USERNAME}  |  post status: {WP_POST_STATUS}")
     status, body = wp_request("GET", "/wp-json/wp/v2/users/me?context=edit")
     if status == 200:
@@ -777,6 +809,7 @@ def wp_selftest():
         return True
     message, _ = explain_wp_failure(status, body)
     print(f"[WP TEST] FAIL: {message}")
+    print(wp_debug_line())
     return False
 
 
@@ -796,6 +829,7 @@ def run_wp_test_post():
     else:
         message, _ = explain_wp_failure(status, body)
         print(f"[WP TEST POST] FAIL: {message}")
+        print(wp_debug_line())
 
 
 def create_wp_post(site_name, title, link, ai_html=None, gov_links=None):
@@ -865,7 +899,7 @@ def create_wp_post(site_name, title, link, ai_html=None, gov_links=None):
         return True, False
 
     message, systemic = explain_wp_failure(status, body)
-    print(f"[WP FAIL] {title}\n          -> {message}", file=sys.stderr)
+    print(f"[WP FAIL] {title}\n          -> {message}\n          {wp_debug_line()}", file=sys.stderr)
     return False, systemic
 
 
