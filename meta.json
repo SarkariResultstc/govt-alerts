@@ -1,11 +1,27 @@
 {
-  "run_count": 6,
+  "run_count": 7,
   "site_fails": {
     "Indian Railways": 2,
     "RPSC": 3,
     "RSSB": 3,
     "MPPSC": 3,
-    "HPSC": 1
+    "HPSC": 2,
+    "DSSSB": 1
   },
-  "wp_pending": []
+  "wp_pending": [
+    {
+      "site": "HPPSC",
+      "title": "Advertisement Number: 68/10-2026 (Scientific Officer (Digital Forensic) in the Department of Home, H.P.",
+      "link": "https://hppsc.hp.gov.in/CommonControls/ViewCMSFile?qs=KI3gZ53zz1wSGo29lXLTBfw1DHezN8KfEg%2BrikZhi%2FLLqiZME0%2BQRfdkGlH8WWht66CPNimzr8pKbFIs%2FRWqc9HQY6harptGK%2FrmfA0x61Y%3D",
+      "attempts": 0,
+      "added": 1791955815
+    },
+    {
+      "site": "HPPSC",
+      "title": "Advertisement Number: 67/10-2026 (Assistant Director (Digital Forensics) in the Department of Home, H.P.",
+      "link": "https://hppsc.hp.gov.in/CommonControls/ViewCMSFile?qs=KI3gZ53zz1wSGo29lXLTBfw1DHezN8KfEg%2BrikZhi%2FLLqiZME0%2BQRfdkGlH8WWhtosj3Yj1%2FgYgyHtzRBFxBMj5deWjSNIHcwQpP7T5WcIQ%3D",
+      "attempts": 0,
+      "added": 1791955815
+    }
+  ]
 }
