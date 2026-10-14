@@ -1,16 +1,15 @@
 {
-  "run_count": 9,
+  "run_count": 10,
   "site_fails": {
     "Indian Railways": 2,
     "RPSC": 3,
     "RSSB": 3,
     "MPPSC": 3,
-    "HPSC": 3,
-    "DSSSB": 3,
-    "HPPSC": 1,
-    "Bihar Board Online": 1,
-    "LIC India": 1,
-    "ESIC": 1
+    "HPSC": 4,
+    "DSSSB": 4,
+    "HPPSC": 2,
+    "Bihar Board Online": 2,
+    "ESIC": 2
   },
   "wp_pending": [
     {
