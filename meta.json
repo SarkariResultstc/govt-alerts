@@ -1,10 +1,11 @@
 {
-  "run_count": 5,
+  "run_count": 6,
   "site_fails": {
     "Indian Railways": 2,
     "RPSC": 3,
     "RSSB": 3,
-    "MPPSC": 2
+    "MPPSC": 3,
+    "HPSC": 1
   },
   "wp_pending": []
 }
