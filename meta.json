@@ -1,12 +1,16 @@
 {
-  "run_count": 8,
+  "run_count": 9,
   "site_fails": {
     "Indian Railways": 2,
     "RPSC": 3,
     "RSSB": 3,
     "MPPSC": 3,
     "HPSC": 3,
-    "DSSSB": 2
+    "DSSSB": 3,
+    "HPPSC": 1,
+    "Bihar Board Online": 1,
+    "LIC India": 1,
+    "ESIC": 1
   },
   "wp_pending": [
     {
@@ -22,6 +26,48 @@
       "link": "https://hppsc.hp.gov.in/CommonControls/ViewCMSFile?qs=KI3gZ53zz1wSGo29lXLTBfw1DHezN8KfEg%2BrikZhi%2FLLqiZME0%2BQRfdkGlH8WWhtosj3Yj1%2FgYgyHtzRBFxBMj5deWjSNIHcwQpP7T5WcIQ%3D",
       "attempts": 0,
       "added": 1791955815
+    },
+    {
+      "site": "UP Police Board (UPPBPB)",
+      "title": "LATEST NOTICE: उत्तर प्रदेश पुलिस में आरक्षी नागरिक पुलिस एवं समकक्ष पदों पर सीधी भर्ती-2025 के अन्तर्गत अन्तिम चयन परिणाम का प्रकाशन ।",
+      "link": "https://uppbpb.gov.in/FilesUploaded/Notice/const 14 Oct 2026c0201978-124f-4557-9c66-e162a881cb82.pdf",
+      "attempts": 0,
+      "added": 1791991796
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of Demand dated October 14, 2026 issued against Jalaj Agrawal (PAN:AUDPA0226H) in the matter of market manipulation using social media in the scrip of Moksh Ornaments Limited - RC No. 9304 of 2026",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-demand-dated-october-14-2026-issued-against-jalaj-agrawal-pan-audpa0226h-in-the-matter-of-market-manipulation-using-social-media-in-the-scrip-of-moksh-ornaments-limited-rc-no-9304-of-2-_105253.html",
+      "attempts": 0,
+      "added": 1791991796
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of attachment dated October 13,2026 issued against M Sasikala under RC No.7699 of 2024 in the matter of Arvind Remedies Ltd.",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-attachment-dated-october-13-2026-issued-against-m-sasikala-under-rc-no-7699-of-2024-in-the-matter-of-arvind-remedies-ltd-_105220.html",
+      "attempts": 0,
+      "added": 1791991796
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of attachment dated October 13,2026 issued against Murali Prakash Naidu under RC No. 7707 of 2024 in the matter of Arvind Remedies Ltd.",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-attachment-dated-october-13-2026-issued-against-murali-prakash-naidu-under-rc-no-7707-of-2024-in-the-matter-of-arvind-remedies-ltd-_105222.html",
+      "attempts": 0,
+      "added": 1791991796
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of attachment dated October 13,2026 issued against Shreyanse Finance Ltd under RC No. 7708 of 2024 in the matter of Arvind Remedies Ltd.",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-attachment-dated-october-13-2026-issued-against-shreyanse-finance-ltd-under-rc-no-7708-of-2024-in-the-matter-of-arvind-remedies-ltd-_105224.html",
+      "attempts": 0,
+      "added": 1791991796
+    },
+    {
+      "site": "AIIMS Exams",
+      "title": "Notice for schedule of PG Research Methodology Examination - October, 2026",
+      "link": "https://rrpdocuments.aiimsexams.ac.in/1791884995924-662665645.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261014%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261014T151956Z&X-Amz-Expires=604800&X-Amz-Signature=1f2ca334d67dc217ced70379618e03144bc331e9fc2b3eb54564b49e9e1464b7&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+      "attempts": 0,
+      "added": 1791991796
     }
   ]
 }
