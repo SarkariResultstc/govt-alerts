@@ -1,5 +1,5 @@
 {
-  "run_count": 11,
+  "run_count": 12,
   "site_fails": {
     "Indian Railways": 2,
     "RPSC": 3,
@@ -9,7 +9,12 @@
     "DSSSB": 4,
     "HPPSC": 3,
     "Bihar Board Online": 3,
-    "ESIC": 3
+    "ESIC": 3,
+    "LIC India": 1,
+    "EPFO": 1,
+    "GPAT": 1,
+    "ICAR NTA": 1,
+    "UPSSSC": 1
   },
   "wp_pending": [
     {
