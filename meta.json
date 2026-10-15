@@ -1,5 +1,5 @@
 {
-  "run_count": 15,
+  "run_count": 16,
   "site_fails": {
     "Indian Railways": 2,
     "RPSC": 3,
@@ -14,25 +14,10 @@
     "GPAT": 3,
     "ICAR NTA": 3,
     "UPSSSC": 3,
-    "CUET": 1,
-    "UP Board Results": 1,
-    "UP Scholarship": 1
+    "UP Board Results": 2,
+    "UP Scholarship": 2
   },
   "wp_pending": [
-    {
-      "site": "HPPSC",
-      "title": "Advertisement Number: 68/10-2026 (Scientific Officer (Digital Forensic) in the Department of Home, H.P.",
-      "link": "https://hppsc.hp.gov.in/CommonControls/ViewCMSFile?qs=KI3gZ53zz1wSGo29lXLTBfw1DHezN8KfEg%2BrikZhi%2FLLqiZME0%2BQRfdkGlH8WWht66CPNimzr8pKbFIs%2FRWqc9HQY6harptGK%2FrmfA0x61Y%3D",
-      "attempts": 0,
-      "added": 1791955815
-    },
-    {
-      "site": "HPPSC",
-      "title": "Advertisement Number: 67/10-2026 (Assistant Director (Digital Forensics) in the Department of Home, H.P.",
-      "link": "https://hppsc.hp.gov.in/CommonControls/ViewCMSFile?qs=KI3gZ53zz1wSGo29lXLTBfw1DHezN8KfEg%2BrikZhi%2FLLqiZME0%2BQRfdkGlH8WWhtosj3Yj1%2FgYgyHtzRBFxBMj5deWjSNIHcwQpP7T5WcIQ%3D",
-      "attempts": 0,
-      "added": 1791955815
-    },
     {
       "site": "UP Police Board (UPPBPB)",
       "title": "LATEST NOTICE: उत्तर प्रदेश पुलिस में आरक्षी नागरिक पुलिस एवं समकक्ष पदों पर सीधी भर्ती-2025 के अन्तर्गत अन्तिम चयन परिणाम का प्रकाशन ।",
