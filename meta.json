@@ -1,5 +1,5 @@
 {
-  "run_count": 20,
+  "run_count": 21,
   "site_fails": {
     "Indian Railways": 2,
     "RPSC": 3,
@@ -16,8 +16,16 @@
     "UPSSSC": 4,
     "UP Board Results": 3,
     "UP Scholarship": 3,
-    "CSBC (Bihar Police Constable)": 2,
-    "BPSSC (Bihar Police SI)": 2
+    "CSBC (Bihar Police Constable)": 3,
+    "BPSSC (Bihar Police SI)": 3
   },
-  "wp_pending": []
+  "wp_pending": [
+    {
+      "site": "AIIMS Exams",
+      "title": "Programme of Interview to be held in the month of October and November 2026 on the direct recruitment basis to the various faculty posts for AIIMS, New Delhi and CAPFIMS",
+      "link": "https://rrpdocuments.aiimsexams.ac.in/1792132876573-651435368.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261016%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261016T114144Z&X-Amz-Expires=604800&X-Amz-Signature=a1084bc98cec9509f1723400d442c7a961880f9f450cfa1203987d914a62a4cb&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+      "attempts": 0,
+      "added": 1792151549
+    }
+  ]
 }
