@@ -1,7 +1,7 @@
 {
-  "run_count": 21,
+  "run_count": 22,
   "site_fails": {
-    "Indian Railways": 2,
+    "Indian Railways": 3,
     "RPSC": 3,
     "RSSB": 3,
     "MPPSC": 3,
@@ -17,7 +17,8 @@
     "UP Board Results": 3,
     "UP Scholarship": 3,
     "CSBC (Bihar Police Constable)": 3,
-    "BPSSC (Bihar Police SI)": 3
+    "BPSSC (Bihar Police SI)": 3,
+    "UPSC": 1
   },
   "wp_pending": [
     {
@@ -26,6 +27,13 @@
       "link": "https://rrpdocuments.aiimsexams.ac.in/1792132876573-651435368.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261016%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261016T114144Z&X-Amz-Expires=604800&X-Amz-Signature=a1084bc98cec9509f1723400d442c7a961880f9f450cfa1203987d914a62a4cb&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
       "attempts": 0,
       "added": 1792151549
+    },
+    {
+      "site": "NTA Notice Board Archive",
+      "title": "Public Notice Corrigendum to the Information Bulletin of UGC-NET December 2026 Examination",
+      "link": "http://cdnbbsr.s3waas.gov.in/s301eee509ee2f68dc6014898c309e86bf/uploads/2026/10/202610161905649093.pdf",
+      "attempts": 0,
+      "added": 1792165419
     }
   ]
 }
