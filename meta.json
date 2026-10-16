@@ -1,5 +1,5 @@
 {
-  "run_count": 22,
+  "run_count": 23,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 3,
@@ -18,7 +18,8 @@
     "UP Scholarship": 3,
     "CSBC (Bihar Police Constable)": 3,
     "BPSSC (Bihar Police SI)": 3,
-    "UPSC": 1
+    "UPSC": 2,
+    "UP Police Board (UPPBPB)": 1
   },
   "wp_pending": [
     {
@@ -34,6 +35,27 @@
       "link": "http://cdnbbsr.s3waas.gov.in/s301eee509ee2f68dc6014898c309e86bf/uploads/2026/10/202610161905649093.pdf",
       "attempts": 0,
       "added": 1792165419
+    },
+    {
+      "site": "IBPS",
+      "title": "NABARD Recruitment of Specialists On Contract – 2026-27 – CISO & DoS-CSITE Registration From 09-Oct-2026",
+      "link": "https://ibpsreg.ibps.in/nabardsjul26/",
+      "attempts": 0,
+      "added": 1792178456
+    },
+    {
+      "site": "IBPS",
+      "title": "NIICL Recruitment of 321 Administrative Officers Registration From 08-Oct-2026",
+      "link": "https://ibpsreg.ibps.in/niiclsep26/",
+      "attempts": 0,
+      "added": 1792178456
+    },
+    {
+      "site": "IBPS",
+      "title": "BOB Recruitment of Human Resource Registration From 04-Sep-2026",
+      "link": "https://ibpsreg.ibps.in/bonwejul26/",
+      "attempts": 0,
+      "added": 1792178456
     }
   ]
 }
