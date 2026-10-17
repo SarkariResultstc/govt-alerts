@@ -1,5 +1,5 @@
 {
-  "run_count": 31,
+  "run_count": 32,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 3,
@@ -18,7 +18,8 @@
     "UP Scholarship": 4,
     "CSBC (Bihar Police Constable)": 4,
     "BPSSC (Bihar Police SI)": 3,
-    "UPSC": 3
+    "UPSC": 3,
+    "CUET": 1
   },
   "wp_pending": [
     {
