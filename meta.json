@@ -1,5 +1,5 @@
 {
-  "run_count": 34,
+  "run_count": 35,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 3,
@@ -19,65 +19,9 @@
     "CSBC (Bihar Police Constable)": 4,
     "BPSSC (Bihar Police SI)": 3,
     "UPSC": 3,
-    "LIC India": 1
+    "IBPS": 1
   },
   "wp_pending": [
-    {
-      "site": "IBPS",
-      "title": "NABARD Recruitment of Specialists On Contract – 2026-27 – CISO & DoS-CSITE Registration From 09-Oct-2026",
-      "link": "https://ibpsreg.ibps.in/nabardsjul26/",
-      "attempts": 0,
-      "added": 1792178456
-    },
-    {
-      "site": "IBPS",
-      "title": "NIICL Recruitment of 321 Administrative Officers Registration From 08-Oct-2026",
-      "link": "https://ibpsreg.ibps.in/niiclsep26/",
-      "attempts": 0,
-      "added": 1792178456
-    },
-    {
-      "site": "IBPS",
-      "title": "BOB Recruitment of Human Resource Registration From 04-Sep-2026",
-      "link": "https://ibpsreg.ibps.in/bonwejul26/",
-      "attempts": 0,
-      "added": 1792178456
-    },
-    {
-      "site": "UPPSC",
-      "title": "LIST OF PROVISIONALLY SELECTED CANDIDATES IN ADVT. NO. A-2/E-1/2020, REGIONAL I..",
-      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmbO3OUZentgvOzjioxzzCo",
-      "attempts": 0,
-      "added": 1792188076
-    },
-    {
-      "site": "UPPSC",
-      "title": "NOTICE REGARDING ADVT. NO. A-7/E-1/2021, U.P. TECHNICAL EDUCATION (TEACHING) SER..",
-      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmbO3OUZentgoWo8RkhUpnV",
-      "attempts": 0,
-      "added": 1792188076
-    },
-    {
-      "site": "UPPSC",
-      "title": "NOTICE REGARDING DISTRICT INFORMATION SLIP FOR ADVT. NO:- D-6/E-1/2025 VETTING O..",
-      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmbO3OUZentgjJg+um+MX8d",
-      "attempts": 0,
-      "added": 1792188076
-    },
-    {
-      "site": "UPPSC",
-      "title": "NOTICE REGARDING DISTRICT SLIP FOR ADVT. NO:- D-6/E-1/2025, HOMEOPATHIC MEDICAL ..",
-      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmbO3OUZentgiIJLpDwLkww",
-      "attempts": 0,
-      "added": 1792188076
-    },
-    {
-      "site": "SEBI",
-      "title": "Notice for sale of immovable property in the matter of Asurre Agrowtech Limited through for E-Auction - Recovery Certificate No. 1725 of 2018",
-      "link": "https://www.sebi.gov.in/enforcement/auction-notice-under-recovery-proceedings/oct-2026/notice-for-sale-of-immovable-property-in-the-matter-of-asurre-agrowtech-limited-through-for-e-auction-recovery-certificate-no-1725-of-2018_105296.html",
-      "attempts": 0,
-      "added": 1792188076
-    },
     {
       "site": "NTA Notice Board Archive",
       "title": "Public Notice: Inviting Answer Key challenges for Joint CSIR-UGC NET June 2021 Examinations and display of Questions, Marked Responses and Provisional Answer Keys.",
