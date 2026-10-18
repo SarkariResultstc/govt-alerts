@@ -1,5 +1,5 @@
 {
-  "run_count": 33,
+  "run_count": 34,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 3,
@@ -18,16 +18,10 @@
     "UP Scholarship": 4,
     "CSBC (Bihar Police Constable)": 4,
     "BPSSC (Bihar Police SI)": 3,
-    "UPSC": 3
+    "UPSC": 3,
+    "LIC India": 1
   },
   "wp_pending": [
-    {
-      "site": "NTA Notice Board Archive",
-      "title": "Public Notice Corrigendum to the Information Bulletin of UGC-NET December 2026 Examination",
-      "link": "http://cdnbbsr.s3waas.gov.in/s301eee509ee2f68dc6014898c309e86bf/uploads/2026/10/202610161905649093.pdf",
-      "attempts": 0,
-      "added": 1792165419
-    },
     {
       "site": "IBPS",
       "title": "NABARD Recruitment of Specialists On Contract – 2026-27 – CISO & DoS-CSITE Registration From 09-Oct-2026",
