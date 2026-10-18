@@ -1,5 +1,5 @@
 {
-  "run_count": 32,
+  "run_count": 33,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 3,
@@ -18,17 +18,9 @@
     "UP Scholarship": 4,
     "CSBC (Bihar Police Constable)": 4,
     "BPSSC (Bihar Police SI)": 3,
-    "UPSC": 3,
-    "CUET": 1
+    "UPSC": 3
   },
   "wp_pending": [
-    {
-      "site": "AIIMS Exams",
-      "title": "Programme of Interview to be held in the month of October and November 2026 on the direct recruitment basis to the various faculty posts for AIIMS, New Delhi and CAPFIMS",
-      "link": "https://rrpdocuments.aiimsexams.ac.in/1792132876573-651435368.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261016%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261016T114144Z&X-Amz-Expires=604800&X-Amz-Signature=a1084bc98cec9509f1723400d442c7a961880f9f450cfa1203987d914a62a4cb&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-      "attempts": 0,
-      "added": 1792151549
-    },
     {
       "site": "NTA Notice Board Archive",
       "title": "Public Notice Corrigendum to the Information Bulletin of UGC-NET December 2026 Examination",
