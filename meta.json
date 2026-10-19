@@ -1,5 +1,5 @@
 {
-  "run_count": 40,
+  "run_count": 41,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 3,
@@ -20,62 +20,5 @@
     "BPSSC (Bihar Police SI)": 4,
     "UPSC": 3
   },
-  "wp_pending": [
-    {
-      "site": "NTA Notice Board Archive",
-      "title": "Public Notice: Inviting Answer Key challenges for Joint CSIR-UGC NET June 2021 Examinations and display of Questions, Marked Responses and Provisional Answer Keys.",
-      "link": "http://csirnet.nta.nic.in",
-      "attempts": 0,
-      "added": 1792239872
-    },
-    {
-      "site": "NTA Notice Board Archive",
-      "title": "Press Release: UGC-NET December 2020 & June 2021 Result",
-      "link": "http://ugcnet.nta.nic.in",
-      "attempts": 0,
-      "added": 1792239872
-    },
-    {
-      "site": "NTA Notice Board Archive",
-      "title": "Display of Admit Cards of Study Webs of Active–Learning for Young Aspiring Minds (SWAYAM) July 2021 Semester",
-      "link": "http://https://swayam.nta.ac.in",
-      "attempts": 0,
-      "added": 1792239872
-    },
-    {
-      "site": "NTA Notice Board Archive",
-      "title": "PRESS RELEASE: Result of National Eligibility cum Entrance Test (UG) – 2021",
-      "link": "http://neet.nta.nic.in/Webinfo",
-      "attempts": 0,
-      "added": 1792239872
-    },
-    {
-      "site": "UPPSC",
-      "title": "LIST OF PROVISIONALLY SELECTED CANDIDATES IN ADVT. NO. A-5/E-1/2025, ASST. TEACH..",
-      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmzNJIRVKnDRwIQMjGyuh7N",
-      "attempts": 0,
-      "added": 1792239872
-    },
-    {
-      "site": "UPPSC",
-      "title": "NOTICE REGARDING DISTRICT INFORMATION SLIP FOR ADVT. NO:- D-6/E-1/2025, DENTAL S..",
-      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmzNJIRVKnDR5BHS7ZpRn4S",
-      "attempts": 0,
-      "added": 1792239872
-    },
-    {
-      "site": "UPPSC",
-      "title": "17 Nov 2026 LIST OF PROVISIONALLY SELECTED CANDIDATES IN ADVT. NO. A-5/E-1/2025, ASST. TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, HOME SCIENCE",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagmzNJIRVKnDR3Q27gA3uurt",
-      "attempts": 0,
-      "added": 1792239872
-    },
-    {
-      "site": "UPPSC",
-      "title": "28 Oct 2026 NOTICE REGARDING DISTRICT INFORMATION SLIP FOR ADVT. NO:- D-6/E-1/2025, DENTAL SURGEON (SCREENING) EXAMINATION-2025",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagmzNJIRVKnDR47USuPnmjFz",
-      "attempts": 0,
-      "added": 1792239872
-    }
-  ]
+  "wp_pending": []
 }
