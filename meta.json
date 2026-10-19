@@ -1,5 +1,5 @@
 {
-  "run_count": 41,
+  "run_count": 42,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 3,
@@ -20,5 +20,13 @@
     "BPSSC (Bihar Police SI)": 4,
     "UPSC": 3
   },
-  "wp_pending": []
+  "wp_pending": [
+    {
+      "site": "UPPSC",
+      "title": "CLICK HERE TO DOWNLOAD EXAM DISTRICT SLIP ADVT. NO.- D-6/E-1/2025, DENTAL SURGEON (SCREENING) EXAMINATION-2025.",
+      "link": "https://uppsc.up.nic.in/CandidatePages/Advertismentwise_DownloadDocument.aspx?inptprmtr=dc",
+      "attempts": 0,
+      "added": 1792392984
+    }
+  ]
 }
