@@ -1,5 +1,5 @@
 {
-  "run_count": 42,
+  "run_count": 43,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 3,
@@ -27,6 +27,20 @@
       "link": "https://uppsc.up.nic.in/CandidatePages/Advertismentwise_DownloadDocument.aspx?inptprmtr=dc",
       "attempts": 0,
       "added": 1792392984
+    },
+    {
+      "site": "AIIMS Exams",
+      "title": "Application form for Special recruitment drive for Junior Resident-July 2026",
+      "link": "https://rrpdocuments.aiimsexams.ac.in/1792408885598-670662232.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261019%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261019T140353Z&X-Amz-Expires=604800&X-Amz-Signature=46b9915d12dbcd126e422f4382766980eea116a77be0d4e637e2fead7e7639b4&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+      "attempts": 0,
+      "added": 1792418898
+    },
+    {
+      "site": "AIIMS Exams",
+      "title": "Special recruitment drive for the post of Junior Resident for the remaining period up to 31.12.2026",
+      "link": "https://rrpdocuments.aiimsexams.ac.in/1792408754061-626307332.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261019%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261019T140353Z&X-Amz-Expires=604800&X-Amz-Signature=8a0065245991907da723edb2d5d0d29722bac1ab09fe3bb9f05eb0b32135979f&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+      "attempts": 0,
+      "added": 1792418898
     }
   ]
 }

@@ -1,17 +1,5 @@
 [
   {
-    "site": "UPPSC",
-    "title": "CLICK HERE TO DOWNLOAD MARKSHEET & CUT OFF FOR ADVT. NO. D-4-E-1-2025, [S-04-01].",
-    "link": "https://uppsc.up.nic.in/CandidatePages/Advertismentwise_DownloadDocument.aspx?inptprmtr=mc",
-    "time_utc": "2026-10-12T11:53:45.630858+00:00"
-  },
-  {
-    "site": "UPPSC",
-    "title": "19 Oct 2026 NOTICE REGARDING DOWNLOAD MARKSHEET & CUT OFF FOR ADVT. NO. D-4-E-1-2025, [S-04-01]",
-    "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagmbO3OUZentgu3Urm7BhrHO",
-    "time_utc": "2026-10-12T11:53:46.173354+00:00"
-  },
-  {
     "site": "HPPSC",
     "title": "Advertisement Number: 68/10-2026 (Scientific Officer (Digital Forensic) in the Department of Home, H.P.",
     "link": "https://hppsc.hp.gov.in/CommonControls/ViewCMSFile?qs=KI3gZ53zz1wSGo29lXLTBfw1DHezN8KfEg%2BrikZhi%2FLLqiZME0%2BQRfdkGlH8WWht66CPNimzr8pKbFIs%2FRWqc9HQY6harptGK%2FrmfA0x61Y%3D",
@@ -178,5 +166,17 @@
     "title": "CLICK HERE TO DOWNLOAD EXAM DISTRICT SLIP ADVT. NO.- D-6/E-1/2025, DENTAL SURGEON (SCREENING) EXAMINATION-2025.",
     "link": "https://uppsc.up.nic.in/CandidatePages/Advertismentwise_DownloadDocument.aspx?inptprmtr=dc",
     "time_utc": "2026-10-19T06:54:19.620383+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Application form for Special recruitment drive for Junior Resident-July 2026",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1792408885598-670662232.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261019%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261019T140353Z&X-Amz-Expires=604800&X-Amz-Signature=46b9915d12dbcd126e422f4382766980eea116a77be0d4e637e2fead7e7639b4&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-10-19T14:07:46.538757+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Special recruitment drive for the post of Junior Resident for the remaining period up to 31.12.2026",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1792408754061-626307332.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261019%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261019T140353Z&X-Amz-Expires=604800&X-Amz-Signature=8a0065245991907da723edb2d5d0d29722bac1ab09fe3bb9f05eb0b32135979f&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-10-19T14:07:47.219810+00:00"
   }
 ]
