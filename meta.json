@@ -1,11 +1,11 @@
 {
-  "run_count": 49,
+  "run_count": 50,
   "site_fails": {
     "Indian Railways": 3,
-    "RPSC": 3,
-    "RSSB": 3,
-    "MPPSC": 3,
-    "HPSC": 4,
+    "RPSC": 4,
+    "RSSB": 4,
+    "MPPSC": 4,
+    "HPSC": 5,
     "DSSSB": 4,
     "HPPSC": 3,
     "Bihar Board Online": 3,
@@ -23,13 +23,6 @@
     "NTA": 2
   },
   "wp_pending": [
-    {
-      "site": "UPPSC",
-      "title": "CLICK HERE TO DOWNLOAD EXAM DISTRICT SLIP ADVT. NO.- D-6/E-1/2025, DENTAL SURGEON (SCREENING) EXAMINATION-2025.",
-      "link": "https://uppsc.up.nic.in/CandidatePages/Advertismentwise_DownloadDocument.aspx?inptprmtr=dc",
-      "attempts": 0,
-      "added": 1792392984
-    },
     {
       "site": "AIIMS Exams",
       "title": "Application form for Special recruitment drive for Junior Resident-July 2026",
