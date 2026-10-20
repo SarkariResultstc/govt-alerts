@@ -1,5 +1,5 @@
 {
-  "run_count": 50,
+  "run_count": 51,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 4,
@@ -19,8 +19,9 @@
     "CSBC (Bihar Police Constable)": 5,
     "BPSSC (Bihar Police SI)": 4,
     "UPSC": 3,
-    "NTA Notice Board Archive": 2,
-    "NTA": 2
+    "NTA Notice Board Archive": 3,
+    "NTA": 3,
+    "DRDO": 1
   },
   "wp_pending": [
     {
