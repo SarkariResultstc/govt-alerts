@@ -1,5 +1,5 @@
 {
-  "run_count": 53,
+  "run_count": 54,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 4,
@@ -21,8 +21,15 @@
     "UPSC": 3,
     "NTA Notice Board Archive": 3,
     "NTA": 3,
-    "DRDO": 3,
-    "LIC India": 1
+    "DRDO": 3
   },
-  "wp_pending": []
+  "wp_pending": [
+    {
+      "site": "UPPSC",
+      "title": "CLICK HERE TO DOWNLOAD ADMIT CARD FOR ADVT. NO.- D-6/E-1/2025, HOMEOPATHIC MEDICAL OFFICER (DIRECTORATE OF HOMEOPATHY) (S-11/32) /(LABOUR DEPT.)(S-11/31) (SCREENING) EXAM.-2025 (EXAM DATED - 24/10/2026).",
+      "link": "https://uppsc.up.nic.in/CandidatePages/Advertismentwise_DownloadDocument.aspx?inptprmtr=ac",
+      "attempts": 0,
+      "added": 1792585063
+    }
+  ]
 }
