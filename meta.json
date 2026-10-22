@@ -1,5 +1,5 @@
 {
-  "run_count": 60,
+  "run_count": 61,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 4,
@@ -44,6 +44,13 @@
       "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/sebi-order-for-compliance-notice-of-attachment-of-bank-post-office-account-for-recovery-certificate-no-7137-of-2023-against-karan-subhashchandra-ravde-in-the-matter-of-india-infraspace-limited_105379.html",
       "attempts": 0,
       "added": 1792672368
+    },
+    {
+      "site": "SEBI",
+      "title": "Certificate No. RC9307 of 2026 Notice of Demand in respect of Sri Salasar Suppliers Pvt. Ltd. (PAN: AADCS8457R) in the matter of Decillion Finance Limited",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/certificate-no-rc9307-of-2026-notice-of-demand-in-respect-of-sri-salasar-suppliers-pvt-ltd-pan-aadcs8457r-in-the-matter-of-decillion-finance-limited_105388.html",
+      "attempts": 0,
+      "added": 1792689799
     }
   ]
 }
