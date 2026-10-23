@@ -1,5 +1,5 @@
 {
-  "run_count": 68,
+  "run_count": 69,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 4,
@@ -21,8 +21,7 @@
     "UPSC": 3,
     "NTA Notice Board Archive": 4,
     "NTA": 3,
-    "DRDO": 4,
-    "LIC India": 2
+    "DRDO": 4
   },
   "wp_pending": [
     {
