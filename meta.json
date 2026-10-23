@@ -1,5 +1,5 @@
 {
-  "run_count": 65,
+  "run_count": 66,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 4,
@@ -21,9 +21,7 @@
     "UPSC": 3,
     "NTA Notice Board Archive": 4,
     "NTA": 3,
-    "DRDO": 4,
-    "CUET": 1,
-    "LIC India": 1
+    "DRDO": 4
   },
   "wp_pending": [
     {
@@ -53,6 +51,27 @@
       "link": "https://uppsc.up.nic.in/CandidatePages/Advertismentwise_DownloadDocument.aspx?inptprmtr=ac",
       "attempts": 0,
       "added": 1792737590
+    },
+    {
+      "site": "UPPSC",
+      "title": "CLICK HERE FOR ADVT. NO. A-5/E-1/2025, ASSISTANT TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, (HOME SCIENCE) (DOCUMENT VERIFICATION).",
+      "link": "https://uppsc.up.nic.in/CandidatePages/OTRAppForm/Applicant_OtrAuthentication.aspx?WEqGEem9m0+8Y4tNQqJiNYurmbKsjJR/fgSlThSTh6o=",
+      "attempts": 0,
+      "added": 1792757114
+    },
+    {
+      "site": "UPPSC",
+      "title": "30 Oct 2026 NOTICE REAGARDING DOCUMENT VERIFICATION FOR ADVT. NO. A-5/E-1/2025, ASSISTANT TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, (HOME SCIENCE).",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagmzNJIRVKnDR3aQH/S0HdIS",
+      "attempts": 0,
+      "added": 1792757114
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of Demand dated October 21, 2026 against Subair P (PAN: BDBPP7195N) in the matter of M/s Inditrade Capital Limited (formerly known as M/s JRG Securities Ltd.) under RC No. 9306 of 2026",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-demand-dated-october-21-2026-against-subair-p-pan-bdbpp7195n-in-the-matter-of-m-s-inditrade-capital-limited-formerly-known-as-m-s-jrg-securities-ltd-under-rc-no-9306-of-2026_105398.html",
+      "attempts": 0,
+      "added": 1792757114
     }
   ]
 }
