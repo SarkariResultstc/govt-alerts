@@ -1,5 +1,5 @@
 {
-  "run_count": 64,
+  "run_count": 65,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 4,
@@ -21,7 +21,9 @@
     "UPSC": 3,
     "NTA Notice Board Archive": 4,
     "NTA": 3,
-    "DRDO": 4
+    "DRDO": 4,
+    "CUET": 1,
+    "LIC India": 1
   },
   "wp_pending": [
     {
@@ -44,6 +46,13 @@
       "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/certificate-no-rc9307-of-2026-notice-of-demand-in-respect-of-sri-salasar-suppliers-pvt-ltd-pan-aadcs8457r-in-the-matter-of-decillion-finance-limited_105388.html",
       "attempts": 0,
       "added": 1792689799
+    },
+    {
+      "site": "UPPSC",
+      "title": "CLICK HERE TO DOWNLOAD ADMIT CARD FOR ADVT. NO.- D-6/E-1/2025, VETTING OFFICER (SCREENING) EXAMINATION-2025 ,DEPT NO. S-02/09 (EXAM DATED - 26/10/2026).",
+      "link": "https://uppsc.up.nic.in/CandidatePages/Advertismentwise_DownloadDocument.aspx?inptprmtr=ac",
+      "attempts": 0,
+      "added": 1792737590
     }
   ]
 }
