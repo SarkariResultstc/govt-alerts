@@ -1,17 +1,5 @@
 [
   {
-    "site": "AIIMS Exams",
-    "title": "Programme of Interview to be held in the month of October and November 2026 on the direct recruitment basis to the various faculty posts for AIIMS, New Delhi and CAPFIMS",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1792132876573-651435368.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261016%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261016T114144Z&X-Amz-Expires=604800&X-Amz-Signature=a1084bc98cec9509f1723400d442c7a961880f9f450cfa1203987d914a62a4cb&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-10-16T11:42:25.168319+00:00"
-  },
-  {
-    "site": "NTA Notice Board Archive",
-    "title": "Public Notice Corrigendum to the Information Bulletin of UGC-NET December 2026 Examination",
-    "link": "http://cdnbbsr.s3waas.gov.in/s301eee509ee2f68dc6014898c309e86bf/uploads/2026/10/202610161905649093.pdf",
-    "time_utc": "2026-10-16T15:33:41.825168+00:00"
-  },
-  {
     "site": "NTA",
     "title": "Public Notice Corrigendum to the Information Bulletin of UGC-NET December 2026 Examination",
     "link": "http://cdnbbsr.s3waas.gov.in/s301eee509ee2f68dc6014898c309e86bf/uploads/2026/10/202610161905649093.pdf",
@@ -178,5 +166,17 @@
     "title": "Notice of Demand dated October 21, 2026 against Subair P (PAN: BDBPP7195N) in the matter of M/s Inditrade Capital Limited (formerly known as M/s JRG Securities Ltd.) under RC No. 9306 of 2026",
     "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-demand-dated-october-21-2026-against-subair-p-pan-bdbpp7195n-in-the-matter-of-m-s-inditrade-capital-limited-formerly-known-as-m-s-jrg-securities-ltd-under-rc-no-9306-of-2026_105398.html",
     "time_utc": "2026-10-23T12:05:14.112714+00:00"
+  },
+  {
+    "site": "UPPSC",
+    "title": "06 Nov 2026 NOTICE REGARDING DISTRICT INFORMATION SLIP / ADMIT CARD FOR ADVT. NO:- D-3/E-1/2023, LECTURERS UNDER UTTAR PRADESH AYUSH (AYURVEDA) DEPARTMENT",
+    "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagmzNJIRVKnDRzTHz/jf4ZQm",
+    "time_utc": "2026-10-24T06:22:42.999202+00:00"
+  },
+  {
+    "site": "UP Police Board (UPPBPB)",
+    "title": "LATEST NOTICE: उत्तर प्रदेश होमगार्ड्स के पदों पर एनरोलमेंट -2025 के अन्तर्गत अन्तिम अंकों के प्रकाशन के सम्बन्ध में सूचना |",
+    "link": "https://uppbpb.gov.in/FilesUploaded/Notice/HG2025_Marks_Notice602be8cf-8ca2-47a1-9c85-b03cb41d37e0.pdf",
+    "time_utc": "2026-10-24T06:23:00.725092+00:00"
   }
 ]

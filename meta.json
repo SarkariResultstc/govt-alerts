@@ -1,5 +1,5 @@
 {
-  "run_count": 70,
+  "run_count": 71,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 4,
@@ -21,16 +21,10 @@
     "UPSC": 3,
     "NTA Notice Board Archive": 5,
     "NTA": 3,
-    "DRDO": 4
+    "DRDO": 4,
+    "CUET": 1
   },
   "wp_pending": [
-    {
-      "site": "SEBI",
-      "title": "Certificate No. RC9307 of 2026 Notice of Demand in respect of Sri Salasar Suppliers Pvt. Ltd. (PAN: AADCS8457R) in the matter of Decillion Finance Limited",
-      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/certificate-no-rc9307-of-2026-notice-of-demand-in-respect-of-sri-salasar-suppliers-pvt-ltd-pan-aadcs8457r-in-the-matter-of-decillion-finance-limited_105388.html",
-      "attempts": 0,
-      "added": 1792689799
-    },
     {
       "site": "UPPSC",
       "title": "CLICK HERE TO DOWNLOAD ADMIT CARD FOR ADVT. NO.- D-6/E-1/2025, VETTING OFFICER (SCREENING) EXAMINATION-2025 ,DEPT NO. S-02/09 (EXAM DATED - 26/10/2026).",
@@ -58,6 +52,20 @@
       "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-demand-dated-october-21-2026-against-subair-p-pan-bdbpp7195n-in-the-matter-of-m-s-inditrade-capital-limited-formerly-known-as-m-s-jrg-securities-ltd-under-rc-no-9306-of-2026_105398.html",
       "attempts": 0,
       "added": 1792757114
+    },
+    {
+      "site": "UPPSC",
+      "title": "06 Nov 2026 NOTICE REGARDING DISTRICT INFORMATION SLIP / ADMIT CARD FOR ADVT. NO:- D-3/E-1/2023, LECTURERS UNDER UTTAR PRADESH AYUSH (AYURVEDA) DEPARTMENT",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagmzNJIRVKnDRzTHz/jf4ZQm",
+      "attempts": 0,
+      "added": 1792823035
+    },
+    {
+      "site": "UP Police Board (UPPBPB)",
+      "title": "LATEST NOTICE: उत्तर प्रदेश होमगार्ड्स के पदों पर एनरोलमेंट -2025 के अन्तर्गत अन्तिम अंकों के प्रकाशन के सम्बन्ध में सूचना |",
+      "link": "https://uppbpb.gov.in/FilesUploaded/Notice/HG2025_Marks_Notice602be8cf-8ca2-47a1-9c85-b03cb41d37e0.pdf",
+      "attempts": 0,
+      "added": 1792823035
     }
   ]
 }
