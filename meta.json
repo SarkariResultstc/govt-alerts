@@ -1,5 +1,5 @@
 {
-  "run_count": 74,
+  "run_count": 75,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 4,
@@ -22,16 +22,10 @@
     "NTA Notice Board Archive": 5,
     "NTA": 3,
     "DRDO": 4,
-    "LIC India": 1
+    "LIC India": 2,
+    "Employment News": 1
   },
   "wp_pending": [
-    {
-      "site": "UPPSC",
-      "title": "CLICK HERE TO DOWNLOAD ADMIT CARD FOR ADVT. NO.- D-6/E-1/2025, VETTING OFFICER (SCREENING) EXAMINATION-2025 ,DEPT NO. S-02/09 (EXAM DATED - 26/10/2026).",
-      "link": "https://uppsc.up.nic.in/CandidatePages/Advertismentwise_DownloadDocument.aspx?inptprmtr=ac",
-      "attempts": 0,
-      "added": 1792737590
-    },
     {
       "site": "UPPSC",
       "title": "CLICK HERE FOR ADVT. NO. A-5/E-1/2025, ASSISTANT TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, (HOME SCIENCE) (DOCUMENT VERIFICATION).",
