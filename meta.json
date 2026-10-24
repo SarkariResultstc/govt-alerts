@@ -1,5 +1,5 @@
 {
-  "run_count": 69,
+  "run_count": 70,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 4,
@@ -11,33 +11,19 @@
     "Bihar Board Online": 3,
     "ESIC": 5,
     "EPFO": 5,
-    "GPAT": 6,
-    "ICAR NTA": 6,
-    "UPSSSC": 6,
-    "UP Board Results": 5,
-    "UP Scholarship": 5,
-    "CSBC (Bihar Police Constable)": 5,
+    "GPAT": 7,
+    "ICAR NTA": 7,
+    "UPSSSC": 7,
+    "UP Board Results": 6,
+    "UP Scholarship": 6,
+    "CSBC (Bihar Police Constable)": 6,
     "BPSSC (Bihar Police SI)": 4,
     "UPSC": 3,
-    "NTA Notice Board Archive": 4,
+    "NTA Notice Board Archive": 5,
     "NTA": 3,
     "DRDO": 4
   },
   "wp_pending": [
-    {
-      "site": "SEBI",
-      "title": "SEBI Order for Compliance Notice of Attachment Demat Account and Mutual Fund Folio(S) for Recovery Certificate No.7137 of 2023 against Karan Subhashchandra Ravde in the matter of India Infraspace Limited",
-      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/sebi-order-for-compliance-notice-of-attachment-demat-account-and-mutual-fund-folio-s-for-recovery-certificate-no-7137-of-2023-against-karan-subhashchandra-ravde-in-the-matter-of-india-infraspace-limi-_105382.html",
-      "attempts": 0,
-      "added": 1792672368
-    },
-    {
-      "site": "SEBI",
-      "title": "SEBI Order for Compliance Notice of Attachment of Bank/Post office Account for Recovery Certificate No.7137 of 2023 against Karan Subhashchandra Ravde in the matter of India Infraspace Limited",
-      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/sebi-order-for-compliance-notice-of-attachment-of-bank-post-office-account-for-recovery-certificate-no-7137-of-2023-against-karan-subhashchandra-ravde-in-the-matter-of-india-infraspace-limited_105379.html",
-      "attempts": 0,
-      "added": 1792672368
-    },
     {
       "site": "SEBI",
       "title": "Certificate No. RC9307 of 2026 Notice of Demand in respect of Sri Salasar Suppliers Pvt. Ltd. (PAN: AADCS8457R) in the matter of Decillion Finance Limited",
