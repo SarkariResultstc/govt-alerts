@@ -1,5 +1,5 @@
 {
-  "run_count": 81,
+  "run_count": 82,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 4,
@@ -24,20 +24,5 @@
     "DRDO": 4,
     "Employment News": 3
   },
-  "wp_pending": [
-    {
-      "site": "UPPSC",
-      "title": "06 Nov 2026 NOTICE REGARDING DISTRICT INFORMATION SLIP / ADMIT CARD FOR ADVT. NO:- D-3/E-1/2023, LECTURERS UNDER UTTAR PRADESH AYUSH (AYURVEDA) DEPARTMENT",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagmzNJIRVKnDRzTHz/jf4ZQm",
-      "attempts": 0,
-      "added": 1792823035
-    },
-    {
-      "site": "UP Police Board (UPPBPB)",
-      "title": "LATEST NOTICE: उत्तर प्रदेश होमगार्ड्स के पदों पर एनरोलमेंट -2025 के अन्तर्गत अन्तिम अंकों के प्रकाशन के सम्बन्ध में सूचना |",
-      "link": "https://uppbpb.gov.in/FilesUploaded/Notice/HG2025_Marks_Notice602be8cf-8ca2-47a1-9c85-b03cb41d37e0.pdf",
-      "attempts": 0,
-      "added": 1792823035
-    }
-  ]
+  "wp_pending": []
 }
