@@ -1,5 +1,5 @@
 {
-  "run_count": 85,
+  "run_count": 86,
   "site_fails": {
     "Indian Railways": 3,
     "RPSC": 4,
@@ -22,9 +22,22 @@
     "NTA Notice Board Archive": 5,
     "NTA": 3,
     "DRDO": 4,
-    "Employment News": 3,
-    "IBPS": 1,
-    "LIC India": 1
+    "Employment News": 3
   },
-  "wp_pending": []
+  "wp_pending": [
+    {
+      "site": "UPPSC",
+      "title": "CLICK HERE TO APPLY FOR ADVT.NO. A-4/E-1/2026,SAMIKSHA ADHIKARI/SAHAYAK SAMIKSHA ADHIKARI ETC.(GEN. / SPL. RECTT.) EXAM.-2026.",
+      "link": "https://uppsc.up.nic.in/CandidatePages/Notifications.aspx",
+      "attempts": 0,
+      "added": 1792997871
+    },
+    {
+      "site": "UPPSC",
+      "title": "06 Nov 2026 NOTICE REGARDING DISTRICT INFORMATION SLIP / ADMIT CARD FOR ADVT. NO:- D-3/E-1/2023, LECTURER GOVT. AYURVEDA DEGREE COLLEGE AND HOSPITAL (SCREENING) .....",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagmzNJIRVKnDRzTHz/jf4ZQm",
+      "attempts": 0,
+      "added": 1792997871
+    }
+  ]
 }
