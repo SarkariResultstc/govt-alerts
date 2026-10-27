@@ -1,11 +1,10 @@
 {
-  "run_count": 89,
+  "run_count": 90,
   "site_fails": {
-    "Indian Railways": 3,
-    "RPSC": 4,
-    "RSSB": 4,
-    "MPPSC": 4,
-    "HPSC": 5,
+    "RPSC": 5,
+    "RSSB": 5,
+    "MPPSC": 5,
+    "HPSC": 6,
     "DSSSB": 4,
     "HPPSC": 3,
     "Bihar Board Online": 3,
@@ -20,7 +19,6 @@
     "BPSSC (Bihar Police SI)": 4,
     "UPSC": 3,
     "NTA Notice Board Archive": 5,
-    "NTA": 3,
     "DRDO": 4,
     "Employment News": 3
   },
