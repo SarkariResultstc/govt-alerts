@@ -1,35 +1,5 @@
 [
   {
-    "site": "IBPS",
-    "title": "NIICL Recruitment of 321 Administrative Officers Registration From 08-Oct-2026",
-    "link": "https://ibpsreg.ibps.in/niiclsep26/",
-    "time_utc": "2026-10-16T19:03:20.162793+00:00"
-  },
-  {
-    "site": "IBPS",
-    "title": "BOB Recruitment of Human Resource Registration From 04-Sep-2026",
-    "link": "https://ibpsreg.ibps.in/bonwejul26/",
-    "time_utc": "2026-10-16T19:03:20.649042+00:00"
-  },
-  {
-    "site": "UPPSC",
-    "title": "LIST OF PROVISIONALLY SELECTED CANDIDATES IN ADVT. NO. A-2/E-1/2020, REGIONAL I..",
-    "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmbO3OUZentgvOzjioxzzCo",
-    "time_utc": "2026-10-16T22:00:09.227974+00:00"
-  },
-  {
-    "site": "UPPSC",
-    "title": "NOTICE REGARDING ADVT. NO. A-7/E-1/2021, U.P. TECHNICAL EDUCATION (TEACHING) SER..",
-    "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmbO3OUZentgoWo8RkhUpnV",
-    "time_utc": "2026-10-16T22:00:09.713515+00:00"
-  },
-  {
-    "site": "UPPSC",
-    "title": "NOTICE REGARDING DISTRICT INFORMATION SLIP FOR ADVT. NO:- D-6/E-1/2025 VETTING O..",
-    "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmbO3OUZentgjJg+um+MX8d",
-    "time_utc": "2026-10-16T22:00:10.198877+00:00"
-  },
-  {
     "site": "UPPSC",
     "title": "NOTICE REGARDING DISTRICT SLIP FOR ADVT. NO:- D-6/E-1/2025, HOMEOPATHIC MEDICAL ..",
     "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagmbO3OUZentgiIJLpDwLkww",
@@ -178,5 +148,35 @@
     "title": "06 Nov 2026 NOTICE REGARDING DISTRICT INFORMATION SLIP / ADMIT CARD FOR ADVT. NO:- D-3/E-1/2023, LECTURER GOVT. AYURVEDA DEGREE COLLEGE AND HOSPITAL (SCREENING) .....",
     "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagmzNJIRVKnDRzTHz/jf4ZQm",
     "time_utc": "2026-10-26T06:56:07.117257+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Date Sheet Notification No. 163 / 2026 of B.Sc. Operation Theatre Technology Phase - I, II & III (Supplementary) Professional Examinations to be held in November 2026",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1793179935284-70874835.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261028%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261028T141700Z&X-Amz-Expires=604800&X-Amz-Signature=be7de8c3f28fb01a0d292a032427f690c46b8aaa7688d8a5bae3af32ff118e7d&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-10-28T14:21:21.029725+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Date Sheet Notification No. 162 / 2026 of Bachelor of Medical Radiology and Imaging Technology Phase - I, II & III (Supplementary) Professional Examinations to be held in November 2026",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1793179857760-421851599.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261028%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261028T141700Z&X-Amz-Expires=604800&X-Amz-Signature=d204956e7d2404772eee5a99d8d8c4bff460ad9b8f14d5fb460c7014576555c4&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-10-28T14:21:21.673766+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Date Sheet Notification No. 164 / 2026 of Bachelor of Optometry Phase - III (Supplementary)-Professional Examinations to be held in November 2026",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1793179781281-224244829.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261028%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261028T141700Z&X-Amz-Expires=604800&X-Amz-Signature=89bbd13de6f8451fd141346e07645f324adbb6c10e3205de96543d2124c5843d&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-10-28T14:21:22.350016+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Date Sheet Notification No. 165 / 2026 of Second MBBS Professional Examinations to be held in December 2026",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1793179530216-194391667.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261028%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261028T141700Z&X-Amz-Expires=604800&X-Amz-Signature=9c7b70b17802e7e95fd0f03a2737e6be75bfcdc7bdf1e61687c6dee766eaccda&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-10-28T14:21:22.995240+00:00"
+  },
+  {
+    "site": "UPPSC",
+    "title": "28 Nov 2026 LIST OF PROVISIONALLY SELECTED CANDIDATES IN ADVT. NO. A-5/E-1/2025, ASST. TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, MATH",
+    "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagnfpuRH59X6AccoBLogdbR7",
+    "time_utc": "2026-10-28T14:22:57.963205+00:00"
   }
 ]
