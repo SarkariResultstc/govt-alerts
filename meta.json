@@ -1,5 +1,5 @@
 {
-  "run_count": 97,
+  "run_count": 98,
   "site_fails": {
     "RPSC": 5,
     "RSSB": 5,
@@ -20,7 +20,8 @@
     "UPSC": 3,
     "NTA Notice Board Archive": 5,
     "DRDO": 4,
-    "Employment News": 3
+    "Employment News": 3,
+    "Indian Railways": 1
   },
   "wp_pending": [
     {
@@ -57,6 +58,20 @@
       "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagnfpuRH59X6AccoBLogdbR7",
       "attempts": 0,
       "added": 1793197386
+    },
+    {
+      "site": "UPPSC",
+      "title": "17 Dec 2026 NOTICE REGARDING ADVT. NO. D-2/E-1/2024, ASSISTANT ARCHITECT, S-06/01 (PUBLIC WORKS DEPARTMENT UTTAR PRADESH)(SCREENING) EXAM-2024",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagktt06NhTTxwrCJQ8FYSe0e",
+      "attempts": 0,
+      "added": 1793216578
+    },
+    {
+      "site": "UPPSC",
+      "title": "16 Dec 2026 NOTICE REGARDING ADVT. NO. D-6/E-1/2025, FOOD SAFETY AND DRUG ADMINISTRATION UTTAR PRADESH / INSPECTOR OF DRUGS, S-06/04",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagldpN1/ndg4XUIRXwT7epDC",
+      "attempts": 0,
+      "added": 1793216578
     }
   ]
 }
