@@ -1,15 +1,14 @@
 {
-  "run_count": 99,
+  "run_count": 100,
   "site_fails": {
     "RPSC": 5,
     "RSSB": 5,
     "MPPSC": 5,
     "HPSC": 6,
-    "DSSSB": 4,
     "HPPSC": 3,
-    "Bihar Board Online": 3,
-    "ESIC": 5,
-    "EPFO": 5,
+    "Bihar Board Online": 4,
+    "ESIC": 6,
+    "EPFO": 6,
     "GPAT": 7,
     "ICAR NTA": 8,
     "UPSSSC": 8,
@@ -19,7 +18,7 @@
     "BPSSC (Bihar Police SI)": 4,
     "UPSC": 3,
     "NTA Notice Board Archive": 5,
-    "DRDO": 4,
+    "DRDO": 5,
     "Employment News": 3,
     "Indian Railways": 2
   },
@@ -72,6 +71,13 @@
       "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagldpN1/ndg4XUIRXwT7epDC",
       "attempts": 0,
       "added": 1793216578
+    },
+    {
+      "site": "DSSSB",
+      "title": "Download e-Admit card for the DSSSB Exam scheduled from 27 Oct to 05 Dec 2026",
+      "link": "https://cdn.digialm.com//EForms/configuredHtml/1258/102944/9dlmYL0z4WFsfsU6zM/login.html",
+      "attempts": 0,
+      "added": 1793242423
     }
   ]
 }
