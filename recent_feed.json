@@ -1,12 +1,6 @@
 [
   {
     "site": "NTA Notice Board Archive",
-    "title": "Press Release: UGC-NET December 2020 & June 2021 Result",
-    "link": "http://ugcnet.nta.nic.in",
-    "time_utc": "2026-10-17T12:21:07.040474+00:00"
-  },
-  {
-    "site": "NTA Notice Board Archive",
     "title": "Display of Admit Cards of Study Webs of Active–Learning for Young Aspiring Minds (SWAYAM) July 2021 Semester",
     "link": "http://https://swayam.nta.ac.in",
     "time_utc": "2026-10-17T12:21:07.685331+00:00"
@@ -178,5 +172,11 @@
     "title": "Download e-Admit card for the DSSSB Exam scheduled from 27 Oct to 05 Dec 2026",
     "link": "https://cdn.digialm.com//EForms/configuredHtml/1258/102944/9dlmYL0z4WFsfsU6zM/login.html",
     "time_utc": "2026-10-29T02:42:59.497572+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Notice regarding walk-in-interview/offline counseling for remaining period July session 2026 to be held on 04.11.2026 against the advt no. AS/JR-07/2026/Special recruitment drive dated 19.10.2026",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1793254057250-829762556.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261029%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T085231Z&X-Amz-Expires=604800&X-Amz-Signature=2e32021a77fed043c7506cfdc8b5a9e8aa5bc7a66a580bc6dae4bf4c311834e4&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-10-29T08:57:20.951257+00:00"
   }
 ]

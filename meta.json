@@ -1,5 +1,5 @@
 {
-  "run_count": 100,
+  "run_count": 101,
   "site_fails": {
     "RPSC": 5,
     "RSSB": 5,
@@ -19,8 +19,7 @@
     "UPSC": 3,
     "NTA Notice Board Archive": 5,
     "DRDO": 5,
-    "Employment News": 3,
-    "Indian Railways": 2
+    "Employment News": 3
   },
   "wp_pending": [
     {
@@ -78,6 +77,13 @@
       "link": "https://cdn.digialm.com//EForms/configuredHtml/1258/102944/9dlmYL0z4WFsfsU6zM/login.html",
       "attempts": 0,
       "added": 1793242423
+    },
+    {
+      "site": "AIIMS Exams",
+      "title": "Notice regarding walk-in-interview/offline counseling for remaining period July session 2026 to be held on 04.11.2026 against the advt no. AS/JR-07/2026/Special recruitment drive dated 19.10.2026",
+      "link": "https://rrpdocuments.aiimsexams.ac.in/1793254057250-829762556.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261029%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T085231Z&X-Amz-Expires=604800&X-Amz-Signature=2e32021a77fed043c7506cfdc8b5a9e8aa5bc7a66a580bc6dae4bf4c311834e4&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+      "attempts": 0,
+      "added": 1793264324
     }
   ]
 }
