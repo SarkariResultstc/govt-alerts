@@ -1,5 +1,5 @@
 {
-  "run_count": 101,
+  "run_count": 102,
   "site_fails": {
     "RPSC": 5,
     "RSSB": 5,
@@ -19,7 +19,10 @@
     "UPSC": 3,
     "NTA Notice Board Archive": 5,
     "DRDO": 5,
-    "Employment News": 3
+    "Employment News": 3,
+    "LIC India": 1,
+    "CUET": 1,
+    "IBPS": 1
   },
   "wp_pending": [
     {
@@ -84,6 +87,20 @@
       "link": "https://rrpdocuments.aiimsexams.ac.in/1793254057250-829762556.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261029%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T085231Z&X-Amz-Expires=604800&X-Amz-Signature=2e32021a77fed043c7506cfdc8b5a9e8aa5bc7a66a580bc6dae4bf4c311834e4&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
       "attempts": 0,
       "added": 1793264324
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of Demand dated October 29, 2026 issued under RC No. 9308 of 2026 drawn against Niranjan D Agarwal in the matter of Kalahridhaan Trendz Limited",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-demand-dated-october-29-2026-issued-under-rc-no-9308-of-2026-drawn-against-niranjan-d-agarwal-in-the-matter-of-kalahridhaan-trendz-limited_105487.html",
+      "attempts": 0,
+      "added": 1793289197
+    },
+    {
+      "site": "BPSC",
+      "title": "Important Notice:- Advertisement for the Posts of Assistant Professor in various Departments (Speciality) of State Medical College & Hospitals has been cancelled. (Advt. Nos. 04/2025 to 28/2025)",
+      "link": "https://bpsc.bihar.gov.in/wp-content/uploads/BPSC_content/Notices/Important-Notice-04-282025-Advertisement-cancelled_BPSC-20261029-wh9ep8.pdf",
+      "attempts": 0,
+      "added": 1793289197
     }
   ]
 }
