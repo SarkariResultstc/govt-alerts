@@ -1,5 +1,5 @@
 {
-  "run_count": 104,
+  "run_count": 105,
   "site_fails": {
     "RPSC": 5,
     "RSSB": 5,
@@ -19,44 +19,10 @@
     "UPSC": 3,
     "NTA Notice Board Archive": 5,
     "DRDO": 5,
-    "Employment News": 3
+    "Employment News": 3,
+    "CSIR NET": 1
   },
   "wp_pending": [
-    {
-      "site": "AIIMS Exams",
-      "title": "Date Sheet Notification No. 163 / 2026 of B.Sc. Operation Theatre Technology Phase - I, II & III (Supplementary) Professional Examinations to be held in November 2026",
-      "link": "https://rrpdocuments.aiimsexams.ac.in/1793179935284-70874835.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261028%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261028T141700Z&X-Amz-Expires=604800&X-Amz-Signature=be7de8c3f28fb01a0d292a032427f690c46b8aaa7688d8a5bae3af32ff118e7d&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-      "attempts": 0,
-      "added": 1793197386
-    },
-    {
-      "site": "AIIMS Exams",
-      "title": "Date Sheet Notification No. 162 / 2026 of Bachelor of Medical Radiology and Imaging Technology Phase - I, II & III (Supplementary) Professional Examinations to be held in November 2026",
-      "link": "https://rrpdocuments.aiimsexams.ac.in/1793179857760-421851599.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261028%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261028T141700Z&X-Amz-Expires=604800&X-Amz-Signature=d204956e7d2404772eee5a99d8d8c4bff460ad9b8f14d5fb460c7014576555c4&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-      "attempts": 0,
-      "added": 1793197386
-    },
-    {
-      "site": "AIIMS Exams",
-      "title": "Date Sheet Notification No. 164 / 2026 of Bachelor of Optometry Phase - III (Supplementary)-Professional Examinations to be held in November 2026",
-      "link": "https://rrpdocuments.aiimsexams.ac.in/1793179781281-224244829.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261028%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261028T141700Z&X-Amz-Expires=604800&X-Amz-Signature=89bbd13de6f8451fd141346e07645f324adbb6c10e3205de96543d2124c5843d&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-      "attempts": 0,
-      "added": 1793197386
-    },
-    {
-      "site": "AIIMS Exams",
-      "title": "Date Sheet Notification No. 165 / 2026 of Second MBBS Professional Examinations to be held in December 2026",
-      "link": "https://rrpdocuments.aiimsexams.ac.in/1793179530216-194391667.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261028%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261028T141700Z&X-Amz-Expires=604800&X-Amz-Signature=9c7b70b17802e7e95fd0f03a2737e6be75bfcdc7bdf1e61687c6dee766eaccda&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-      "attempts": 0,
-      "added": 1793197386
-    },
-    {
-      "site": "UPPSC",
-      "title": "28 Nov 2026 LIST OF PROVISIONALLY SELECTED CANDIDATES IN ADVT. NO. A-5/E-1/2025, ASST. TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, MATH",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagnfpuRH59X6AccoBLogdbR7",
-      "attempts": 0,
-      "added": 1793197386
-    },
     {
       "site": "UPPSC",
       "title": "17 Dec 2026 NOTICE REGARDING ADVT. NO. D-2/E-1/2024, ASSISTANT ARCHITECT, S-06/01 (PUBLIC WORKS DEPARTMENT UTTAR PRADESH)(SCREENING) EXAM-2024",
