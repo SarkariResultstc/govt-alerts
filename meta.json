@@ -1,5 +1,5 @@
 {
-  "run_count": 105,
+  "run_count": 106,
   "site_fails": {
     "RPSC": 5,
     "RSSB": 5,
@@ -20,23 +20,10 @@
     "NTA Notice Board Archive": 5,
     "DRDO": 5,
     "Employment News": 3,
-    "CSIR NET": 1
+    "CSIR NET": 2,
+    "IBPS": 1
   },
   "wp_pending": [
-    {
-      "site": "UPPSC",
-      "title": "17 Dec 2026 NOTICE REGARDING ADVT. NO. D-2/E-1/2024, ASSISTANT ARCHITECT, S-06/01 (PUBLIC WORKS DEPARTMENT UTTAR PRADESH)(SCREENING) EXAM-2024",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagktt06NhTTxwrCJQ8FYSe0e",
-      "attempts": 0,
-      "added": 1793216578
-    },
-    {
-      "site": "UPPSC",
-      "title": "16 Dec 2026 NOTICE REGARDING ADVT. NO. D-6/E-1/2025, FOOD SAFETY AND DRUG ADMINISTRATION UTTAR PRADESH / INSPECTOR OF DRUGS, S-06/04",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagldpN1/ndg4XUIRXwT7epDC",
-      "attempts": 0,
-      "added": 1793216578
-    },
     {
       "site": "DSSSB",
       "title": "Download e-Admit card for the DSSSB Exam scheduled from 27 Oct to 05 Dec 2026",
@@ -64,6 +51,69 @@
       "link": "https://bpsc.bihar.gov.in/wp-content/uploads/BPSC_content/Notices/Important-Notice-04-282025-Advertisement-cancelled_BPSC-20261029-wh9ep8.pdf",
       "attempts": 0,
       "added": 1793289197
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of Demand dated October 30, 2026 against Aditya N Agarwal (PAN: AKTPA4024B) in the matter of Kalahridhaan Trendz Limited under RC No. 9310 of 2026",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-demand-dated-october-30-2026-against-aditya-n-agarwal-pan-aktpa4024b-in-the-matter-of-kalahridhaan-trendz-limited-under-rc-no-9310-of-2026_105513.html",
+      "attempts": 0,
+      "added": 1793364219
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of Demand dated October 30, 2026 against Sunitadevi Niranjan Agarwal (PAN: ADRPS3295H) in the matter of Kalahridhaan Trendz Limited under RC No. 9311 of 2026",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-demand-dated-october-30-2026-against-sunitadevi-niranjan-agarwal-pan-adrps3295h-in-the-matter-of-kalahridhaan-trendz-limited-under-rc-no-9311-of-2026_105515.html",
+      "attempts": 0,
+      "added": 1793364219
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of Demand dated October 30, 2026 issued under RC No. 9309 of 2026 drawn against M/s. Arihant Securities (Proprietor: Pravin Kumar Jain) in the matter of Betala Global Securities Limited",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-demand-dated-october-30-2026-issued-under-rc-no-9309-of-2026-drawn-against-m-s-arihant-securities-proprietor-pravin-kumar-jain-in-the-matter-of-betala-global-securities-limited_105511.html",
+      "attempts": 0,
+      "added": 1793364219
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of Attachment dated October 29, 2026 issued under RC No. 7544 of 2024 drawn against Rajesh Nath and Shubham Rai in the matter of Unregistered Investment Advisory",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-attachment-dated-october-29-2026-issued-under-rc-no-7544-of-2024-drawn-against-rajesh-nath-and-shubham-rai-in-the-matter-of-unregistered-investment-advisory_105497.html",
+      "attempts": 0,
+      "added": 1793364219
+    },
+    {
+      "site": "AIIMS Exams",
+      "title": "Notice 167/2026 Online Seat allocation NORCET for 11",
+      "link": "https://rrpdocuments.aiimsexams.ac.in/1793357014007-516211958.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261030%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261030T123726Z&X-Amz-Expires=604800&X-Amz-Signature=0addaf5277c5b0e85f1dc002776658da371149d475ed771860f6b476e8a83e67&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+      "attempts": 0,
+      "added": 1793364219
+    },
+    {
+      "site": "UPPSC",
+      "title": "NOTICE REAGARDING DOCUMENT VERIFICATION FOR ADVT. NO. A-2/E-1/2020, REGIONAL INS..",
+      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagnfpuRH59X6AfwR/TDYKT8g",
+      "attempts": 0,
+      "added": 1793364219
+    },
+    {
+      "site": "UPPSC",
+      "title": "RESULT OF ADVT. NO. 2/2020-2021, U.P. CHIKITSA SHIKSHA (HOMOEOPATHIC) DEPTT., LE..",
+      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagnfpuRH59X6AdUDjhvz8oXc",
+      "attempts": 0,
+      "added": 1793364219
+    },
+    {
+      "site": "UPPSC",
+      "title": "30 Nov 2026 RESULT OF ADVT. NO. 2/2020-2021, U.P. CHIKITSA SHIKSHA (HOMOEOPATHIC) DEPTT., LECTURER HOMOEOPATHIC PHARMACY, S-11/01",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagnfpuRH59X6AV1pC4l+A9gZ",
+      "attempts": 0,
+      "added": 1793364219
+    },
+    {
+      "site": "UPPSC",
+      "title": "04 Nov 2026 NOTICE REAGARDING DOCUMENT VERIFICATION FOR ADVT. NO. A-2/E-1/2020, REGIONAL INSPECTOR (TECHNICAL) EXAMINATION-2020",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagnfpuRH59X6AeasKv82Ugq+",
+      "attempts": 0,
+      "added": 1793364219
     }
   ]
 }
