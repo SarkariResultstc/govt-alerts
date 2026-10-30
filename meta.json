@@ -1,5 +1,5 @@
 {
-  "run_count": 106,
+  "run_count": 107,
   "site_fails": {
     "RPSC": 5,
     "RSSB": 5,
@@ -20,17 +20,9 @@
     "NTA Notice Board Archive": 5,
     "DRDO": 5,
     "Employment News": 3,
-    "CSIR NET": 2,
-    "IBPS": 1
+    "CSIR NET": 3
   },
   "wp_pending": [
-    {
-      "site": "DSSSB",
-      "title": "Download e-Admit card for the DSSSB Exam scheduled from 27 Oct to 05 Dec 2026",
-      "link": "https://cdn.digialm.com//EForms/configuredHtml/1258/102944/9dlmYL0z4WFsfsU6zM/login.html",
-      "attempts": 0,
-      "added": 1793242423
-    },
     {
       "site": "AIIMS Exams",
       "title": "Notice regarding walk-in-interview/offline counseling for remaining period July session 2026 to be held on 04.11.2026 against the advt no. AS/JR-07/2026/Special recruitment drive dated 19.10.2026",
