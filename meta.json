@@ -1,5 +1,5 @@
 {
-  "run_count": 109,
+  "run_count": 110,
   "site_fails": {
     "RPSC": 5,
     "RSSB": 5,
@@ -7,36 +7,21 @@
     "HPSC": 6,
     "HPPSC": 3,
     "Bihar Board Online": 4,
-    "ESIC": 6,
-    "EPFO": 6,
-    "GPAT": 7,
-    "ICAR NTA": 8,
-    "UPSSSC": 8,
+    "ESIC": 7,
+    "EPFO": 7,
+    "GPAT": 8,
+    "ICAR NTA": 9,
+    "UPSSSC": 9,
     "UP Board Results": 7,
     "UP Scholarship": 7,
     "CSBC (Bihar Police Constable)": 7,
     "BPSSC (Bihar Police SI)": 4,
     "UPSC": 3,
-    "NTA Notice Board Archive": 5,
+    "NTA Notice Board Archive": 6,
     "DRDO": 5,
-    "Employment News": 3,
-    "CSIR NET": 3
+    "CSIR NET": 4
   },
   "wp_pending": [
-    {
-      "site": "SEBI",
-      "title": "Notice of Demand dated October 29, 2026 issued under RC No. 9308 of 2026 drawn against Niranjan D Agarwal in the matter of Kalahridhaan Trendz Limited",
-      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-demand-dated-october-29-2026-issued-under-rc-no-9308-of-2026-drawn-against-niranjan-d-agarwal-in-the-matter-of-kalahridhaan-trendz-limited_105487.html",
-      "attempts": 0,
-      "added": 1793289197
-    },
-    {
-      "site": "BPSC",
-      "title": "Important Notice:- Advertisement for the Posts of Assistant Professor in various Departments (Speciality) of State Medical College & Hospitals has been cancelled. (Advt. Nos. 04/2025 to 28/2025)",
-      "link": "https://bpsc.bihar.gov.in/wp-content/uploads/BPSC_content/Notices/Important-Notice-04-282025-Advertisement-cancelled_BPSC-20261029-wh9ep8.pdf",
-      "attempts": 0,
-      "added": 1793289197
-    },
     {
       "site": "SEBI",
       "title": "Notice of Demand dated October 30, 2026 against Aditya N Agarwal (PAN: AKTPA4024B) in the matter of Kalahridhaan Trendz Limited under RC No. 9310 of 2026",
