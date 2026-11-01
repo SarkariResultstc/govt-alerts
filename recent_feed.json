@@ -1,12 +1,6 @@
 [
   {
     "site": "SEBI",
-    "title": "SEBI Order for Compliance Notice of Attachment of Bank/Post office Account for Recovery Certificate No.7137 of 2023 against Karan Subhashchandra Ravde in the matter of India Infraspace Limited",
-    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/sebi-order-for-compliance-notice-of-attachment-of-bank-post-office-account-for-recovery-certificate-no-7137-of-2023-against-karan-subhashchandra-ravde-in-the-matter-of-india-infraspace-limited_105379.html",
-    "time_utc": "2026-10-22T12:23:05.012535+00:00"
-  },
-  {
-    "site": "SEBI",
     "title": "Certificate No. RC9307 of 2026 Notice of Demand in respect of Sri Salasar Suppliers Pvt. Ltd. (PAN: AADCS8457R) in the matter of Decillion Finance Limited",
     "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/certificate-no-rc9307-of-2026-notice-of-demand-in-respect-of-sri-salasar-suppliers-pvt-ltd-pan-aadcs8457r-in-the-matter-of-decillion-finance-limited_105388.html",
     "time_utc": "2026-10-22T17:21:55.650454+00:00"
@@ -178,5 +172,11 @@
     "title": "04 Nov 2026 NOTICE REAGARDING DOCUMENT VERIFICATION FOR ADVT. NO. A-2/E-1/2020, REGIONAL INSPECTOR (TECHNICAL) EXAMINATION-2020",
     "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagnfpuRH59X6AeasKv82Ugq+",
     "time_utc": "2026-10-30T12:42:55.048821+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Notice No-168/2026: Final Seat Position of INI-SS(DM/M.Ch.) for the January 2027 session",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1793509914632-269417135.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261101%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261101T110601Z&X-Amz-Expires=604800&X-Amz-Signature=8e015266fe8cad247a6987400de1bff3e16111e8e13f9c884a73104dddffa21d&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-11-01T11:10:04.807704+00:00"
   }
 ]
