@@ -1,5 +1,5 @@
 {
-  "run_count": 120,
+  "run_count": 121,
   "site_fails": {
     "RPSC": 5,
     "RSSB": 5,
@@ -28,6 +28,20 @@
       "link": "https://rrpdocuments.aiimsexams.ac.in/1793509914632-269417135.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261101%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261101T110601Z&X-Amz-Expires=604800&X-Amz-Signature=8e015266fe8cad247a6987400de1bff3e16111e8e13f9c884a73104dddffa21d&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
       "attempts": 0,
       "added": 1793531414
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of Demand dated November 02, 2026 issued under RC No. 9315 of 2026 drawn against Jalaj Agarwal (PAN: AUDPA0226H) in the matter of stock recommendation tips in the scrip of Unison Metals Limited",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-02-2026-issued-under-rc-no-9315-of-2026-drawn-against-jalaj-agarwal-pan-audpa0226h-in-the-matter-of-stock-recommendation-tips-in-the-scrip-of-unison-metals-limite-_105548.html",
+      "attempts": 0,
+      "added": 1793637491
+    },
+    {
+      "site": "AIIMS Exams",
+      "title": "Notice No. 01 of 2026 :- Regarding the Interview schedule for various faculty posts of various disciplines at AIIMS-Awantipora.",
+      "link": "https://rrpdocuments.aiimsexams.ac.in/1793621714134-402137555.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261102%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261102T163302Z&X-Amz-Expires=604800&X-Amz-Signature=c7449d41d30482d00f0fa175a2cacaeb8eb3142f4b4cd9c79e15e3c2ed263824&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+      "attempts": 0,
+      "added": 1793637491
     }
   ]
 }
