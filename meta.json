@@ -1,5 +1,5 @@
 {
-  "run_count": 124,
+  "run_count": 125,
   "site_fails": {
     "RPSC": 5,
     "RSSB": 5,
@@ -84,6 +84,20 @@
       "link": "https://rrpdocuments.aiimsexams.ac.in/1793685604040-925543909.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261103%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261103T114738Z&X-Amz-Expires=604800&X-Amz-Signature=0e2c1d33e31e542e1867b196e76c1215ed71419ae232731f1ad80c8d8cf5197d&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
       "attempts": 0,
       "added": 1793706714
+    },
+    {
+      "site": "UPPSC",
+      "title": "NOTICE REGARDING ADVT. NO. A-1/E-1/2025, COMBINED STATE/UPPER SUBORDINATE SERVIC..",
+      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagk3H4ltFfLCjsv7tAk2LK46",
+      "attempts": 0,
+      "added": 1793731375
+    },
+    {
+      "site": "UPPSC",
+      "title": "10 Nov 2026 NOTICE REGARDING ADVT. NO. A-1/E-1/2025, COMBINED STATE/UPPER SUBORDINATE SERVICES EXAM.-2025",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjlXyC4UwMTq6",
+      "attempts": 0,
+      "added": 1793731375
     }
   ]
 }
