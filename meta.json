@@ -1,5 +1,5 @@
 {
-  "run_count": 123,
+  "run_count": 124,
   "site_fails": {
     "RPSC": 5,
     "RSSB": 5,
@@ -35,6 +35,55 @@
       "link": "https://rrpdocuments.aiimsexams.ac.in/1793621714134-402137555.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261102%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261102T163302Z&X-Amz-Expires=604800&X-Amz-Signature=c7449d41d30482d00f0fa175a2cacaeb8eb3142f4b4cd9c79e15e3c2ed263824&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
       "attempts": 0,
       "added": 1793637491
+    },
+    {
+      "site": "IBPS",
+      "title": "RSBL Recruitment of Clerk (Junior Officer), Assistant Branch Manager & Assistant Manager-IT Registration From 30-Oct-2026",
+      "link": "https://ibpsreg.ibps.in/rsblrsep26/",
+      "attempts": 0,
+      "added": 1793706714
+    },
+    {
+      "site": "IBPS",
+      "title": "CWC Recruitment of Various Posts Registration From 17-Oct-2026",
+      "link": "https://ibpsreg.ibps.in/cwcaug26/",
+      "attempts": 0,
+      "added": 1793706714
+    },
+    {
+      "site": "UPPSC",
+      "title": "12 Nov 2026 NOTICE REGARDING ADVT. NO. A-10/E-1/2023 U.P. KHADI AND VILLAGE INDUSTRIES BOARD, PRASHIKSHAK (NON EDIBLE OIL AND SOAP)",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjoFEwKjTscaS",
+      "attempts": 0,
+      "added": 1793706714
+    },
+    {
+      "site": "UPPSC",
+      "title": "12 Nov 2026 NOTICE REGARDING ADVT. NO. A-10/E-1/2023 U.P. KHADI AND VILLAGE INDUSTRIES BOARD, PRASHIKSHAK (BEE KEEPING)",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjjcVnckd8GdB",
+      "attempts": 0,
+      "added": 1793706714
+    },
+    {
+      "site": "UPPSC",
+      "title": "12 Nov 2026 NOTICE REGARDING ADVT. NO. A-10/E-1/2023 U.P. KHADI AND VILLAGE INDUSTRIES BOARD, PRASHIKSHAK (KHADI)",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjn6vgQm6cDNg",
+      "attempts": 0,
+      "added": 1793706714
+    },
+    {
+      "site": "UPPSC",
+      "title": "20 Nov 2026 NOTICE REAGARDING DOCUMENT VERIFICATION FOR ADVT. NO. A-5/E-1/2025, ASSISTANT TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, (MATHS)",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagnfpuRH59X6AeC6+KhmN26Z",
+      "attempts": 0,
+      "added": 1793706714
+    },
+    {
+      "site": "AIIMS Exams",
+      "title": "Revised date for Walk-in interview/counseling for the post of Junior Resident - Advertisement No. AS/JR.07/2026/Special Recruitment drive dated 19.10.2026",
+      "link": "https://rrpdocuments.aiimsexams.ac.in/1793685604040-925543909.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261103%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261103T114738Z&X-Amz-Expires=604800&X-Amz-Signature=0e2c1d33e31e542e1867b196e76c1215ed71419ae232731f1ad80c8d8cf5197d&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+      "attempts": 0,
+      "added": 1793706714
     }
   ]
 }
