@@ -1,5 +1,5 @@
 {
-  "run_count": 128,
+  "run_count": 129,
   "site_fails": {
     "RPSC": 5,
     "RSSB": 5,
@@ -19,7 +19,8 @@
     "UPSC": 3,
     "NTA Notice Board Archive": 6,
     "DRDO": 5,
-    "CSIR NET": 5
+    "CSIR NET": 5,
+    "IBPS": 1
   },
   "wp_pending": [
     {
@@ -105,6 +106,13 @@
       "link": "https://uppsc.up.nic.in/CandidatePages/Notifications.aspx",
       "attempts": 0,
       "added": 1793789932
+    },
+    {
+      "site": "AIIMS Exams",
+      "title": "Update list of eligible / not eligible for walk-in-interivew/offline counseling for JR July 2026 session",
+      "link": "https://rrpdocuments.aiimsexams.ac.in/1793793407393-287725237.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261104%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261104T234444Z&X-Amz-Expires=604800&X-Amz-Signature=be21b95a0879242ff20850163bf9803f4f511bdcefd594028be0cff9bd96c34c&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+      "attempts": 0,
+      "added": 1793836211
     }
   ]
 }
