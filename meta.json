@@ -1,5 +1,5 @@
 {
-  "run_count": 130,
+  "run_count": 131,
   "site_fails": {
     "RPSC": 6,
     "RSSB": 5,
@@ -19,23 +19,10 @@
     "UPSC": 4,
     "NTA Notice Board Archive": 6,
     "DRDO": 5,
-    "CSIR NET": 5
+    "CSIR NET": 5,
+    "BSSC": 1
   },
   "wp_pending": [
-    {
-      "site": "UPPSC",
-      "title": "NOTICE REGARDING ADVT. NO. A-1/E-1/2025, COMBINED STATE/UPPER SUBORDINATE SERVIC..",
-      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagk3H4ltFfLCjsv7tAk2LK46",
-      "attempts": 0,
-      "added": 1793731375
-    },
-    {
-      "site": "UPPSC",
-      "title": "10 Nov 2026 NOTICE REGARDING ADVT. NO. A-1/E-1/2025, COMBINED STATE/UPPER SUBORDINATE SERVICES EXAM.-2025",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjlXyC4UwMTq6",
-      "attempts": 0,
-      "added": 1793731375
-    },
     {
       "site": "IBPS",
       "title": "SBI Recruitment of Specialist Cadre Officer (Assistant Manager -Engineer (Fire)) Registration From 04-Nov-2026",
