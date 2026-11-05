@@ -1,5 +1,5 @@
 {
-  "run_count": 131,
+  "run_count": 132,
   "site_fails": {
     "RPSC": 6,
     "RSSB": 5,
@@ -20,7 +20,7 @@
     "NTA Notice Board Archive": 6,
     "DRDO": 5,
     "CSIR NET": 5,
-    "BSSC": 1
+    "BSSC": 2
   },
   "wp_pending": [
     {
@@ -50,6 +50,27 @@
       "link": "https://rrpdocuments.aiimsexams.ac.in/1793793407393-287725237.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261104%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261104T234444Z&X-Amz-Expires=604800&X-Amz-Signature=be21b95a0879242ff20850163bf9803f4f511bdcefd594028be0cff9bd96c34c&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
       "attempts": 0,
       "added": 1793836211
+    },
+    {
+      "site": "UPPSC",
+      "title": "05 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/PROFESSOR OTO-RHINO-LARYNGOLOGY(ENT), S-08/06",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjk5eFIB8Ab41",
+      "attempts": 0,
+      "added": 1793905157
+    },
+    {
+      "site": "UPPSC",
+      "title": "05 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/PROFESSOR CARDIOLOGY, S-08/09",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjrZ+1OCTmF4j",
+      "attempts": 0,
+      "added": 1793905157
+    },
+    {
+      "site": "UPPSC",
+      "title": "05 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/PROFESSOR ANATOMY, S-08/04",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjvXzP95+GKEZ",
+      "attempts": 0,
+      "added": 1793905157
     }
   ]
 }
