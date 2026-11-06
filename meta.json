@@ -1,5 +1,5 @@
 {
-  "run_count": 135,
+  "run_count": 136,
   "site_fails": {
     "RPSC": 6,
     "RSSB": 5,
@@ -64,6 +64,48 @@
       "link": "https://rrpdocuments.aiimsexams.ac.in/1793965563098-233622495.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261106%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261106T122740Z&X-Amz-Expires=604800&X-Amz-Signature=ac601f5921490d1a0fa8fd92435630917928e61dd94f3327160550a1081202ef&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
       "attempts": 0,
       "added": 1793968143
+    },
+    {
+      "site": "UPPSC",
+      "title": "06 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/PROFESSOR MICROBIOLOGY, S-08/22",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjiqYVUgd9FeU",
+      "attempts": 0,
+      "added": 1793993231
+    },
+    {
+      "site": "UPPSC",
+      "title": "06 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/PROFESSOR EMERGENCY MEDICINE, S-08/03",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjiahHje/L8Xc",
+      "attempts": 0,
+      "added": 1793993231
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of Demand dated November 06, 2026 issued under RC No. 9319 of 2026 drawn against Investowryght Research Analytics Private Limited in the matter of Investowryght Research Analytics Private Limited",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-06-2026-issued-under-rc-no-9319-of-2026-drawn-against-investowryght-research-analytics-private-limited-in-the-matter-of-investowryght-research-analytics-private-limit-_105652.html",
+      "attempts": 0,
+      "added": 1793993231
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of Demand dated November 06, 2026 against Satyen Bhupendra Dalal (PAN: AACPD0426F) in the matter of Veerkrupa Jewellers Limited under RC No. 9320 of 2026",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-06-2026-against-satyen-bhupendra-dalal-pan-aacpd0426f-in-the-matter-of-veerkrupa-jewellers-limited-under-rc-no-9320-of-2026_105654.html",
+      "attempts": 0,
+      "added": 1793993231
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of Demand dated November 06, 2026, against Natasha Sinha (AAUPS3146B) in the matter of Mideast Integrated Steel Limited (MISL) under RC No. 9321 of 2026",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-06-2026-against-natasha-sinha-aaups3146b-in-the-matter-of-mideast-integrated-steel-limited-misl-under-rc-no-9321-of-2026_105656.html",
+      "attempts": 0,
+      "added": 1793993231
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of Demand dated November 06, 2026, against First Overseas Capital Limited (AAACL4737A) in the matter of Veerkrupa Jewellers Limited under RC No. 9322 of 2026",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-06-2026-against-first-overseas-capital-limited-aaacl4737a-in-the-matter-of-veerkrupa-jewellers-limited-under-rc-no-9322-of-2026_105658.html",
+      "attempts": 0,
+      "added": 1793993231
     }
   ]
 }
