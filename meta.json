@@ -1,5 +1,5 @@
 {
-  "run_count": 134,
+  "run_count": 135,
   "site_fails": {
     "RPSC": 6,
     "RSSB": 5,
@@ -24,13 +24,6 @@
   },
   "wp_pending": [
     {
-      "site": "AIIMS Exams",
-      "title": "Update list of eligible / not eligible for walk-in-interivew/offline counseling for JR July 2026 session",
-      "link": "https://rrpdocuments.aiimsexams.ac.in/1793793407393-287725237.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261104%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261104T234444Z&X-Amz-Expires=604800&X-Amz-Signature=be21b95a0879242ff20850163bf9803f4f511bdcefd594028be0cff9bd96c34c&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-      "attempts": 0,
-      "added": 1793836211
-    },
-    {
       "site": "UPPSC",
       "title": "05 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/PROFESSOR OTO-RHINO-LARYNGOLOGY(ENT), S-08/06",
       "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjk5eFIB8Ab41",
@@ -50,6 +43,27 @@
       "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjvXzP95+GKEZ",
       "attempts": 0,
       "added": 1793905157
+    },
+    {
+      "site": "UPPSC",
+      "title": "CLICK HERE FOR ADVT. NO. A-5/E-1/2025, ASSISTANT TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, (MATHS) (DOCUMENT VERIFICATION).",
+      "link": "https://uppsc.up.nic.in/CandidatePages/OTRAppForm/Applicant_OtrAuthentication.aspx?WEqGEem9m0+8Y4tNQqJiNYurmbKsjJR/fgSlThSTh6o=",
+      "attempts": 0,
+      "added": 1793968143
+    },
+    {
+      "site": "AIIMS Exams",
+      "title": "Notice No. 172/2026: Schedule of Skill Test for Group Code 2, 19 & 20 of CRE-5",
+      "link": "https://rrpdocuments.aiimsexams.ac.in/1793965940985-884141201.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261106%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261106T122740Z&X-Amz-Expires=604800&X-Amz-Signature=f68df5ae924fcdc96b0cdb462b5fa0f4f649c890af7fed67fa6dc9a753725560&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+      "attempts": 0,
+      "added": 1793968143
+    },
+    {
+      "site": "AIIMS Exams",
+      "title": "Notice: Dates for the Stage-II(Departmental Assessment in online mode) for the INI-SS January 2027 Session",
+      "link": "https://rrpdocuments.aiimsexams.ac.in/1793965563098-233622495.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261106%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261106T122740Z&X-Amz-Expires=604800&X-Amz-Signature=ac601f5921490d1a0fa8fd92435630917928e61dd94f3327160550a1081202ef&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+      "attempts": 0,
+      "added": 1793968143
     }
   ]
 }

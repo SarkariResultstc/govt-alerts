@@ -1,24 +1,6 @@
 [
   {
     "site": "SEBI",
-    "title": "Notice of Demand dated October 29, 2026 issued under RC No. 9308 of 2026 drawn against Niranjan D Agarwal in the matter of Kalahridhaan Trendz Limited",
-    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-demand-dated-october-29-2026-issued-under-rc-no-9308-of-2026-drawn-against-niranjan-d-agarwal-in-the-matter-of-kalahridhaan-trendz-limited_105487.html",
-    "time_utc": "2026-10-29T15:46:43.811340+00:00"
-  },
-  {
-    "site": "BPSC",
-    "title": "Important Notice:- Advertisement for the Posts of Assistant Professor in various Departments (Speciality) of State Medical College & Hospitals has been cancelled. (Advt. Nos. 04/2025 to 28/2025)",
-    "link": "https://bpsc.bihar.gov.in/wp-content/uploads/BPSC_content/Notices/Important-Notice-04-282025-Advertisement-cancelled_BPSC-20261029-wh9ep8.pdf",
-    "time_utc": "2026-10-29T15:53:06.717041+00:00"
-  },
-  {
-    "site": "SEBI",
-    "title": "Notice of Demand dated October 30, 2026 against Aditya N Agarwal (PAN: AKTPA4024B) in the matter of Kalahridhaan Trendz Limited under RC No. 9310 of 2026",
-    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-demand-dated-october-30-2026-against-aditya-n-agarwal-pan-aktpa4024b-in-the-matter-of-kalahridhaan-trendz-limited-under-rc-no-9310-of-2026_105513.html",
-    "time_utc": "2026-10-30T12:41:27.135621+00:00"
-  },
-  {
-    "site": "SEBI",
     "title": "Notice of Demand dated October 30, 2026 against Sunitadevi Niranjan Agarwal (PAN: ADRPS3295H) in the matter of Kalahridhaan Trendz Limited under RC No. 9311 of 2026",
     "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/oct-2026/notice-of-demand-dated-october-30-2026-against-sunitadevi-niranjan-agarwal-pan-adrps3295h-in-the-matter-of-kalahridhaan-trendz-limited-under-rc-no-9311-of-2026_105515.html",
     "time_utc": "2026-10-30T12:41:27.632802+00:00"
@@ -178,5 +160,23 @@
     "title": "05 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/PROFESSOR ANATOMY, S-08/04",
     "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjvXzP95+GKEZ",
     "time_utc": "2026-11-05T18:57:22.202709+00:00"
+  },
+  {
+    "site": "UPPSC",
+    "title": "CLICK HERE FOR ADVT. NO. A-5/E-1/2025, ASSISTANT TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, (MATHS) (DOCUMENT VERIFICATION).",
+    "link": "https://uppsc.up.nic.in/CandidatePages/OTRAppForm/Applicant_OtrAuthentication.aspx?WEqGEem9m0+8Y4tNQqJiNYurmbKsjJR/fgSlThSTh6o=",
+    "time_utc": "2026-11-06T12:25:55.537900+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Notice No. 172/2026: Schedule of Skill Test for Group Code 2, 19 & 20 of CRE-5",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1793965940985-884141201.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261106%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261106T122740Z&X-Amz-Expires=604800&X-Amz-Signature=f68df5ae924fcdc96b0cdb462b5fa0f4f649c890af7fed67fa6dc9a753725560&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-11-06T12:28:07.151965+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Notice: Dates for the Stage-II(Departmental Assessment in online mode) for the INI-SS January 2027 Session",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1793965563098-233622495.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261106%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261106T122740Z&X-Amz-Expires=604800&X-Amz-Signature=ac601f5921490d1a0fa8fd92435630917928e61dd94f3327160550a1081202ef&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-11-06T12:28:07.785126+00:00"
   }
 ]
