@@ -1,5 +1,5 @@
 {
-  "run_count": 138,
+  "run_count": 139,
   "site_fails": {
     "RPSC": 6,
     "RSSB": 5,
@@ -23,27 +23,6 @@
     "BSSC": 3
   },
   "wp_pending": [
-    {
-      "site": "UPPSC",
-      "title": "05 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/PROFESSOR OTO-RHINO-LARYNGOLOGY(ENT), S-08/06",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjk5eFIB8Ab41",
-      "attempts": 0,
-      "added": 1793905157
-    },
-    {
-      "site": "UPPSC",
-      "title": "05 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/PROFESSOR CARDIOLOGY, S-08/09",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjrZ+1OCTmF4j",
-      "attempts": 0,
-      "added": 1793905157
-    },
-    {
-      "site": "UPPSC",
-      "title": "05 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/PROFESSOR ANATOMY, S-08/04",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjvXzP95+GKEZ",
-      "attempts": 0,
-      "added": 1793905157
-    },
     {
       "site": "UPPSC",
       "title": "CLICK HERE FOR ADVT. NO. A-5/E-1/2025, ASSISTANT TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, (MATHS) (DOCUMENT VERIFICATION).",
@@ -106,6 +85,20 @@
       "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-06-2026-against-first-overseas-capital-limited-aaacl4737a-in-the-matter-of-veerkrupa-jewellers-limited-under-rc-no-9322-of-2026_105658.html",
       "attempts": 0,
       "added": 1793993231
+    },
+    {
+      "site": "UPPSC",
+      "title": "RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY),..",
+      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagk3H4ltFfLCjhRbeHv+Wx86",
+      "attempts": 0,
+      "added": 1794046355
+    },
+    {
+      "site": "UPPSC",
+      "title": "07 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY), ASSISTANT PROFESSOR MICROBIOLOGY, S-08/89",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjn7m7xwLdrzX",
+      "attempts": 0,
+      "added": 1794046355
     }
   ]
 }
