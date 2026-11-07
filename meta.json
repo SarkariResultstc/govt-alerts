@@ -1,13 +1,13 @@
 {
-  "run_count": 139,
+  "run_count": 140,
   "site_fails": {
     "RPSC": 6,
-    "RSSB": 5,
-    "MPPSC": 5,
-    "HPSC": 6,
-    "HPPSC": 3,
-    "Bihar Board Online": 4,
-    "ESIC": 7,
+    "RSSB": 6,
+    "MPPSC": 6,
+    "HPSC": 7,
+    "HPPSC": 4,
+    "Bihar Board Online": 5,
+    "ESIC": 8,
     "EPFO": 7,
     "GPAT": 9,
     "ICAR NTA": 10,
@@ -18,9 +18,9 @@
     "BPSSC (Bihar Police SI)": 5,
     "UPSC": 4,
     "NTA Notice Board Archive": 6,
-    "DRDO": 5,
+    "DRDO": 6,
     "CSIR NET": 5,
-    "BSSC": 3
+    "BSSC": 4
   },
   "wp_pending": [
     {
