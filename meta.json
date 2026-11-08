@@ -1,5 +1,5 @@
 {
-  "run_count": 145,
+  "run_count": 146,
   "site_fails": {
     "RPSC": 6,
     "RSSB": 6,
@@ -20,7 +20,8 @@
     "NTA Notice Board Archive": 6,
     "DRDO": 6,
     "CSIR NET": 5,
-    "BSSC": 4
+    "BSSC": 4,
+    "LIC India": 1
   },
   "wp_pending": [
     {
