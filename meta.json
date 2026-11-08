@@ -1,5 +1,5 @@
 {
-  "run_count": 146,
+  "run_count": 147,
   "site_fails": {
     "RPSC": 6,
     "RSSB": 6,
@@ -20,23 +20,7 @@
     "NTA Notice Board Archive": 6,
     "DRDO": 6,
     "CSIR NET": 5,
-    "BSSC": 4,
-    "LIC India": 1
+    "BSSC": 4
   },
-  "wp_pending": [
-    {
-      "site": "UPPSC",
-      "title": "RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY),..",
-      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagk3H4ltFfLCjhRbeHv+Wx86",
-      "attempts": 0,
-      "added": 1794046355
-    },
-    {
-      "site": "UPPSC",
-      "title": "07 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY), ASSISTANT PROFESSOR MICROBIOLOGY, S-08/89",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjn7m7xwLdrzX",
-      "attempts": 0,
-      "added": 1794046355
-    }
-  ]
+  "wp_pending": []
 }
