@@ -1,23 +1,5 @@
 [
   {
-    "site": "AIIMS Exams",
-    "title": "Notice No-168/2026: Final Seat Position of INI-SS(DM/M.Ch.) for the January 2027 session",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1793509914632-269417135.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261101%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261101T110601Z&X-Amz-Expires=604800&X-Amz-Signature=8e015266fe8cad247a6987400de1bff3e16111e8e13f9c884a73104dddffa21d&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-11-01T11:10:04.807704+00:00"
-  },
-  {
-    "site": "SEBI",
-    "title": "Notice of Demand dated November 02, 2026 issued under RC No. 9315 of 2026 drawn against Jalaj Agarwal (PAN: AUDPA0226H) in the matter of stock recommendation tips in the scrip of Unison Metals Limited",
-    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-02-2026-issued-under-rc-no-9315-of-2026-drawn-against-jalaj-agarwal-pan-audpa0226h-in-the-matter-of-stock-recommendation-tips-in-the-scrip-of-unison-metals-limite-_105548.html",
-    "time_utc": "2026-11-02T16:37:47.679218+00:00"
-  },
-  {
-    "site": "AIIMS Exams",
-    "title": "Notice No. 01 of 2026 :- Regarding the Interview schedule for various faculty posts of various disciplines at AIIMS-Awantipora.",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1793621714134-402137555.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261102%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261102T163302Z&X-Amz-Expires=604800&X-Amz-Signature=c7449d41d30482d00f0fa175a2cacaeb8eb3142f4b4cd9c79e15e3c2ed263824&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-11-02T16:37:55.027763+00:00"
-  },
-  {
     "site": "IBPS",
     "title": "RSBL Recruitment of Clerk (Junior Officer), Assistant Branch Manager & Assistant Manager-IT Registration From 30-Oct-2026",
     "link": "https://ibpsreg.ibps.in/rsblrsep26/",
@@ -178,5 +160,23 @@
     "title": "07 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY), ASSISTANT PROFESSOR MICROBIOLOGY, S-08/89",
     "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjn7m7xwLdrzX",
     "time_utc": "2026-11-07T10:12:27.773625+00:00"
+  },
+  {
+    "site": "SEBI",
+    "title": "Notice of attachment dated November 10, 2026 issued against Chennai Commodities under RC No.7470 of 2023 in the matter of First Futures and Stocks Private Limited",
+    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-10-2026-issued-against-chennai-commodities-under-rc-no-7470-of-2023-in-the-matter-of-first-futures-and-stocks-private-limited_105696.html",
+    "time_utc": "2026-11-10T20:02:03.219770+00:00"
+  },
+  {
+    "site": "SEBI",
+    "title": "Notice of attachment dated November 10, 2026 issued against Secunderabad Healthcare Limited under RC No.7734 of 2024 in the matter of Secunderabad Healthcare Limited",
+    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-10-2026-issued-against-secunderabad-healthcare-limited-under-rc-no-7734-of-2024-in-the-matter-of-secunderabad-healthcare-limited_105698.html",
+    "time_utc": "2026-11-10T20:02:03.923828+00:00"
+  },
+  {
+    "site": "SEBI",
+    "title": "Notice of attachment dated November 10, 2026 issued against First Futures and Stocks Private Limited under RC No.7469 of 2023 in the matter of First Futures and Stocks Private Limited",
+    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-10-2026-issued-against-first-futures-and-stocks-private-limited-under-rc-no-7469-of-2023-in-the-matter-of-first-futures-and-stocks-private-limited_105694.html",
+    "time_utc": "2026-11-10T20:02:04.541589+00:00"
   }
 ]
