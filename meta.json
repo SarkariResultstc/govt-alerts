@@ -1,5 +1,5 @@
 {
-  "run_count": 154,
+  "run_count": 155,
   "site_fails": {
     "RPSC": 6,
     "RSSB": 6,
@@ -19,8 +19,7 @@
     "UPSC": 4,
     "NTA Notice Board Archive": 7,
     "DRDO": 7,
-    "BSSC": 4,
-    "LIC India": 2
+    "BSSC": 4
   },
   "wp_pending": [
     {
@@ -43,6 +42,20 @@
       "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-10-2026-issued-against-first-futures-and-stocks-private-limited-under-rc-no-7469-of-2023-in-the-matter-of-first-futures-and-stocks-private-limited_105694.html",
       "attempts": 0,
       "added": 1794340924
+    },
+    {
+      "site": "IBPS",
+      "title": "BPCL Special Recruitment Drive for Persons with Benchmark Disabilities (PwBDs)/ Divyangjans Registration From 09-Nov-2026",
+      "link": "https://ibpsreg.ibps.in/bpcljul26/",
+      "attempts": 0,
+      "added": 1794380059
+    },
+    {
+      "site": "IBPS",
+      "title": "JKB Recruitment of Various Posts Registration From 07-Nov-2026",
+      "link": "https://ibpsreg.ibps.in/jkbvpocto26/",
+      "attempts": 0,
+      "added": 1794380059
     }
   ]
 }
