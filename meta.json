@@ -1,5 +1,5 @@
 {
-  "run_count": 159,
+  "run_count": 160,
   "site_fails": {
     "RPSC": 6,
     "RSSB": 6,
@@ -9,35 +9,21 @@
     "Bihar Board Online": 5,
     "ESIC": 9,
     "EPFO": 8,
-    "GPAT": 10,
-    "ICAR NTA": 11,
-    "UPSSSC": 11,
-    "UP Board Results": 8,
-    "UP Scholarship": 8,
-    "CSBC (Bihar Police Constable)": 9,
+    "GPAT": 11,
+    "ICAR NTA": 12,
+    "UPSSSC": 12,
+    "UP Board Results": 9,
+    "UP Scholarship": 9,
+    "CSBC (Bihar Police Constable)": 10,
     "BPSSC (Bihar Police SI)": 5,
     "UPSC": 4,
-    "NTA Notice Board Archive": 7,
+    "NTA Notice Board Archive": 8,
     "DRDO": 7,
     "BSSC": 4,
     "Indian Railways": 1,
     "IBPS": 1
   },
   "wp_pending": [
-    {
-      "site": "IBPS",
-      "title": "BPCL Special Recruitment Drive for Persons with Benchmark Disabilities (PwBDs)/ Divyangjans Registration From 09-Nov-2026",
-      "link": "https://ibpsreg.ibps.in/bpcljul26/",
-      "attempts": 0,
-      "added": 1794380059
-    },
-    {
-      "site": "IBPS",
-      "title": "JKB Recruitment of Various Posts Registration From 07-Nov-2026",
-      "link": "https://ibpsreg.ibps.in/jkbvpocto26/",
-      "attempts": 0,
-      "added": 1794380059
-    },
     {
       "site": "SEBI",
       "title": "Notice of attachment dated November 10, 2026 issued against R Ravichandran under RC No.6735 of 2023 in the matter of Teledata Technology Solutions Limited",
