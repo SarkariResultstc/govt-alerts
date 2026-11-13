@@ -1,5 +1,5 @@
 {
-  "run_count": 161,
+  "run_count": 162,
   "site_fails": {
     "RPSC": 6,
     "RSSB": 6,
@@ -20,16 +20,11 @@
     "NTA Notice Board Archive": 8,
     "DRDO": 7,
     "BSSC": 4,
-    "Indian Railways": 2
+    "Indian Railways": 3,
+    "IBPS": 1,
+    "LIC India": 1
   },
   "wp_pending": [
-    {
-      "site": "SEBI",
-      "title": "Notice of attachment dated November 10, 2026 issued against R Ravichandran under RC No.6735 of 2023 in the matter of Teledata Technology Solutions Limited",
-      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-10-2026-issued-against-r-ravichandran-under-rc-no-6735-of-2023-in-the-matter-of-teledata-technology-solutions-limited_105700.html",
-      "attempts": 0,
-      "added": 1794433083
-    },
     {
       "site": "UPPSC",
       "title": "RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) ..",
@@ -50,6 +45,20 @@
       "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq+6ETBjMMNz6",
       "attempts": 0,
       "added": 1794507284
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of Demand dated 12.11.2026 in RC No. 9324 of 2026",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-12-11-2026-in-rc-no-9324-of-2026_105739.html",
+      "attempts": 0,
+      "added": 1794569709
+    },
+    {
+      "site": "SEBI",
+      "title": "Notice of Demand dated 12.11.2026 in RC No. 9325 of 2026",
+      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-12-11-2026-in-rc-no-9325-of-2026_105741.html",
+      "attempts": 0,
+      "added": 1794569709
     }
   ]
 }

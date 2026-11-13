@@ -1,17 +1,5 @@
 [
   {
-    "site": "AIIMS Exams",
-    "title": "Revised date for Walk-in interview/counseling for the post of Junior Resident - Advertisement No. AS/JR.07/2026/Special Recruitment drive dated 19.10.2026",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1793685604040-925543909.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261103%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261103T114738Z&X-Amz-Expires=604800&X-Amz-Signature=0e2c1d33e31e542e1867b196e76c1215ed71419ae232731f1ad80c8d8cf5197d&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-11-03T11:51:36.636056+00:00"
-  },
-  {
-    "site": "UPPSC",
-    "title": "NOTICE REGARDING ADVT. NO. A-1/E-1/2025, COMBINED STATE/UPPER SUBORDINATE SERVIC..",
-    "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagk3H4ltFfLCjsv7tAk2LK46",
-    "time_utc": "2026-11-03T18:41:27.553493+00:00"
-  },
-  {
     "site": "UPPSC",
     "title": "10 Nov 2026 NOTICE REGARDING ADVT. NO. A-1/E-1/2025, COMBINED STATE/UPPER SUBORDINATE SERVICES EXAM.-2025",
     "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagk3H4ltFfLCjlXyC4UwMTq6",
@@ -178,5 +166,17 @@
     "title": "12 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) /ASSISTANT PROFESSOR ANATOMY, S-08/44...",
     "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq+6ETBjMMNz6",
     "time_utc": "2026-11-12T18:13:35.825952+00:00"
+  },
+  {
+    "site": "SEBI",
+    "title": "Notice of Demand dated 12.11.2026 in RC No. 9324 of 2026",
+    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-12-11-2026-in-rc-no-9324-of-2026_105739.html",
+    "time_utc": "2026-11-13T11:34:51.779866+00:00"
+  },
+  {
+    "site": "SEBI",
+    "title": "Notice of Demand dated 12.11.2026 in RC No. 9325 of 2026",
+    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-12-11-2026-in-rc-no-9325-of-2026_105741.html",
+    "time_utc": "2026-11-13T11:34:52.547342+00:00"
   }
 ]
