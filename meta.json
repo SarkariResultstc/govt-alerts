@@ -1,5 +1,5 @@
 {
-  "run_count": 162,
+  "run_count": 163,
   "site_fails": {
     "RPSC": 6,
     "RSSB": 6,
@@ -20,9 +20,7 @@
     "NTA Notice Board Archive": 8,
     "DRDO": 7,
     "BSSC": 4,
-    "Indian Railways": 3,
-    "IBPS": 1,
-    "LIC India": 1
+    "Indian Railways": 3
   },
   "wp_pending": [
     {
@@ -59,6 +57,48 @@
       "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-12-11-2026-in-rc-no-9325-of-2026_105741.html",
       "attempts": 0,
       "added": 1794569709
+    },
+    {
+      "site": "IBPS",
+      "title": "MANIT Recruitment of various Group ‘B’ & ‘C’ Non-Teaching Positions Registration From 13-Nov-2026",
+      "link": "https://ibpsreg.ibps.in/manitboct26/",
+      "attempts": 0,
+      "added": 1794595263
+    },
+    {
+      "site": "UPPSC",
+      "title": "RESULT OF ADVT. NO. D-1/E-1/2026,MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/A..",
+      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagn3Lnqaz4gdq6pNygydf5ja",
+      "attempts": 0,
+      "added": 1794595263
+    },
+    {
+      "site": "UPPSC",
+      "title": "13 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026,MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/ASSISTANT PROFESSOR TRANSFUSION MEDICINE, S-08/118",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq3P5HGkQk3RF",
+      "attempts": 0,
+      "added": 1794595263
+    },
+    {
+      "site": "UPPSC",
+      "title": "13 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026,MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/ASSISTANT PROFESSOR CARDIOLOGY, S-08/54",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq1AZ1QP/oV/E",
+      "attempts": 0,
+      "added": 1794595263
+    },
+    {
+      "site": "UPPSC",
+      "title": "13 Dec 2027 RESULT OF ADVT. NO. D-1/E-1/2026,MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY)/ASSISTANT PROFESSOR EMERGENCY MEDICINE, S-08/43",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdqx9TZEVjD3pj",
+      "attempts": 0,
+      "added": 1794595263
+    },
+    {
+      "site": "AIIMS Exams",
+      "title": "Notice No-175/2026: Conduct of Online CBT Entrance Examination for Ph.D. Programme January 2027 Session at AIIMS, New Delhi, in Delhi/NCR only",
+      "link": "https://rrpdocuments.aiimsexams.ac.in/1794570205073-757074023.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261113%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261113T183753Z&X-Amz-Expires=604800&X-Amz-Signature=1076812611b0980d707a744a7697b9e11d8e90a606bf685733f81ec27346fd72&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+      "attempts": 0,
+      "added": 1794595263
     }
   ]
 }
