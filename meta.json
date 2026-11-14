@@ -1,5 +1,5 @@
 {
-  "run_count": 165,
+  "run_count": 166,
   "site_fails": {
     "RPSC": 6,
     "RSSB": 6,
@@ -23,27 +23,6 @@
     "Indian Railways": 3
   },
   "wp_pending": [
-    {
-      "site": "UPPSC",
-      "title": "RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) ..",
-      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagn3Lnqaz4gdq9A2tZjX6yGV",
-      "attempts": 0,
-      "added": 1794507284
-    },
-    {
-      "site": "UPPSC",
-      "title": "12 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) /ASSISTANT PROFESSOR TRANSFUSION MEDICINE, S-08/58...",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq11kR5sUy5XQ",
-      "attempts": 0,
-      "added": 1794507284
-    },
-    {
-      "site": "UPPSC",
-      "title": "12 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) /ASSISTANT PROFESSOR ANATOMY, S-08/44...",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq+6ETBjMMNz6",
-      "attempts": 0,
-      "added": 1794507284
-    },
     {
       "site": "SEBI",
       "title": "Notice of Demand dated 12.11.2026 in RC No. 9324 of 2026",
