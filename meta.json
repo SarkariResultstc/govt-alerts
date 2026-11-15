@@ -1,5 +1,5 @@
 {
-  "run_count": 168,
+  "run_count": 169,
   "site_fails": {
     "RPSC": 6,
     "RSSB": 6,
@@ -23,20 +23,6 @@
     "Indian Railways": 3
   },
   "wp_pending": [
-    {
-      "site": "SEBI",
-      "title": "Notice of Demand dated 12.11.2026 in RC No. 9324 of 2026",
-      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-12-11-2026-in-rc-no-9324-of-2026_105739.html",
-      "attempts": 0,
-      "added": 1794569709
-    },
-    {
-      "site": "SEBI",
-      "title": "Notice of Demand dated 12.11.2026 in RC No. 9325 of 2026",
-      "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-12-11-2026-in-rc-no-9325-of-2026_105741.html",
-      "attempts": 0,
-      "added": 1794569709
-    },
     {
       "site": "IBPS",
       "title": "MANIT Recruitment of various Group ‘B’ & ‘C’ Non-Teaching Positions Registration From 13-Nov-2026",
