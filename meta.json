@@ -1,5 +1,5 @@
 {
-  "run_count": 178,
+  "run_count": 179,
   "site_fails": {
     "RPSC": 6,
     "RSSB": 6,
@@ -20,7 +20,8 @@
     "NTA Notice Board Archive": 8,
     "DRDO": 7,
     "BSSC": 4,
-    "Indian Railways": 3
+    "Indian Railways": 3,
+    "IBPS": 1
   },
   "wp_pending": [
     {
@@ -43,6 +44,27 @@
       "link": "https://uppbpb.gov.in/FilesUploaded/Notice/CONST 25 VIGGYAPTI 16-11-2026e9f869c6-bb93-4210-acb5-e17dabd0d0c4.pdf",
       "attempts": 0,
       "added": 1794862738
+    },
+    {
+      "site": "UPPSC",
+      "title": "LIST OF SELECTED CANDIDATES IN Advt. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTM..",
+      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagn3Lnqaz4gdq1V5zwlKle8k",
+      "attempts": 0,
+      "added": 1794948740
+    },
+    {
+      "site": "UPPSC",
+      "title": "16 Dec 2026 LIST OF SELECTED CANDIDATES IN Advt. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY), ASSISTANT PROFESSOR OTO-RHINO-LARYNGOLOGY (ENT).....",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq1b9+dbHbD9+",
+      "attempts": 0,
+      "added": 1794948740
+    },
+    {
+      "site": "UPPSC",
+      "title": "17 Dec 2026 LIST OF PROVISIONALLY SELECTED CANDIDATES IN ADVT. NO. A-5/E-1/2025, ASSISTANT TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, SUBJECT-URDU",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq+ZDBcgQKxjJ",
+      "attempts": 0,
+      "added": 1794948740
     }
   ]
 }
