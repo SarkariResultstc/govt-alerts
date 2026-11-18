@@ -1,10 +1,10 @@
 {
-  "run_count": 179,
+  "run_count": 180,
   "site_fails": {
-    "RPSC": 6,
-    "RSSB": 6,
-    "MPPSC": 6,
-    "HPSC": 7,
+    "RPSC": 7,
+    "RSSB": 7,
+    "MPPSC": 7,
+    "HPSC": 8,
     "HPPSC": 4,
     "Bihar Board Online": 5,
     "ESIC": 9,
@@ -20,17 +20,9 @@
     "NTA Notice Board Archive": 8,
     "DRDO": 7,
     "BSSC": 4,
-    "Indian Railways": 3,
-    "IBPS": 1
+    "Indian Railways": 3
   },
   "wp_pending": [
-    {
-      "site": "AIIMS Exams",
-      "title": "Notice: Fees and Admit Card for Second MBBS / Final MBBS / MD / MS / MDS / DM / MCh / Fellowship Programme Professional Examinations to be held in December 2026",
-      "link": "https://rrpdocuments.aiimsexams.ac.in/1794816769981-956173912.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261116%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261116T110607Z&X-Amz-Expires=604800&X-Amz-Signature=5cc2e5671eee606808ab19636c82a71ef1bf336fd34fbbbab235c41c4c876998&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-      "attempts": 0,
-      "added": 1794827403
-    },
     {
       "site": "UPPSC",
       "title": "16 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) /ASSISTANT PROFESSOR MICROBIOLOGY, S-08/128...",
