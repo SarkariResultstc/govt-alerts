@@ -1,5 +1,5 @@
 {
-  "run_count": 180,
+  "run_count": 181,
   "site_fails": {
     "RPSC": 7,
     "RSSB": 7,
@@ -20,23 +20,10 @@
     "NTA Notice Board Archive": 8,
     "DRDO": 7,
     "BSSC": 4,
-    "Indian Railways": 3
+    "Indian Railways": 3,
+    "LIC India": 1
   },
   "wp_pending": [
-    {
-      "site": "UPPSC",
-      "title": "16 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) /ASSISTANT PROFESSOR MICROBIOLOGY, S-08/128...",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq8R3/HLrIFDx",
-      "attempts": 0,
-      "added": 1794862738
-    },
-    {
-      "site": "UP Police Board (UPPBPB)",
-      "title": "LATEST NOTICE: उत्तर प्रदेश पुलिस में आरक्षी नागरिक पुलिस एवं समकक्ष पदों पर सीधी भर्ती-2025 के अन्तर्गत प्रसामान्यीकृत अंकों के प्रकाशन के सम्बन्ध में सूचना |",
-      "link": "https://uppbpb.gov.in/FilesUploaded/Notice/CONST 25 VIGGYAPTI 16-11-2026e9f869c6-bb93-4210-acb5-e17dabd0d0c4.pdf",
-      "attempts": 0,
-      "added": 1794862738
-    },
     {
       "site": "UPPSC",
       "title": "LIST OF SELECTED CANDIDATES IN Advt. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTM..",
