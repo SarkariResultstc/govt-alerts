@@ -1,18 +1,6 @@
 [
   {
     "site": "SEBI",
-    "title": "Notice of Demand dated November 06, 2026 against Satyen Bhupendra Dalal (PAN: AACPD0426F) in the matter of Veerkrupa Jewellers Limited under RC No. 9320 of 2026",
-    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-06-2026-against-satyen-bhupendra-dalal-pan-aacpd0426f-in-the-matter-of-veerkrupa-jewellers-limited-under-rc-no-9320-of-2026_105654.html",
-    "time_utc": "2026-11-06T19:25:41.941077+00:00"
-  },
-  {
-    "site": "SEBI",
-    "title": "Notice of Demand dated November 06, 2026, against Natasha Sinha (AAUPS3146B) in the matter of Mideast Integrated Steel Limited (MISL) under RC No. 9321 of 2026",
-    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-06-2026-against-natasha-sinha-aaups3146b-in-the-matter-of-mideast-integrated-steel-limited-misl-under-rc-no-9321-of-2026_105656.html",
-    "time_utc": "2026-11-06T19:25:42.474507+00:00"
-  },
-  {
-    "site": "SEBI",
     "title": "Notice of Demand dated November 06, 2026, against First Overseas Capital Limited (AAACL4737A) in the matter of Veerkrupa Jewellers Limited under RC No. 9322 of 2026",
     "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-06-2026-against-first-overseas-capital-limited-aaacl4737a-in-the-matter-of-veerkrupa-jewellers-limited-under-rc-no-9322-of-2026_105658.html",
     "time_utc": "2026-11-06T19:25:43.033360+00:00"
@@ -178,5 +166,17 @@
     "title": "Re-Schedule notice for the Date of Departmental Assessment in online mode (Stage-II) for the INI-SS DM/M.Ch. January 2027 Session",
     "link": "https://rrpdocuments.aiimsexams.ac.in/1795075577099-518705336.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261119%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261119T083554Z&X-Amz-Expires=604800&X-Amz-Signature=42a10884d16f9be35943f8247a276dc66fd070c4eafbf279776195058cc84708&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
     "time_utc": "2026-11-19T08:40:58.786008+00:00"
+  },
+  {
+    "site": "SEBI",
+    "title": "Notice of Attachment dated November 16, 2026 issued under RC No. 9309 of 2026 drawn against Ms. Arihant Securities (Proprietor Pravin Kumar Jain) in the matter of Betala Global Securities Limited",
+    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-16-2026-issued-under-rc-no-9309-of-2026-drawn-against-ms-arihant-securities-proprietor-pravin-kumar-jain-in-the-matter-of-betala-global-securities-limited_105847.html",
+    "time_utc": "2026-11-19T17:38:12.134524+00:00"
+  },
+  {
+    "site": "SEBI",
+    "title": "Notice of Attachment dated November 16, 2026 issued under RC No. 9308 of 2026 drawn against Niranjan D Agarwal in the matter of Kalahridhaan Trendz Limited",
+    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-16-2026-issued-under-rc-no-9308-of-2026-drawn-against-niranjan-d-agarwal-in-the-matter-of-kalahridhaan-trendz-limited_105846.html",
+    "time_utc": "2026-11-19T17:38:12.695273+00:00"
   }
 ]
