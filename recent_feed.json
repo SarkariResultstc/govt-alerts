@@ -1,12 +1,6 @@
 [
   {
     "site": "SEBI",
-    "title": "Notice of Demand dated November 06, 2026 issued under RC No. 9319 of 2026 drawn against Investowryght Research Analytics Private Limited in the matter of Investowryght Research Analytics Private Limited",
-    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-06-2026-issued-under-rc-no-9319-of-2026-drawn-against-investowryght-research-analytics-private-limited-in-the-matter-of-investowryght-research-analytics-private-limit-_105652.html",
-    "time_utc": "2026-11-06T19:25:41.412608+00:00"
-  },
-  {
-    "site": "SEBI",
     "title": "Notice of Demand dated November 06, 2026 against Satyen Bhupendra Dalal (PAN: AACPD0426F) in the matter of Veerkrupa Jewellers Limited under RC No. 9320 of 2026",
     "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-06-2026-against-satyen-bhupendra-dalal-pan-aacpd0426f-in-the-matter-of-veerkrupa-jewellers-limited-under-rc-no-9320-of-2026_105654.html",
     "time_utc": "2026-11-06T19:25:41.941077+00:00"
@@ -178,5 +172,11 @@
     "title": "18 Dec 2026 LIST OF PROVISIONALLY SELECTED CANDIDATES IN ADVT. NO. A-5/E-1/2025, ASSISTANT TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, SUBJECT-MUSIC",
     "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq2bVy3TPsqf2",
     "time_utc": "2026-11-18T19:05:05.969640+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Re-Schedule notice for the Date of Departmental Assessment in online mode (Stage-II) for the INI-SS DM/M.Ch. January 2027 Session",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1795075577099-518705336.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261119%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261119T083554Z&X-Amz-Expires=604800&X-Amz-Signature=42a10884d16f9be35943f8247a276dc66fd070c4eafbf279776195058cc84708&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-11-19T08:40:58.786008+00:00"
   }
 ]
