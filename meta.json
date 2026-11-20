@@ -1,5 +1,5 @@
 {
-  "run_count": 188,
+  "run_count": 189,
   "site_fails": {
     "RPSC": 7,
     "RSSB": 7,
@@ -20,16 +20,10 @@
     "NTA Notice Board Archive": 8,
     "DRDO": 7,
     "BSSC": 4,
-    "Indian Railways": 3
+    "Indian Railways": 3,
+    "IBPS": 1
   },
   "wp_pending": [
-    {
-      "site": "AIIMS Exams",
-      "title": "Re-Schedule notice for the Date of Departmental Assessment in online mode (Stage-II) for the INI-SS DM/M.Ch. January 2027 Session",
-      "link": "https://rrpdocuments.aiimsexams.ac.in/1795075577099-518705336.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261119%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261119T083554Z&X-Amz-Expires=604800&X-Amz-Signature=42a10884d16f9be35943f8247a276dc66fd070c4eafbf279776195058cc84708&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-      "attempts": 0,
-      "added": 1795077717
-    },
     {
       "site": "SEBI",
       "title": "Notice of Attachment dated November 16, 2026 issued under RC No. 9309 of 2026 drawn against Ms. Arihant Securities (Proprietor Pravin Kumar Jain) in the matter of Betala Global Securities Limited",
@@ -64,6 +58,13 @@
       "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq8wa1SBR0ZJ/",
       "attempts": 0,
       "added": 1795180718
+    },
+    {
+      "site": "UPPSC",
+      "title": "20 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) / PROFESSOR GENERAL SURGERY, S-08/11...",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagldjThZjoT+Rhool75tMDUI",
+      "attempts": 0,
+      "added": 1795209208
     }
   ]
 }
