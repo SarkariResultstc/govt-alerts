@@ -1,5 +1,5 @@
 {
-  "run_count": 187,
+  "run_count": 188,
   "site_fails": {
     "RPSC": 7,
     "RSSB": 7,
@@ -24,13 +24,6 @@
   },
   "wp_pending": [
     {
-      "site": "UPPSC",
-      "title": "18 Dec 2026 LIST OF PROVISIONALLY SELECTED CANDIDATES IN ADVT. NO. A-5/E-1/2025, ASSISTANT TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, SUBJECT-MUSIC",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq2bVy3TPsqf2",
-      "attempts": 0,
-      "added": 1795028705
-    },
-    {
       "site": "AIIMS Exams",
       "title": "Re-Schedule notice for the Date of Departmental Assessment in online mode (Stage-II) for the INI-SS DM/M.Ch. January 2027 Session",
       "link": "https://rrpdocuments.aiimsexams.ac.in/1795075577099-518705336.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261119%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261119T083554Z&X-Amz-Expires=604800&X-Amz-Signature=42a10884d16f9be35943f8247a276dc66fd070c4eafbf279776195058cc84708&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
@@ -50,6 +43,27 @@
       "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-16-2026-issued-under-rc-no-9308-of-2026-drawn-against-niranjan-d-agarwal-in-the-matter-of-kalahridhaan-trendz-limited_105846.html",
       "attempts": 0,
       "added": 1795109965
+    },
+    {
+      "site": "UPPSC",
+      "title": "CLICK HERE TO APPLY FOR ADVT.NO. A-6/E-1/2026, U.P. JUDICIAL SERVICE CIVIL JUDGE (JUNIOR DIVISION) EXAM.-2026.",
+      "link": "https://uppsc.up.nic.in/CandidatePages/Notifications.aspx",
+      "attempts": 0,
+      "added": 1795180718
+    },
+    {
+      "site": "UPPSC",
+      "title": "CLICK HERE FOR ADVT. NO. A-5/E-1/2025, ASSISTANT TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, (URDU, MUSIC) (DOCUMENT VERIFICATION).",
+      "link": "https://uppsc.up.nic.in/CandidatePages/OTRAppForm/Applicant_OtrAuthentication.aspx?WEqGEem9m0+8Y4tNQqJiNYurmbKsjJR/fgSlThSTh6o=",
+      "attempts": 0,
+      "added": 1795180718
+    },
+    {
+      "site": "UPPSC",
+      "title": "26 Nov 2026 NOTICE REAGARDING DOCUMENT VERIFICATION FOR ADVT. NO. A-5/E-1/2025, ASSISTANT TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, (URDU, MUSIC)",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq8wa1SBR0ZJ/",
+      "attempts": 0,
+      "added": 1795180718
     }
   ]
 }
