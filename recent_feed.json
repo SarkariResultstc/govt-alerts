@@ -1,30 +1,6 @@
 [
   {
     "site": "SEBI",
-    "title": "Notice of attachment dated November 10, 2026 issued against Secunderabad Healthcare Limited under RC No.7734 of 2024 in the matter of Secunderabad Healthcare Limited",
-    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-10-2026-issued-against-secunderabad-healthcare-limited-under-rc-no-7734-of-2024-in-the-matter-of-secunderabad-healthcare-limited_105698.html",
-    "time_utc": "2026-11-10T20:02:03.923828+00:00"
-  },
-  {
-    "site": "SEBI",
-    "title": "Notice of attachment dated November 10, 2026 issued against First Futures and Stocks Private Limited under RC No.7469 of 2023 in the matter of First Futures and Stocks Private Limited",
-    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-10-2026-issued-against-first-futures-and-stocks-private-limited-under-rc-no-7469-of-2023-in-the-matter-of-first-futures-and-stocks-private-limited_105694.html",
-    "time_utc": "2026-11-10T20:02:04.541589+00:00"
-  },
-  {
-    "site": "IBPS",
-    "title": "BPCL Special Recruitment Drive for Persons with Benchmark Disabilities (PwBDs)/ Divyangjans Registration From 09-Nov-2026",
-    "link": "https://ibpsreg.ibps.in/bpcljul26/",
-    "time_utc": "2026-11-11T06:53:19.425077+00:00"
-  },
-  {
-    "site": "IBPS",
-    "title": "JKB Recruitment of Various Posts Registration From 07-Nov-2026",
-    "link": "https://ibpsreg.ibps.in/jkbvpocto26/",
-    "time_utc": "2026-11-11T06:53:19.992664+00:00"
-  },
-  {
-    "site": "SEBI",
     "title": "Notice of attachment dated November 10, 2026 issued against R Ravichandran under RC No.6735 of 2023 in the matter of Teledata Technology Solutions Limited",
     "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-10-2026-issued-against-r-ravichandran-under-rc-no-6735-of-2023-in-the-matter-of-teledata-technology-solutions-limited_105700.html",
     "time_utc": "2026-11-11T21:37:55.970145+00:00"
@@ -178,5 +154,29 @@
     "title": "20 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) / PROFESSOR GENERAL SURGERY, S-08/11...",
     "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagldjThZjoT+Rhool75tMDUI",
     "time_utc": "2026-11-20T21:13:16.035393+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Programme of Interview to be held from 01/12/2026 to 05/12/2026 for the direct recruitment post of Professor for AIIMS-CAPFIMS, MaidanGarhi, New Delhi",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1795247191704-189618225.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261121%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261121T094127Z&X-Amz-Expires=604800&X-Amz-Signature=909c27be67d14286f594948c5efec6a65ccfff8001b691e8090173a5462471b7&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-11-21T09:43:23.499573+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Programme of Interview to be held from 01/12/2026 to 05/12/2026 for the direct recruitment post of Additional/Associate Professor for AIIMS-CAPFIMS, MaidanGarhi, New Delhi",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1795247164565-472076290.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261121%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261121T094127Z&X-Amz-Expires=604800&X-Amz-Signature=7c895ad40b49615975d97cdffac48beb42247250d67c997fa4ec48bb2176aafe&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-11-21T09:43:23.984839+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Programme of Interview to be held from 01/12/2026 to 05/12/2026 for the direct recruitment post of Assistant Professor for AIIMS-CAPFIMS, MaidanGarhi, New Delhi",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1795247136832-943102343.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261121%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261121T094127Z&X-Amz-Expires=604800&X-Amz-Signature=962998abd66956d47467e5a57f2c61e8500a6d392c410676d7c535115b0df729&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-11-21T09:43:24.447679+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Programme of Interview to be held from 01/12/2026 to 05/12/2026 for the direct recruitment post of Assistant Professor for AIIMS, New Delhi",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1795247095587-805654911.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261121%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261121T094127Z&X-Amz-Expires=604800&X-Amz-Signature=8c4ea0c4af07a8f8f25fa0a1d70898f7c2d7fa46b39d01c2f521e699f4dc24b4&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-11-21T09:43:24.974914+00:00"
   }
 ]
