@@ -1,5 +1,5 @@
 {
-  "run_count": 193,
+  "run_count": 194,
   "site_fails": {
     "RPSC": 7,
     "RSSB": 7,
@@ -22,27 +22,6 @@
     "Indian Railways": 3
   },
   "wp_pending": [
-    {
-      "site": "UPPSC",
-      "title": "CLICK HERE TO APPLY FOR ADVT.NO. A-6/E-1/2026, U.P. JUDICIAL SERVICE CIVIL JUDGE (JUNIOR DIVISION) EXAM.-2026.",
-      "link": "https://uppsc.up.nic.in/CandidatePages/Notifications.aspx",
-      "attempts": 0,
-      "added": 1795180718
-    },
-    {
-      "site": "UPPSC",
-      "title": "CLICK HERE FOR ADVT. NO. A-5/E-1/2025, ASSISTANT TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, (URDU, MUSIC) (DOCUMENT VERIFICATION).",
-      "link": "https://uppsc.up.nic.in/CandidatePages/OTRAppForm/Applicant_OtrAuthentication.aspx?WEqGEem9m0+8Y4tNQqJiNYurmbKsjJR/fgSlThSTh6o=",
-      "attempts": 0,
-      "added": 1795180718
-    },
-    {
-      "site": "UPPSC",
-      "title": "26 Nov 2026 NOTICE REAGARDING DOCUMENT VERIFICATION FOR ADVT. NO. A-5/E-1/2025, ASSISTANT TEACHER TRAINED GRADUATE (M./F.) EXAM 2025, (URDU, MUSIC)",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq8wa1SBR0ZJ/",
-      "attempts": 0,
-      "added": 1795180718
-    },
     {
       "site": "UPPSC",
       "title": "20 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) / PROFESSOR GENERAL SURGERY, S-08/11...",
