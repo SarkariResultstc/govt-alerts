@@ -1,5 +1,5 @@
 {
-  "run_count": 196,
+  "run_count": 197,
   "site_fails": {
     "RPSC": 7,
     "RSSB": 7,
@@ -19,36 +19,8 @@
     "UPSC": 4,
     "NTA Notice Board Archive": 9,
     "DRDO": 8,
-    "Indian Railways": 3
+    "Indian Railways": 3,
+    "Employment News": 1
   },
-  "wp_pending": [
-    {
-      "site": "AIIMS Exams",
-      "title": "Programme of Interview to be held from 01/12/2026 to 05/12/2026 for the direct recruitment post of Professor for AIIMS-CAPFIMS, MaidanGarhi, New Delhi",
-      "link": "https://rrpdocuments.aiimsexams.ac.in/1795247191704-189618225.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261121%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261121T094127Z&X-Amz-Expires=604800&X-Amz-Signature=909c27be67d14286f594948c5efec6a65ccfff8001b691e8090173a5462471b7&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-      "attempts": 0,
-      "added": 1795254280
-    },
-    {
-      "site": "AIIMS Exams",
-      "title": "Programme of Interview to be held from 01/12/2026 to 05/12/2026 for the direct recruitment post of Additional/Associate Professor for AIIMS-CAPFIMS, MaidanGarhi, New Delhi",
-      "link": "https://rrpdocuments.aiimsexams.ac.in/1795247164565-472076290.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261121%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261121T094127Z&X-Amz-Expires=604800&X-Amz-Signature=7c895ad40b49615975d97cdffac48beb42247250d67c997fa4ec48bb2176aafe&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-      "attempts": 0,
-      "added": 1795254280
-    },
-    {
-      "site": "AIIMS Exams",
-      "title": "Programme of Interview to be held from 01/12/2026 to 05/12/2026 for the direct recruitment post of Assistant Professor for AIIMS-CAPFIMS, MaidanGarhi, New Delhi",
-      "link": "https://rrpdocuments.aiimsexams.ac.in/1795247136832-943102343.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261121%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261121T094127Z&X-Amz-Expires=604800&X-Amz-Signature=962998abd66956d47467e5a57f2c61e8500a6d392c410676d7c535115b0df729&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-      "attempts": 0,
-      "added": 1795254280
-    },
-    {
-      "site": "AIIMS Exams",
-      "title": "Programme of Interview to be held from 01/12/2026 to 05/12/2026 for the direct recruitment post of Assistant Professor for AIIMS, New Delhi",
-      "link": "https://rrpdocuments.aiimsexams.ac.in/1795247095587-805654911.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261121%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261121T094127Z&X-Amz-Expires=604800&X-Amz-Signature=8c4ea0c4af07a8f8f25fa0a1d70898f7c2d7fa46b39d01c2f521e699f4dc24b4&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-      "attempts": 0,
-      "added": 1795254280
-    }
-  ]
+  "wp_pending": []
 }
