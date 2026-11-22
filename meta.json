@@ -1,5 +1,5 @@
 {
-  "run_count": 194,
+  "run_count": 195,
   "site_fails": {
     "RPSC": 7,
     "RSSB": 7,
@@ -22,13 +22,6 @@
     "Indian Railways": 3
   },
   "wp_pending": [
-    {
-      "site": "UPPSC",
-      "title": "20 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) / PROFESSOR GENERAL SURGERY, S-08/11...",
-      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagldjThZjoT+Rhool75tMDUI",
-      "attempts": 0,
-      "added": 1795209208
-    },
     {
       "site": "AIIMS Exams",
       "title": "Programme of Interview to be held from 01/12/2026 to 05/12/2026 for the direct recruitment post of Professor for AIIMS-CAPFIMS, MaidanGarhi, New Delhi",
