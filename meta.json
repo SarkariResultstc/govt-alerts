@@ -1,5 +1,5 @@
 {
-  "run_count": 199,
+  "run_count": 200,
   "site_fails": {
     "RPSC": 7,
     "RSSB": 7,
@@ -7,20 +7,20 @@
     "HPSC": 8,
     "HPPSC": 4,
     "Bihar Board Online": 6,
-    "ESIC": 10,
-    "EPFO": 9,
-    "GPAT": 12,
-    "ICAR NTA": 13,
-    "UPSSSC": 14,
+    "ESIC": 11,
+    "EPFO": 10,
+    "GPAT": 13,
+    "ICAR NTA": 14,
+    "UPSSSC": 15,
     "UP Board Results": 10,
     "UP Scholarship": 10,
     "CSBC (Bihar Police Constable)": 11,
     "BPSSC (Bihar Police SI)": 5,
     "UPSC": 4,
-    "NTA Notice Board Archive": 9,
+    "NTA Notice Board Archive": 10,
     "DRDO": 8,
     "Indian Railways": 3,
-    "Employment News": 3
+    "Employment News": 4
   },
   "wp_pending": [
     {
