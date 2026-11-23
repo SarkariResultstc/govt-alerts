@@ -1,23 +1,5 @@
 [
   {
-    "site": "SEBI",
-    "title": "Notice of attachment dated November 10, 2026 issued against R Ravichandran under RC No.6735 of 2023 in the matter of Teledata Technology Solutions Limited",
-    "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-10-2026-issued-against-r-ravichandran-under-rc-no-6735-of-2023-in-the-matter-of-teledata-technology-solutions-limited_105700.html",
-    "time_utc": "2026-11-11T21:37:55.970145+00:00"
-  },
-  {
-    "site": "UPPSC",
-    "title": "RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) ..",
-    "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagn3Lnqaz4gdq9A2tZjX6yGV",
-    "time_utc": "2026-11-12T18:13:34.826983+00:00"
-  },
-  {
-    "site": "UPPSC",
-    "title": "12 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) /ASSISTANT PROFESSOR TRANSFUSION MEDICINE, S-08/58...",
-    "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq11kR5sUy5XQ",
-    "time_utc": "2026-11-12T18:13:35.299722+00:00"
-  },
-  {
     "site": "UPPSC",
     "title": "12 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) /ASSISTANT PROFESSOR ANATOMY, S-08/44...",
     "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq+6ETBjMMNz6",
@@ -178,5 +160,23 @@
     "title": "Programme of Interview to be held from 01/12/2026 to 05/12/2026 for the direct recruitment post of Assistant Professor for AIIMS, New Delhi",
     "link": "https://rrpdocuments.aiimsexams.ac.in/1795247095587-805654911.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261121%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261121T094127Z&X-Amz-Expires=604800&X-Amz-Signature=8c4ea0c4af07a8f8f25fa0a1d70898f7c2d7fa46b39d01c2f521e699f4dc24b4&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
     "time_utc": "2026-11-21T09:43:24.974914+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Schedule for the interview of 02 faculty members for promotion to the next higher grade under Assessment Promotion Scheme-2026(APS-2026)",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1795425171762-431062798.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261123%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261123T115752Z&X-Amz-Expires=604800&X-Amz-Signature=201b7c5bb95ec8f630de3650ba50a9db8bd072d35d95f67e2a15f7a57d5ad258&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-11-23T11:58:48.981099+00:00"
+  },
+  {
+    "site": "AIIMS Exams",
+    "title": "Date Sheet Notification No. 177 / 2026 of Final MBBS (Regular) Professional Examinations to be held in December 2026 to January 2027",
+    "link": "https://rrpdocuments.aiimsexams.ac.in/1795409783497-234024553.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261123%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261123T115752Z&X-Amz-Expires=604800&X-Amz-Signature=36c79468cbf1e43fd921c69c442cac505c41cf64ed1ed9c054be489afc3c77b2&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
+    "time_utc": "2026-11-23T11:58:49.431660+00:00"
+  },
+  {
+    "site": "SEBI",
+    "title": "Notice of Sale for E-auction of immovable property in the matter of Asurre Agrowtech Limited - Recovery Certificate No. 1725 of 2018",
+    "link": "https://www.sebi.gov.in/enforcement/auction-notice-under-recovery-proceedings/nov-2026/notice-of-sale-for-e-auction-of-immovable-property-in-the-matter-of-asurre-agrowtech-limited-recovery-certificate-no-1725-of-2018_105855.html",
+    "time_utc": "2026-11-23T12:05:11.152025+00:00"
   }
 ]
