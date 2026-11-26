@@ -1,5 +1,5 @@
 {
-  "run_count": 207,
+  "run_count": 208,
   "site_fails": {
     "RPSC": 7,
     "RSSB": 7,
@@ -57,6 +57,34 @@
       "link": "https://rrpdocuments.aiimsexams.ac.in/1795605265386-61135881.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261125%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261125T114714Z&X-Amz-Expires=604800&X-Amz-Signature=e0787b538fb1911cd4283cb01d360f8b8d5aaf329dbc20db5520d2a0e659ceed&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
       "attempts": 0,
       "added": 1795607468
+    },
+    {
+      "site": "UPPSC",
+      "title": "RESULT OF ADVT. NO:-D-5/E-1/2025, PLANNING DEPARTMENT UTTAR PRADESH / JOINT DIRE..",
+      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagldjThZjoT+RivHh9oXvtP+",
+      "attempts": 0,
+      "added": 1795729235
+    },
+    {
+      "site": "UPPSC",
+      "title": "RESULT OF ADVT. NO:-D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) ..",
+      "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagldjThZjoT+Rj8AIVJYBxN7",
+      "attempts": 0,
+      "added": 1795729235
+    },
+    {
+      "site": "UPPSC",
+      "title": "26 Dec 2026 RESULT OF ADVT. NO:-D-5/E-1/2025, PLANNING DEPARTMENT UTTAR PRADESH / JOINT DIRECTOR (EVALUATION), S-02/06...",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagldjThZjoT+RtDGhuRgiyAL",
+      "attempts": 0,
+      "added": 1795729235
+    },
+    {
+      "site": "UPPSC",
+      "title": "26 Dec 2026 RESULT OF ADVT. NO:-D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) / ASSISTANT PROFESSOR TUBERCULOSIS AND RESPIRATORY MEDICINE /PULMONAR.....",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagldjThZjoT+Rl+QyhCPiGTx",
+      "attempts": 0,
+      "added": 1795729235
     }
   ]
 }
