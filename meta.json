@@ -1,5 +1,5 @@
 {
-  "run_count": 208,
+  "run_count": 209,
   "site_fails": {
     "RPSC": 7,
     "RSSB": 7,
@@ -23,41 +23,6 @@
     "Employment News": 4
   },
   "wp_pending": [
-    {
-      "site": "IBPS",
-      "title": "SBI Recruitment Of Specialist Cadre Officers on Regular Basis Registration From 20-Nov-2026",
-      "link": "https://ibpsreg.ibps.in/sbifteoct26/",
-      "attempts": 0,
-      "added": 1795607468
-    },
-    {
-      "site": "BPSC",
-      "title": "Final Results : District Statistical Officer/Assistant Director Competitive Examination. (Advt. No. 38/2025)",
-      "link": "https://bpsc.bihar.gov.in/wp-content/uploads/BPSC_content/Notices/Final-Results-382025-District-Statistical-Officer-Assistant-Director_BPSC-20261123-il0j5w.pdf",
-      "attempts": 0,
-      "added": 1795607468
-    },
-    {
-      "site": "BPSC",
-      "title": "Results : Prosecution Officer (Preliminary) Competitive Examination. (Advt. No. 13/2026)",
-      "link": "https://bpsc.bihar.gov.in/wp-content/uploads/BPSC_content/Notices/Results-132026-Prosecution-Officer-Preliminary-Examination_BPSC-20261119-d637of.pdf",
-      "attempts": 0,
-      "added": 1795607468
-    },
-    {
-      "site": "BPSC",
-      "title": "Results : Research Officer (Preliminary) Competitive Examination. (Advt. No. 08/2026)",
-      "link": "https://bpsc.bihar.gov.in/wp-content/uploads/BPSC_content/Notices/Results-082026-Research-Officer-Preliminary-Examination_BPSC-20261119-phtmr7.pdf",
-      "attempts": 0,
-      "added": 1795607468
-    },
-    {
-      "site": "AIIMS Exams",
-      "title": "Revised Programme of Interview to be held from 01/12/2026 to 05/12/2026 for the direct recruitment post of Assistant Professor for AIIMS, New Delhi",
-      "link": "https://rrpdocuments.aiimsexams.ac.in/1795605265386-61135881.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261125%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261125T114714Z&X-Amz-Expires=604800&X-Amz-Signature=e0787b538fb1911cd4283cb01d360f8b8d5aaf329dbc20db5520d2a0e659ceed&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-      "attempts": 0,
-      "added": 1795607468
-    },
     {
       "site": "UPPSC",
       "title": "RESULT OF ADVT. NO:-D-5/E-1/2025, PLANNING DEPARTMENT UTTAR PRADESH / JOINT DIRE..",
