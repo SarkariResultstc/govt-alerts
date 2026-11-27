@@ -1,23 +1,5 @@
 [
   {
-    "site": "AIIMS Exams",
-    "title": "Notice: Fees and Admit Card for Second MBBS / Final MBBS / MD / MS / MDS / DM / MCh / Fellowship Programme Professional Examinations to be held in December 2026",
-    "link": "https://rrpdocuments.aiimsexams.ac.in/1794816769981-956173912.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVRUVRLXWMSLVSAP7%2F20261116%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261116T110607Z&X-Amz-Expires=604800&X-Amz-Signature=5cc2e5671eee606808ab19636c82a71ef1bf336fd34fbbbab235c41c4c876998&X-Amz-SignedHeaders=host&response-content-type=application%2Fpdf",
-    "time_utc": "2026-11-16T11:09:38.237830+00:00"
-  },
-  {
-    "site": "UPPSC",
-    "title": "16 Dec 2026 RESULT OF ADVT. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) /ASSISTANT PROFESSOR MICROBIOLOGY, S-08/128...",
-    "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagn3Lnqaz4gdq8R3/HLrIFDx",
-    "time_utc": "2026-11-16T20:57:34.631663+00:00"
-  },
-  {
-    "site": "UP Police Board (UPPBPB)",
-    "title": "LATEST NOTICE: उत्तर प्रदेश पुलिस में आरक्षी नागरिक पुलिस एवं समकक्ष पदों पर सीधी भर्ती-2025 के अन्तर्गत प्रसामान्यीकृत अंकों के प्रकाशन के सम्बन्ध में सूचना |",
-    "link": "https://uppbpb.gov.in/FilesUploaded/Notice/CONST 25 VIGGYAPTI 16-11-2026e9f869c6-bb93-4210-acb5-e17dabd0d0c4.pdf",
-    "time_utc": "2026-11-16T20:57:52.715491+00:00"
-  },
-  {
     "site": "UPPSC",
     "title": "LIST OF SELECTED CANDIDATES IN Advt. NO. D-1/E-1/2026, MEDICAL EDUCATION DEPARTM..",
     "link": "https://uppsc.up.nic.in/Open_PDF_DB.aspx?I4PnQ0tBagn3Lnqaz4gdq1V5zwlKle8k",
@@ -178,5 +160,23 @@
     "title": "26 Dec 2026 RESULT OF ADVT. NO:-D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) / ASSISTANT PROFESSOR TUBERCULOSIS AND RESPIRATORY MEDICINE /PULMONAR.....",
     "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagldjThZjoT+Rl+QyhCPiGTx",
     "time_utc": "2026-11-26T21:38:58.225866+00:00"
+  },
+  {
+    "site": "IBPS",
+    "title": "IEB Direct Recruitment Drive for Management Trainees and Managers Registration From 27-Nov-2026",
+    "link": "https://ibpsreg.ibps.in/iebmtmnov26/",
+    "time_utc": "2026-11-27T21:56:54.794334+00:00"
+  },
+  {
+    "site": "IBPS",
+    "title": "SIDBI Recruitment of Officers Registration From 21-Nov-2026",
+    "link": "https://ibpsreg.ibps.in/sidbimay26/",
+    "time_utc": "2026-11-27T21:56:55.332561+00:00"
+  },
+  {
+    "site": "UPPSC",
+    "title": "27 Dec 2026 RESULT OF ADVT. NO:-D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) / PROFESSOR ANESTHESIOLOGY, S-08/05...",
+    "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagldjThZjoT+Rq4bXywJdNOO",
+    "time_utc": "2026-11-27T21:57:01.510142+00:00"
   }
 ]

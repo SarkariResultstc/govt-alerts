@@ -1,5 +1,5 @@
 {
-  "run_count": 210,
+  "run_count": 211,
   "site_fails": {
     "RPSC": 7,
     "RSSB": 7,
@@ -20,7 +20,8 @@
     "NTA Notice Board Archive": 10,
     "DRDO": 8,
     "Indian Railways": 3,
-    "Employment News": 4
+    "Employment News": 4,
+    "SEBI": 1
   },
   "wp_pending": [
     {
@@ -50,6 +51,27 @@
       "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagldjThZjoT+Rl+QyhCPiGTx",
       "attempts": 0,
       "added": 1795729235
+    },
+    {
+      "site": "IBPS",
+      "title": "IEB Direct Recruitment Drive for Management Trainees and Managers Registration From 27-Nov-2026",
+      "link": "https://ibpsreg.ibps.in/iebmtmnov26/",
+      "attempts": 0,
+      "added": 1795816735
+    },
+    {
+      "site": "IBPS",
+      "title": "SIDBI Recruitment of Officers Registration From 21-Nov-2026",
+      "link": "https://ibpsreg.ibps.in/sidbimay26/",
+      "attempts": 0,
+      "added": 1795816735
+    },
+    {
+      "site": "UPPSC",
+      "title": "27 Dec 2026 RESULT OF ADVT. NO:-D-1/E-1/2026, MEDICAL EDUCATION DEPARTMENT U.P. (ALLOPATHY) / PROFESSOR ANESTHESIOLOGY, S-08/05...",
+      "link": "https://uppsc.up.nic.in/Open_PDF.aspx?I4PnQ0tBagldjThZjoT+Rq4bXywJdNOO",
+      "attempts": 0,
+      "added": 1795816735
     }
   ]
 }
