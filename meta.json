@@ -1,5 +1,5 @@
 {
-  "run_count": 211,
+  "run_count": 212,
   "site_fails": {
     "RPSC": 7,
     "RSSB": 7,
@@ -20,8 +20,7 @@
     "NTA Notice Board Archive": 10,
     "DRDO": 8,
     "Indian Railways": 3,
-    "Employment News": 4,
-    "SEBI": 1
+    "Employment News": 4
   },
   "wp_pending": [
     {
